@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>На аппрув · maria · 2026-W33</title>
+<style>
+:root{--cream:#FDFBF6;--navy:#1F3A5F;--accent:#B9461D;--beige:#F4F0E6;
+--ink:#16181C;--muted:#6B7280;--line:#E4DCCB;--green:#2E7D32;--gold:#C79A2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+background:var(--beige);color:var(--navy);margin-right:6px}
+.badge.warn{background:#FBEEE7;color:var(--accent)}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0;font-size:14px}
+.note b{color:var(--navy)}
+h2{font-size:18px;color:var(--navy);margin:30px 0 10px;padding-top:14px;
+border-top:2px solid var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th{background:var(--beige);color:var(--navy);text-align:left;font-weight:600;
+padding:8px 10px;border:1px solid var(--line);font-size:12.5px}
+td{padding:9px 10px;border:1px solid var(--line);vertical-align:top}
+tr.daystart td{border-top:2px solid var(--navy)}
+.dt{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.topic{font-weight:600}
+.angle{color:#3d4450}
+.ask{background:#FAF7F0;font-size:13.5px;line-height:1.45}
+.askcol{width:38%}
+.sid{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.note.src{border-left-color:var(--muted);font-size:13px}
+.briefs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.brief{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-size:13.5px;line-height:1.45}
+.bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
+@media (max-width:760px){.brief{flex:1 1 100%}}
+.locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+.job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
+background:var(--beige);color:var(--navy)}
+.check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
+h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
+table.mini{font-size:13px}
+table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-weight:400}
+.caps{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cap{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:13.5px}
+.cap.over{border-color:var(--accent);background:#FDF4F0}
+.capttl{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:13px}
+.verdict{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;margin:6px 0 4px}
+.verdict.ok{background:#EDF6ED;color:var(--green)}
+.verdict.bad{background:#FBEEE7;color:var(--accent)}
+.warn{color:var(--accent)}
+.note.warn{border-left-color:var(--accent)}
+.scroll{overflow-x:auto}
+.scroll table{min-width:100%;font-size:12px}
+.scroll td{max-width:230px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}
+  tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+/* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
+   страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
+@media (max-width:760px){
+  .wrap{padding:18px 12px 40px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:#fff;border:1px solid var(--line);border-radius:10px;
+     margin:0 0 12px;padding:10px 12px;position:relative}
+  tr.daystart{border-top:1px solid var(--line)}
+  td{border:none;padding:4px 0 4px 0}
+  td:empty{display:none}
+  td[data-l]::before{content:attr(data-l);display:block;font-size:11px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:1px}
+  td.topic{font-size:16px;font-weight:600}
+  td.ask{background:var(--beige);border-radius:8px;padding:10px 12px;margin-top:6px}
+  .check{position:absolute;top:10px;right:12px;width:auto;text-align:right}
+  .askcol{width:auto}
+}
+</style></head><body>
+<div class="wrap">
+<h1>Контент-план на аппрув</h1>
+<div class="sub">неделя 10.08 — 16.08<br><span class="badge">съёмка 07.08</span></div>
+<div class="note"><b>Что с этим делать.</b> Посмотреть тему и угол каждой карточки. Тему и угол можно менять — это ваша территория. Формат заблокирован: он посчитан от ёмкости съёмочного дня, и правка одной строки двигает остальные.<br><br>На каждую утверждённую карточку — <b>голосовое по заданию «что наговорить»</b>. Это не текст ролика и не пересказ: наговорите так, как объяснили бы клиенту, своими словами, 2–3 минуты. Из этого потом соберутся и реплики в кадре, и подписи. В названии файла — код карточки.</div>
+<h2>Что от вас нужно в каждом формате</h2><div class="briefs"><div class="brief"><div class="bttl">Список</div><div>Перечисление: «пять признаков», «три вопроса». Нужно назвать, СКОЛЬКО пунктов, сами пункты и раскрыть каждый хотя бы одной фразой — без раскрытия список не работает, это просто заголовок. Самый сильный формат для аккаунта вашего размера по нашим замерам, поэтому его в неделе больше всего. </div></div><div class="brief"><div class="bttl">Демонстрация</div><div>Вы показываете действие руками — предмет, лист, сантиметр, упаковку. В кадре руки и вещь, ЛИЦО НЕ ОБЯЗАТЕЛЬНО, говорите за кадром. Нужно наговорить, что именно вы делаете по шагам и что зритель должен увидеть. Самый спокойный формат для первой съёмки — и при этом один из самых сильных по охвату. </div></div><div class="brief"><div class="bttl">Сценка</div><div>Ролик, где вы ИГРАЕТЕ ситуацию, а не рассказываете о ней: произносите в кадре фразы за человека — за одного или за двух по очереди, как это звучит в жизни. Поэтому в голосовом нужны САМИ СЛОВА, а не описание. Не «пациентка возмущается», а «мне сказали, что я просто мало стараюсь». Берите формулировки, которые реально слышите на приёме. Обычно 3–5 фраз плюс момент, где разговор разворачивается, — скажите отдельно, где он. </div></div><div class="brief"><div class="bttl">История</div><div>Один случай — ваш или обезличенный пациентский. Нужны начало, перелом и чем кончилось, как рассказали бы близкому за столом. Одна история, не три подряд. 🔴 Если случай пациентский — без возраста, города, профессии и узнаваемых бытовых деталей: механизм и динамику оставляем, приметы убираем. </div></div><div class="brief"><div class="bttl">Закулисье</div><div>Как устроена работа изнутри — то, чего пациент не видит. Нужно провести по порядку: что происходит и почему именно так. Формат длиннее обычного (полторы минуты), поэтому материала нужно больше: не три фразы, а связный рассказ. </div></div><div class="brief"><div class="bttl">Миф</div><div>«Обычно думают X, а на самом деле Y». Нужно назвать само заблуждение теми словами, какими его произносят вслух, и что вместо него. 🔴 Без обещаний: то, что вы видите по своим картам, — это наблюдение, а не гарантия результата. </div></div></div>
+<h2>Instagram · рилсы <span class="muted">· 14</span></h2>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">R-01</div></td><td class="locked" data-l="Формат">Список</td><td class="topic" data-l="Тема">Врач сказал «анализы хорошие», а вы просыпаетесь разбитой уже полгода</td><td class="angle" data-l="Угол">«Хорошие» значит «не болезнь». Это не то же самое, что «здорова»</td><td class="" data-l="Название">Когда норма не значит здоровье</td><td class="ask" data-l="Что наговорить">Назовите 3 вопроса, которые стоит задать врачу, когда вам сказали «всё в норме», и раскройте каждый: что именно спрашивать и что означает ответ. Плюс объясните в двух фразах, чем «нет болезни» отличается от «здорова».</td></tr>
+<tr><td class="check">☐<div class="sid">R-02</div></td><td class="locked" data-l="Формат">История</td><td class="topic" data-l="Тема">Вам кажется, что врачи выбирают профессию ради статуса</td><td class="angle" data-l="Угол">Три могилы врачей в моей семье и почему я всё равно пошла</td><td class="" data-l="Название">Почему я стала эндокринологом</td><td class="ask" data-l="Что наговорить">Расскажите свою историю: три могилы врачей в семье. С чего начался ваш выбор, в какой момент решилось, и чем это отзывается в вашей работе сейчас. Как рассказали бы близкому за столом — начало, перелом, чем кончилось.</td></tr>
+<tr><td class="check">☐<div class="sid">R-03</div></td><td class="locked" data-l="Формат">Демонстрация</td><td class="topic" data-l="Тема">Джинсы не сходятся, а весы показывают то же, что и год назад</td><td class="angle" data-l="Угол">Сантиметр говорит правду там, где весы молчат</td><td class="" data-l="Название">Где мерить талию и что значит цифра</td><td class="ask" data-l="Что наговорить">Покажите руками на себе или на любом человеке, ГДЕ именно проходит линия измерения талии, и наговорите по шагам: как встать, где приложить сантиметр, на каком дыхании смотреть. И назовите цифры-границы для женщин и мужчин — с чего начинается вопрос к врачу. Лицо в кадре не нужно, только руки и сантиметр.</td></tr>
+<tr><td class="check">☐<div class="sid">R-04</div></td><td class="locked" data-l="Формат">Список</td><td class="topic" data-l="Тема">Мёрзнут руки в тёплой комнате, и вам всю жизнь говорят «ты просто мерзлячка»</td><td class="angle" data-l="Угол">Пять «особенностей характера», которые проверяются одним анализом</td><td class="" data-l="Название">Не характер, а щитовидка</td><td class="ask" data-l="Что наговорить">Перечислите 5 вещей, которые люди списывают на характер — мерзлявость, медлительность, «я сова», забывчивость, что-то ещё из вашей практики, — и по каждой скажите одной фразой, что за этим может стоять физиологически и каким анализом это проверяется.</td></tr>
+<tr><td class="check">☐<div class="sid">R-05</div></td><td class="locked" data-l="Формат">Сценка</td><td class="topic" data-l="Тема">Пришли в поликлинику и услышали «вы уверены, что вам надо именно к нам?»</td><td class="angle" data-l="Угол">Эта фраза значит не «уходите» — она значит вот что</td><td class="" data-l="Название">Что на самом деле значит эта фраза</td><td class="ask" data-l="Что наговорить">Наговорите сам разговор словами: 2–3 фразы регистратуры или врача дословно, как это звучит («вы уверены, что вам надо именно к нам?»), и 2 фразы растерянного пациента. Потом объясните, что за этой фразой стоит на самом деле и что в такой момент делать.</td></tr>
+<tr><td class="check">☐<div class="sid">R-06</div></td><td class="locked" data-l="Формат">Закулисье</td><td class="topic" data-l="Тема">Вы приходите к врачу и не понимаете, почему он спрашивает про сон, а не про щитовидку</td><td class="angle" data-l="Угол">Что происходит в те сорок минут и почему первые десять — не про анализы</td><td class="" data-l="Название">Как устроен приём изнутри</td><td class="ask" data-l="Что наговорить">Проведите по порядку через ваш приём: что происходит в первые десять минут, что во вторые, когда вы наконец открываете анализы и почему именно в этот момент. Это самый длинный ролик недели — полторы минуты, нужен связный рассказ, а не тезисы. Скажите и то, чего вы НЕ делаете, хотя от врача этого ждут.</td></tr>
+<tr><td class="check">☐<div class="sid">R-07</div></td><td class="locked" data-l="Формат">Список</td><td class="topic" data-l="Тема">Вес стоит третий месяц, хотя вы едите меньше всех за столом</td><td class="angle" data-l="Угол">Что проверить, прежде чем в очередной раз урезать еду</td><td class="" data-l="Название">Что проверить до того, как урезать еду</td><td class="ask" data-l="Что наговорить">Перечислите 4–5 вещей, которые стоит проверить, когда вес стоит при малом питании, и раскройте каждую одной фразой: что именно смотрим и о чём это говорит. Без схем приёма и доз — только «что проверить у врача».</td></tr>
+<tr><td class="check">☐<div class="sid">R-08</div></td><td class="locked" data-l="Формат">Миф</td><td class="topic" data-l="Тема">Вам сказали «ничего не поделать, пейте таблетки пожизненно»</td><td class="angle" data-l="Угол">Что я вижу по своим картам за год — и почему это наблюдение, а не обещание</td><td class="" data-l="Название">Что я вижу по своим картам</td><td class="ask" data-l="Что наговорить">Назовите само заблуждение теми словами, какими его произносят на приёме («пейте пожизненно, ничего не поделать»), и что вместо него. Расскажите, что вы увидели, когда подняли свои карты за год, — цифру и что именно за ней стоит. 🔴 Обязательно проговорите вслух, что это ваше наблюдение по вашим пациентам, а не обещание «и у вас так будет».</td></tr>
+<tr><td class="check">☐<div class="sid">R-09</div></td><td class="locked" data-l="Формат">Демонстрация</td><td class="topic" data-l="Тема">Съедаете мандарины горстями, потому что «там витамин C»</td><td class="angle" data-l="Угол">Сколько их нужно сегодня, чтобы закрыть норму, и почему их столько</td><td class="" data-l="Название">Почему еды стало «меньше» в еде</td><td class="ask" data-l="Что наговорить">Выложите руками на стол мандарины — сколько их нужно сегодня, чтобы закрыть суточную норму, — и наговорите за кадром: сколько было раньше, сколько теперь и почему так вышло. Про обеднение почв — своими словами, как объясняете пациентам. Лицо не нужно, только руки и фрукты.</td></tr>
+<tr><td class="check">☐<div class="sid">R-10</div></td><td class="locked" data-l="Формат">Список</td><td class="topic" data-l="Тема">Муж говорит «я просто устал», и так уже второй год</td><td class="angle" data-l="Угол">Что стоит проверить мужчине после 35, если «просто устал» длится дольше месяца</td><td class="" data-l="Название">Когда усталость это не усталость</td><td class="ask" data-l="Что наговорить">Перечислите 4 вещи, которые стоит проверить мужчине после 35, если усталость тянется месяцами, и раскройте каждую фразой. И скажите отдельно: по каким признакам жене понятно, что это уже не про «много работы».</td></tr>
+<tr><td class="check">☐<div class="sid">R-11</div></td><td class="locked" data-l="Формат">Сценка</td><td class="topic" data-l="Тема">Принесли врачу расшифровку анализов от нейросети</td><td class="angle" data-l="Угол">Что там было правдой, а что стоило бы жизни, если бы поверили</td><td class="" data-l="Название">Пациент с распечаткой от ИИ</td><td class="ask" data-l="Что наговорить">Наговорите разговор словами: 2–3 фразы пациента дословно, как он приносит распечатку («мне тут нейросеть расшифровала»), и ваши 2 ответа. Потом скажите, что в той расшифровке было верно, а что опасно — и почему машина не видит того, что видите вы. Случай обезличить: без возраста, города и примет.</td></tr>
+<tr><td class="check">☐<div class="sid">R-12</div></td><td class="locked" data-l="Формат">История</td><td class="topic" data-l="Тема">Думаете, что врач всегда знает ответ</td><td class="angle" data-l="Угол">Куда я отправляю пациента, когда это не моё, и почему говорю об этом вслух</td><td class="" data-l="Название">Что я не лечу</td><td class="ask" data-l="Что наговорить">Расскажите случай, когда вы отправили пациента к другому специалисту: с чем он пришёл, в какой момент вы поняли, что это не ваше, что сказали и куда направили. И объясните, почему говорите об этом вслух, а не молча лечите «что-нибудь». Случай обезличить.</td></tr>
+<tr><td class="check">☐<div class="sid">R-13</div></td><td class="locked" data-l="Формат">Демонстрация</td><td class="topic" data-l="Тема">Врач говорит вам про здоровый образ жизни, а сам ест на бегу</td><td class="angle" data-l="Угол">Тортики пять раз в год и подъём в 6:30 без будильника — как это уживается</td><td class="" data-l="Название">Что реально в тарелке у эндокринолога</td><td class="ask" data-l="Что наговорить">Покажите руками свой обычный завтрак или содержимое сумки/холодильника — что там реально лежит — и наговорите за кадром: во сколько встаёте, что едите в обычный день, где позволяете себе исключение. Про «тортики пять раз в год» и подъём в 6:30 — своими словами. Лицо не обязательно.</td></tr>
+<tr><td class="check">☐<div class="sid">R-14</div></td><td class="locked" data-l="Формат">Список</td><td class="topic" data-l="Тема">Выбираете врача и не знаете, на что смотреть, кроме отзывов</td><td class="angle" data-l="Угол">Пять признаков, что вы попали к тому врачу, и один — что стоит уйти</td><td class="" data-l="Название">Как выбрать эндокринолога</td><td class="ask" data-l="Что наговорить">Перечислите 5 признаков, что человек попал к хорошему эндокринологу, раскройте каждый одной фразой, и назовите 1 признак, при котором стоит уйти. Говорите про то, что видно пациенту в кабинете, а не про регалии.</td></tr>
+</tbody></table>
+<h2>Instagram · сторис <span class="muted">· 3</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">S-01</div></td><td class="locked" data-l="Формат">Знакомство</td><td class="topic" data-l="Тема">Кто я и зачем этот аккаунт — три кадра, без представления регалиями</td></tr>
+<tr><td class="check">☐<div class="sid">S-02</div></td><td class="locked" data-l="Формат">Бэкстейдж</td><td class="topic" data-l="Тема">Как снимали первый батч — без халата, телефоном</td></tr>
+<tr><td class="check">☐<div class="sid">S-03</div></td><td class="locked" data-l="Формат">Ответы</td><td class="topic" data-l="Тема">Ответы на 2–3 вопроса из стикера понедельника</td></tr>
+</tbody></table>
+<h2>Instagram · посты <span class="muted">· 2</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">P-01</div></td><td class="locked" data-l="Формат">Карусель</td><td class="topic" data-l="Тема">Что взять с собой на приём к эндокринологу</td><td class="angle" data-l="Угол">Список: какие выписки, какие прошлые анализы, что записать заранее</td></tr>
+<tr><td class="check">☐<div class="sid">P-02</div></td><td class="locked" data-l="Формат">Карусель</td><td class="topic" data-l="Тема">Норма в бланке и норма для вас — почему это разные вещи</td><td class="angle" data-l="Угол">Разбор на примере одного показателя: референс лаборатории против клиники</td></tr>
+</tbody></table>
+<h2>Telegram <span class="muted">· 3</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">TG-01</div></td><td class="locked" data-l="Формат">Первый пост</td><td class="topic" data-l="Тема">Зачем этот канал и чем он отличается от того, что в Instagram</td></tr>
+<tr><td class="check">☐<div class="sid">TG-02</div></td><td class="locked" data-l="Формат">Лонгрид</td><td class="topic" data-l="Тема">Как читать свой бланк анализов: что значат стрелочки и почему они не диагноз</td></tr>
+<tr><td class="check">☐<div class="sid">TG-03</div></td><td class="locked" data-l="Формат">Обезличенный кейс</td><td class="topic" data-l="Тема">«Я просто унылая и ленивая» — как звучал запрос, за которым оказался гипотиреоз</td></tr>
+</tbody></table>
+<h2>Threads <span class="muted">· 6</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">TH-01</div></td><td class="locked" data-l="Формат">Из рилса</td><td class="topic" data-l="Тема">«Анализы хорошие» значит «не болезнь». Это не то же самое, что «здорова». Разница стоит нескольких лет самочувствия.</td></tr>
+<tr><td class="check">☐<div class="sid">TH-02</div></td><td class="locked" data-l="Формат">Самостоятельный</td><td class="topic" data-l="Тема">Самый честный прибор в доме не весы. Сантиметровая лента.</td></tr>
+<tr><td class="check">☐<div class="sid">TH-03</div></td><td class="locked" data-l="Формат">Вопрос</td><td class="topic" data-l="Тема">Что вам говорили про ваше самочувствие такого, что вы приняли за черту характера?</td></tr>
+<tr><td class="check">☐<div class="sid">TH-04</div></td><td class="locked" data-l="Формат">Из рилса</td><td class="topic" data-l="Тема">Первые десять минут приёма я не смотрю в анализы. Сначала надо понять, как человек живёт.</td></tr>
+<tr><td class="check">☐<div class="sid">TH-05</div></td><td class="locked" data-l="Формат">Самостоятельный</td><td class="topic" data-l="Тема">Хороший врач говорит «это не ко мне» вслух. Плохой лечит что-нибудь.</td></tr>
+<tr><td class="check">☐<div class="sid">TH-06</div></td><td class="locked" data-l="Формат">Вопрос</td><td class="topic" data-l="Тема">Какой вопрос вы стеснялись задать врачу?</td></tr>
+</tbody></table>
+<footer>Карточек на аппрув: 28 из 28 в плане. Голосовых нужно записать: 14.<br>Собрано из <code>plan.yaml</code> (maria-2026-W33) — правки вносятся в него, эта страница пересобирается.</footer>
+</div></body></html>

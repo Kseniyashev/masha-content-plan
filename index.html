@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Системный · maria · 2026-W33</title>
+<style>
+:root{--cream:#FDFBF6;--navy:#1F3A5F;--accent:#B9461D;--beige:#F4F0E6;
+--ink:#16181C;--muted:#6B7280;--line:#E4DCCB;--green:#2E7D32;--gold:#C79A2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+background:var(--beige);color:var(--navy);margin-right:6px}
+.badge.warn{background:#FBEEE7;color:var(--accent)}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0;font-size:14px}
+.note b{color:var(--navy)}
+h2{font-size:18px;color:var(--navy);margin:30px 0 10px;padding-top:14px;
+border-top:2px solid var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th{background:var(--beige);color:var(--navy);text-align:left;font-weight:600;
+padding:8px 10px;border:1px solid var(--line);font-size:12.5px}
+td{padding:9px 10px;border:1px solid var(--line);vertical-align:top}
+tr.daystart td{border-top:2px solid var(--navy)}
+.dt{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.topic{font-weight:600}
+.angle{color:#3d4450}
+.ask{background:#FAF7F0;font-size:13.5px;line-height:1.45}
+.askcol{width:38%}
+.sid{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.note.src{border-left-color:var(--muted);font-size:13px}
+.briefs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.brief{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-size:13.5px;line-height:1.45}
+.bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
+@media (max-width:760px){.brief{flex:1 1 100%}}
+.locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+.job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
+background:var(--beige);color:var(--navy)}
+.check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
+h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
+table.mini{font-size:13px}
+table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-weight:400}
+.caps{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cap{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:13.5px}
+.cap.over{border-color:var(--accent);background:#FDF4F0}
+.capttl{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:13px}
+.verdict{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;margin:6px 0 4px}
+.verdict.ok{background:#EDF6ED;color:var(--green)}
+.verdict.bad{background:#FBEEE7;color:var(--accent)}
+.warn{color:var(--accent)}
+.note.warn{border-left-color:var(--accent)}
+.scroll{overflow-x:auto}
+.scroll table{min-width:100%;font-size:12px}
+.scroll td{max-width:230px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}
+  tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+/* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
+   страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
+@media (max-width:760px){
+  .wrap{padding:18px 12px 40px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:#fff;border:1px solid var(--line);border-radius:10px;
+     margin:0 0 12px;padding:10px 12px;position:relative}
+  tr.daystart{border-top:1px solid var(--line)}
+  td{border:none;padding:4px 0 4px 0}
+  td:empty{display:none}
+  td[data-l]::before{content:attr(data-l);display:block;font-size:11px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:1px}
+  td.topic{font-size:16px;font-weight:600}
+  td.ask{background:var(--beige);border-radius:8px;padding:10px 12px;margin-top:6px}
+  .check{position:absolute;top:10px;right:12px;width:auto;text-align:right}
+  .askcol{width:auto}
+}
+</style></head><body>
+<div class="wrap">
+<h1>Контент-план · системная версия</h1>
+<div class="sub">maria &middot; неделя 2026-W33 (2026-08-10 — 2026-08-16) &middot; план <code>maria-2026-W33</code> &middot; алгоритм v1.8<br><span class="badge">С1</span><span class="badge">статус: draft</span><span class="badge">съёмка 07.08</span><span class="badge warn">ДНК-лифт есть, velocity не измерена</span></div>
+<div class="note"><b>Провенанс.</b> Проход A · срез ДНК-лифта 2026-08-02 · банк тем <code>experts/maria/topic_bank.yaml</code> · линтеры: ig_lint.py --field speech, ai_lint.py --per-line --voice-profile experts/maria/voice_profile.yaml<br>Трендвотчинг: <span class="warn">ДНК-лифт снят 2026-08-02, но второго среза нет — velocity не измерялась, полка «тренд» пуста</span></div>
+<div class="note"><b>Стадия и волна.</b> Попадание · старт с нуля, действующего блога нет. Задача стадии — не расти, а найти заходящую связку &middot; Продающих слотов нет по построению: на С1 J4 = 0%, конверсия только встроенная (CTA-комментарий)</div>
+<div class="note">Хештеги не используем: −31.7% просмотров, −33.9% взаимодействий ⬤.</div>
+<h2>Распределение</h2><div class="cards">
+<div class="card"><h3>Работы · рилсы <span class="muted">· 14</span></h3><table class="mini"><tbody><tr><td>охват</td><td class="num">10</td><td class="num muted">71%</td></tr><tr><td>доверие</td><td class="num">3</td><td class="num muted">21%</td></tr><tr><td>конверсия</td><td class="num">1</td><td class="num muted">7%</td></tr><tr><td>продажа</td><td class="num">0</td><td class="num muted">0%</td></tr><tr><td>связь</td><td class="num">0</td><td class="num muted">0%</td></tr></tbody></table><div class="note">С1 = 70% охват / 25% доверие / 5% конверсия. Продажи и связь — ноль по построению: J5 не работает без базы ⬤, продающие слоты на С1 сгорают вхолостую. Конверсия встроена в охватные слоты через CTA-комментарий (+202.8% комментариев ⬤), отдельного слота не занимает. </div></div>
+<div class="card"><h3>Источники · внутри J1+J2 <span class="muted">· 13</span></h3><table class="mini"><tbody><tr><td>ставка</td><td class="num">1</td><td class="num muted">8%</td></tr><tr><td>эвергрин</td><td class="num">12</td><td class="num muted">92%</td></tr></tbody></table><div class="note">🔴 ОТКЛОНЕНИЕ ОТ МИКСА §8.3, осознанное. База С1 — эвергрин 55 / тренд 25 / ставка 20. Полка «тренд» пуста: у Радара Маши есть эвергрин-срез, но ВТОРОГО СРЕЗА НЕТ, значит velocity не измерялась ни разу и «что растёт сейчас» неизвестно. Ставить слоты в эту полку — выдавать догадку за измерение. Полка добрана эвергрином (12 из 14). Единственная «ставка» — мужские гормоны: драйвер 1.75, но стоит на 4 аккаунтах, то есть слабый сигнал по определению. Закрывается вторым срезом панели — он и вернёт полку «тренд». </div></div>
+<div class="card"><h3>Чем закрыт вал · рилсы <span class="muted">· 14</span></h3><table class="mini"><tbody><tr><td>съёмка</td><td class="num">14</td><td class="num muted">100%</td></tr></tbody></table></div>
+<div class="card"><h3>Разнообразие <span class="muted">· 14</span></h3><table class="mini"><tbody><tr><td>ЦА: bad_curious</td><td class="num">2</td><td class="num muted">14%</td></tr><tr><td>ЦА: main</td><td class="num">12</td><td class="num muted">86%</td></tr><tr><td>depth</td><td class="num">5</td><td class="num muted">36%</td></tr><tr><td>reach</td><td class="num">9</td><td class="num muted">64%</td></tr></tbody></table><div class="note">🔴 Топ-драйвер её пула — детское здоровье (1.91) — в плане отсутствует полностью: это не её компетенция (взрослый эндокринолог, ЦА 30–38) и рядом с её красной линией «многодетность как экспертиза». Полка оставлена пустой осознанно, а не забыта. 🔑 Щитовидка — прямая специальность — НЕ драйвер (0.86 у её пула, 0.23 у крупных). Поэтому в плане она заходит через симптом («мёрзнут руки», «пожизненно таблетки»), а не через термин, и занимает 2 слота из 14. </div></div>
+</div>
+<h2>Ёмкость</h2><div class="caps"><div class="cap"><div class="capttl">ЭКСПЕРТ В КАДРЕ</div><div>14 слотов · 257 из 360 мин<br><span class="muted">72%</span></div></div></div><div class="verdict ok">✅ Неделя помещается в ёмкость</div><div class="note">Загрузка съёмочного дня 73%, а не под потолок — намеренно. Это ПЕРВЫЙ съёмочный день, опыта съёмок нет. Коэффициент k=1.25 уже закладывает лишние дубли, но запас нужен ещё и на то, что первый час уйдёт на разгон. Если день пойдёт легко — добираем из банка, это дешевле, чем не снять запланированное. # 🔒 Формулировка про камеру намеренно нейтральная: рендер уходит на публичный # URL, а прямая цитата из её распаковки — личное, которому там не место. # Производственный довод от этого не меняется, он в цифрах. </div>
+<h2>Instagram · рилсы <span class="muted">· 14</span></h2><div class="note">14 слотов, 2 в день. Частота 10+/нед даёт +24% охвата на пост ⬤, поэтому меньше двух в день на старте смысла не имеет. 🔑 Формат-рычаг её пула — СПИСОК (1.95 ⬤), поэтому его 5 из 14. То, что она любит и умеет по профилю — «ликбез с самопроверкой» и «разбор мифа», — это разбор понятия 0.76 и техника-инструкция 0.78, антипаттерны у её пула. Ликбез не выброшен, а переупакован в список и сценку. 🔑 Визуальные драйверы её пула требуют ЕЁ В КАДРЕ: POV-сценка 4.25, демонстрация процесса 3.61, говорящая голова 2.09. Карточками с текстом это не обойти — у аккаунтов её размера текст-на-экране это антипаттерн (0.80). Демонстрация процесса — самый мягкий вход: руки и предмет, лицо не обязательно. Отсюда 3 слота TXD в первую неделю. </div>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Дата</th><th>Время</th><th>Работа</th><th>Источник</th><th>Формат</th><th>Шаблон</th><th>Длина</th><th>Тема</th><th>Угол</th><th>Тип хука</th><th>Хук</th><th>Название</th><th>Лифт</th><th>ЦА</th><th>Оси</th><th>Банк</th><th>CTA</th><th>Пр.</th><th>От эксперта</th><th>Статус</th></tr></thead><tbody>
+<tr class="daystart"><td>R-01</td><td>10.08</td><td>08:30</td><td>охват</td><td>эвергрин</td><td>Список</td><td>T01</td><td>55 с</td><td>Врач сказал «анализы хорошие», а вы просыпаетесь разбитой уже полгода</td><td>«Хорошие» значит «не болезнь». Это не то же самое, что «здорова»</td><td>контрарный</td><td>«Анализы хорошие» и «вы здоровы». Это две разные фразы.</td><td>Когда норма не значит здоровье</td><td>theme ×1.31 · format ×1.95</td><td>main</td><td>reach · Growth</td><td>AN-01</td><td>коммент</td><td>съёмка</td><td>Назовите 3 вопроса, которые стоит задать врачу, когда вам сказали «всё в норме», и раскройте каждый: что именно спрашивать и что означает ответ. Плюс объясните в двух фразах, чем «нет болезни» отличается от «здорова».</td><td>draft</td></tr>
+<tr class=""><td>R-02</td><td>10.08</td><td>19:00</td><td>доверие</td><td>эвергрин</td><td>История</td><td>T09</td><td>55 с</td><td>Вам кажется, что врачи выбирают профессию ради статуса</td><td>Три могилы врачей в моей семье и почему я всё равно пошла</td><td>story-open</td><td>В моей семье три могилы врачей. Я всё равно пошла.</td><td>Почему я стала эндокринологом</td><td>theme ×1.04 · format ×0.85</td><td>main</td><td>depth · Authenticity</td><td>OZ-04</td><td></td><td>съёмка</td><td>Расскажите свою историю: три могилы врачей в семье. С чего начался ваш выбор, в какой момент решилось, и чем это отзывается в вашей работе сейчас. Как рассказали бы близкому за столом — начало, перелом, чем кончилось.</td><td>draft</td></tr>
+<tr class="daystart"><td>R-03</td><td>11.08</td><td>08:30</td><td>охват</td><td>эвергрин</td><td>Демонстрация</td><td>TXD</td><td>30 с</td><td>Джинсы не сходятся, а весы показывают то же, что и год назад</td><td>Сантиметр говорит правду там, где весы молчат</td><td>how-to</td><td>Весы врут. Сантиметр — нет.</td><td>Где мерить талию и что значит цифра</td><td>theme ×1.16 · visual ×3.61</td><td>main</td><td>reach · Growth</td><td>VE-02</td><td>коммент</td><td>съёмка</td><td>Покажите руками на себе или на любом человеке, ГДЕ именно проходит линия измерения талии, и наговорите по шагам: как встать, где приложить сантиметр, на каком дыхании смотреть. И назовите цифры-границы для женщин и мужчин — с чего начинается вопрос к врачу. Лицо в кадре не нужно, только руки и сантиметр.</td><td>draft</td></tr>
+<tr class=""><td>R-04</td><td>11.08</td><td>19:00</td><td>охват</td><td>эвергрин</td><td>Список</td><td>T01</td><td>55 с</td><td>Мёрзнут руки в тёплой комнате, и вам всю жизнь говорят «ты просто мерзлячка»</td><td>Пять «особенностей характера», которые проверяются одним анализом</td><td>листикл</td><td>Пять черт характера, которые на самом деле анализ.</td><td>Не характер, а щитовидка</td><td>theme ×0.86 · format ×1.95</td><td>main</td><td>reach · Growth</td><td>SC-01</td><td>коммент</td><td>съёмка</td><td>Перечислите 5 вещей, которые люди списывают на характер — мерзлявость, медлительность, «я сова», забывчивость, что-то ещё из вашей практики, — и по каждой скажите одной фразой, что за этим может стоять физиологически и каким анализом это проверяется.</td><td>draft</td></tr>
+<tr class="daystart"><td>R-05</td><td>12.08</td><td>08:30</td><td>охват</td><td>эвергрин</td><td>Сценка</td><td>T02</td><td>30 с</td><td>Пришли в поликлинику и услышали «вы уверены, что вам надо именно к нам?»</td><td>Эта фраза значит не «уходите» — она значит вот что</td><td>POV-сценка</td><td>«Вы уверены, что вам надо именно к нам?»</td><td>Что на самом деле значит эта фраза</td><td>theme ×1.04 · visual ×4.25</td><td>main</td><td>reach · Growth</td><td>OZ-05</td><td></td><td>съёмка</td><td>Наговорите сам разговор словами: 2–3 фразы регистратуры или врача дословно, как это звучит («вы уверены, что вам надо именно к нам?»), и 2 фразы растерянного пациента. Потом объясните, что за этой фразой стоит на самом деле и что в такой момент делать.</td><td>draft</td></tr>
+<tr class=""><td>R-06</td><td>12.08</td><td>19:00</td><td>доверие</td><td>эвергрин</td><td>Закулисье</td><td>L03</td><td>85 с</td><td>Вы приходите к врачу и не понимаете, почему он спрашивает про сон, а не про щитовидку</td><td>Что происходит в те сорок минут и почему первые десять — не про анализы</td><td>инсайдер-секрет</td><td>Первые десять минут приёма я не смотрю в анализы.</td><td>Как устроен приём изнутри</td><td>theme ×1.04 · format ×0.85</td><td>main</td><td>depth · Authority</td><td>OZ-01</td><td></td><td>съёмка</td><td>Проведите по порядку через ваш приём: что происходит в первые десять минут, что во вторые, когда вы наконец открываете анализы и почему именно в этот момент. Это самый длинный ролик недели — полторы минуты, нужен связный рассказ, а не тезисы. Скажите и то, чего вы НЕ делаете, хотя от врача этого ждут.</td><td>draft</td></tr>
+<tr class="daystart"><td>R-07</td><td>13.08</td><td>08:30</td><td>охват</td><td>эвергрин</td><td>Список</td><td>T01</td><td>55 с</td><td>Вес стоит третий месяц, хотя вы едите меньше всех за столом</td><td>Что проверить, прежде чем в очередной раз урезать еду</td><td>контрарный</td><td>Вы едите меньше всех за столом. И вес стоит.</td><td>Что проверить до того, как урезать еду</td><td>theme ×1.16 · format ×1.95</td><td>main</td><td>reach · Growth</td><td>VE-01</td><td>коммент</td><td>съёмка</td><td>Перечислите 4–5 вещей, которые стоит проверить, когда вес стоит при малом питании, и раскройте каждую одной фразой: что именно смотрим и о чём это говорит. Без схем приёма и доз — только «что проверить у врача».</td><td>draft</td></tr>
+<tr class=""><td>R-08</td><td>13.08</td><td>19:00</td><td>охват</td><td>эвергрин</td><td>Миф</td><td>T05</td><td>55 с</td><td>Вам сказали «ничего не поделать, пейте таблетки пожизненно»</td><td>Что я вижу по своим картам за год — и почему это наблюдение, а не обещание</td><td>миф/контрарный</td><td>Слово «пожизненно» звучит как приговор. Не всегда им является.</td><td>Что я вижу по своим картам</td><td>theme ×0.86 · format ×0.82</td><td>main</td><td>depth · Authority</td><td>SC-02</td><td></td><td>съёмка</td><td>Назовите само заблуждение теми словами, какими его произносят на приёме («пейте пожизненно, ничего не поделать»), и что вместо него. Расскажите, что вы увидели, когда подняли свои карты за год, — цифру и что именно за ней стоит. 🔴 Обязательно проговорите вслух, что это ваше наблюдение по вашим пациентам, а не обещание «и у вас так будет».</td><td>draft</td></tr>
+<tr class="daystart"><td>R-09</td><td>14.08</td><td>08:30</td><td>охват</td><td>эвергрин</td><td>Демонстрация</td><td>TXD</td><td>30 с</td><td>Съедаете мандарины горстями, потому что «там витамин C»</td><td>Сколько их нужно сегодня, чтобы закрыть норму, и почему их столько</td><td>шок-стат</td><td>Восемь мандаринов. Столько нужно сегодня вместо одного.</td><td>Почему еды стало «меньше» в еде</td><td>theme ×0.81 · visual ×3.61</td><td>bad_curious</td><td>reach · Growth</td><td>DE-02</td><td>коммент</td><td>съёмка</td><td>Выложите руками на стол мандарины — сколько их нужно сегодня, чтобы закрыть суточную норму, — и наговорите за кадром: сколько было раньше, сколько теперь и почему так вышло. Про обеднение почв — своими словами, как объясняете пациентам. Лицо не нужно, только руки и фрукты.</td><td>draft</td></tr>
+<tr class=""><td>R-10</td><td>14.08</td><td>19:00</td><td>охват</td><td>ставка</td><td>Список</td><td>T01</td><td>55 с</td><td>Муж говорит «я просто устал», и так уже второй год</td><td>Что стоит проверить мужчине после 35, если «просто устал» длится дольше месяца</td><td>листикл</td><td>«Я просто устал» — второй год подряд.</td><td>Когда усталость это не усталость</td><td>theme ×1.75 · format ×1.95</td><td>main</td><td>reach · Growth</td><td>MU-01</td><td>коммент</td><td>съёмка</td><td>Перечислите 4 вещи, которые стоит проверить мужчине после 35, если усталость тянется месяцами, и раскройте каждую фразой. И скажите отдельно: по каким признакам жене понятно, что это уже не про «много работы».</td><td>draft</td></tr>
+<tr class="daystart"><td>R-11</td><td>15.08</td><td>08:30</td><td>охват</td><td>эвергрин</td><td>Сценка</td><td>T02</td><td>30 с</td><td>Принесли врачу расшифровку анализов от нейросети</td><td>Что там было правдой, а что стоило бы жизни, если бы поверили</td><td>POV-сценка</td><td>«Мне тут нейросеть расшифровала, посмотрите.»</td><td>Пациент с распечаткой от ИИ</td><td>theme ×1.31 · visual ×4.25</td><td>bad_curious</td><td>reach · Growth</td><td>AN-04</td><td>коммент</td><td>съёмка</td><td>Наговорите разговор словами: 2–3 фразы пациента дословно, как он приносит распечатку («мне тут нейросеть расшифровала»), и ваши 2 ответа. Потом скажите, что в той расшифровке было верно, а что опасно — и почему машина не видит того, что видите вы. Случай обезличить: без возраста, города и примет.</td><td>draft</td></tr>
+<tr class=""><td>R-12</td><td>15.08</td><td>19:00</td><td>доверие</td><td>эвергрин</td><td>История</td><td>T09</td><td>55 с</td><td>Думаете, что врач всегда знает ответ</td><td>Куда я отправляю пациента, когда это не моё, и почему говорю об этом вслух</td><td>признание</td><td>Есть вопросы, на которые я говорю: это не ко мне.</td><td>Что я не лечу</td><td>theme ×1.04 · format ×0.85</td><td>main</td><td>depth · Authority</td><td>OZ-02</td><td></td><td>съёмка</td><td>Расскажите случай, когда вы отправили пациента к другому специалисту: с чем он пришёл, в какой момент вы поняли, что это не ваше, что сказали и куда направили. И объясните, почему говорите об этом вслух, а не молча лечите «что-нибудь». Случай обезличить.</td><td>draft</td></tr>
+<tr class="daystart"><td>R-13</td><td>16.08</td><td>08:30</td><td>охват</td><td>эвергрин</td><td>Демонстрация</td><td>TXD</td><td>30 с</td><td>Врач говорит вам про здоровый образ жизни, а сам ест на бегу</td><td>Тортики пять раз в год и подъём в 6:30 без будильника — как это уживается</td><td>инсайдер-секрет</td><td>Я ем торт пять раз в год. Считала.</td><td>Что реально в тарелке у эндокринолога</td><td>theme ×1.04 · visual ×3.61</td><td>main</td><td>reach · Authenticity</td><td>OZ-06</td><td></td><td>съёмка</td><td>Покажите руками свой обычный завтрак или содержимое сумки/холодильника — что там реально лежит — и наговорите за кадром: во сколько встаёте, что едите в обычный день, где позволяете себе исключение. Про «тортики пять раз в год» и подъём в 6:30 — своими словами. Лицо не обязательно.</td><td>draft</td></tr>
+<tr class=""><td>R-14</td><td>16.08</td><td>19:00</td><td>конверсия</td><td>эвергрин</td><td>Список</td><td>T01</td><td>55 с</td><td>Выбираете врача и не знаете, на что смотреть, кроме отзывов</td><td>Пять признаков, что вы попали к тому врачу, и один — что стоит уйти</td><td>листикл</td><td>Пять признаков, что вы попали к своему врачу.</td><td>Как выбрать эндокринолога</td><td>theme ×1.04 · format ×1.95</td><td>main</td><td>depth · Authority</td><td>OZ-03</td><td>коммент: «напишите, какой пункт у вас не совпал»</td><td>съёмка</td><td>Перечислите 5 признаков, что человек попал к хорошему эндокринологу, раскройте каждый одной фразой, и назовите 1 признак, при котором стоит уйти. Говорите про то, что видно пациенту в кабинете, а не про регалии.</td><td>draft</td></tr>
+</tbody></table></div>
+<h2>Instagram · сторис <span class="muted">· 3</span></h2><div class="note">На С1 сторис почти не ведём: их видят только свои, а своих ещё нет. Три штуки — минимум, чтобы аккаунт не выглядел брошенным. Снимаются НЕ в съёмочный день, телефоном, без подготовки. </div>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Дата</th><th>Время</th><th>Работа</th><th>Тип серии</th><th>Содержание</th><th>Механика</th><th>Кадров</th><th>Статус</th></tr></thead><tbody>
+<tr class="daystart"><td>S-01</td><td>10.08</td><td>12:00</td><td>доверие</td><td>Знакомство</td><td>Кто я и зачем этот аккаунт — три кадра, без представления регалиями</td><td>стикер-вопрос «что спросили бы у эндокринолога»</td><td>3</td><td>draft</td></tr>
+<tr class="daystart"><td>S-02</td><td>13.08</td><td>13:00</td><td>доверие</td><td>Бэкстейдж</td><td>Как снимали первый батч — без халата, телефоном</td><td></td><td>4</td><td>draft</td></tr>
+<tr class="daystart"><td>S-03</td><td>16.08</td><td>18:00</td><td>доверие</td><td>Ответы</td><td>Ответы на 2–3 вопроса из стикера понедельника</td><td>переклейка вопросов, ответ голосом</td><td>5</td><td>draft</td></tr>
+</tbody></table></div>
+<h2>Instagram · посты <span class="muted">· 2</span></h2><div class="note">Сохраняемое ядро. Карусель даёт 9× сохранений против одиночного фото ⬤, но собственной поверхности для не-подписчиков не имеет — на С1 работает на тех, кто уже дошёл до профиля. Одиночные фото не планируем: охват −21.96% г/г ⬤. </div>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Дата</th><th>Время</th><th>Работа</th><th>Формат</th><th>Тема</th><th>Что внутри</th><th>Тип хука</th><th>Первая строка</th><th>ЦА</th><th>Статус</th></tr></thead><tbody>
+<tr class="daystart"><td>P-01</td><td>12.08</td><td>11:00</td><td>доверие</td><td>Карусель</td><td>Что взять с собой на приём к эндокринологу</td><td>Список: какие выписки, какие прошлые анализы, что записать заранее</td><td>how-to</td><td>Возьмите это с собой — приём будет вдвое полезнее.</td><td>main</td><td>draft</td></tr>
+<tr class="daystart"><td>P-02</td><td>15.08</td><td>11:00</td><td>доверие</td><td>Карусель</td><td>Норма в бланке и норма для вас — почему это разные вещи</td><td>Разбор на примере одного показателя: референс лаборатории против клиники</td><td>контрарный</td><td>Референс в бланке считается не для вас.</td><td>main</td><td>draft</td></tr>
+</tbody></table></div>
+<h2>Telegram <span class="muted">· 3</span></h2><div class="note">Канал заводится с нуля и на этой неделе только засевается — уводить туда пока некого. Три поста, чтобы пришедший из профиля не увидел пустоту. Сырьё общее с рилсами: одно голосовое раскладывается и в ролик, и в пост. </div>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Дата</th><th>Время</th><th>Работа</th><th>Формат</th><th>Тема</th><th>Первая строка</th><th>Сырьё</th><th>ЦА</th><th>Статус</th></tr></thead><tbody>
+<tr class="daystart"><td>TG-01</td><td>10.08</td><td>20:00</td><td>доверие</td><td>Первый пост</td><td>Зачем этот канал и чем он отличается от того, что в Instagram</td><td>Здесь будет то, что не помещается в полторы минуты.</td><td>R-02 (то же голосовое, другой угол)</td><td>main</td><td>draft</td></tr>
+<tr class="daystart"><td>TG-02</td><td>13.08</td><td>20:00</td><td>доверие</td><td>Лонгрид</td><td>Как читать свой бланк анализов: что значат стрелочки и почему они не диагноз</td><td>Стрелочка вверх сама по себе ещё не болезнь.</td><td>R-01 (то же голосовое, развёрнуто)</td><td>main</td><td>draft</td></tr>
+<tr class="daystart"><td>TG-03</td><td>16.08</td><td>20:00</td><td>доверие</td><td>Обезличенный кейс</td><td>«Я просто унылая и ленивая» — как звучал запрос, за которым оказался гипотиреоз</td><td>Она сказала: я просто унылая и ленивая, это характер. Это оказался диагноз.</td><td>новое голосовое; 🔴 риск высокий — обезличить максимально</td><td>main</td><td>draft</td></tr>
+</tbody></table></div>
+<h2>Threads <span class="muted">· 6</span></h2><div class="note">Полигон для хуков и собственный охват. Текст, собравший отклик здесь, идёт в рилс следующей недели уже проверенным. Ответы в комментариях дают тут +42% вовлечения ⬤. Самый дешёвый способ тестировать формулировки, пока снятого материала мало. </div>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Дата</th><th>Время</th><th>Работа</th><th>Роль</th><th>Текст</th><th>Тип хука</th><th>ЦА</th><th>Статус</th></tr></thead><tbody>
+<tr class="daystart"><td>TH-01</td><td>10.08</td><td>10:00</td><td>охват</td><td>Из рилса</td><td>«Анализы хорошие» значит «не болезнь». Это не то же самое, что «здорова». Разница стоит нескольких лет самочувствия.</td><td>контрарный</td><td>main</td><td>draft</td></tr>
+<tr class="daystart"><td>TH-02</td><td>11.08</td><td>10:00</td><td>охват</td><td>Самостоятельный</td><td>Самый честный прибор в доме не весы. Сантиметровая лента.</td><td>контрарный</td><td>main</td><td>draft</td></tr>
+<tr class="daystart"><td>TH-03</td><td>12.08</td><td>10:00</td><td>охват</td><td>Вопрос</td><td>Что вам говорили про ваше самочувствие такого, что вы приняли за черту характера?</td><td>вопрос-крючок</td><td>main</td><td>draft</td></tr>
+<tr class="daystart"><td>TH-04</td><td>13.08</td><td>10:00</td><td>охват</td><td>Из рилса</td><td>Первые десять минут приёма я не смотрю в анализы. Сначала надо понять, как человек живёт.</td><td>инсайдер-секрет</td><td>main</td><td>draft</td></tr>
+<tr class="daystart"><td>TH-05</td><td>15.08</td><td>10:00</td><td>охват</td><td>Самостоятельный</td><td>Хороший врач говорит «это не ко мне» вслух. Плохой лечит что-нибудь.</td><td>контрарный</td><td>main</td><td>draft</td></tr>
+<tr class="daystart"><td>TH-06</td><td>16.08</td><td>10:00</td><td>охват</td><td>Вопрос</td><td>Какой вопрос вы стеснялись задать врачу?</td><td>вопрос-крючок</td><td>main</td><td>draft</td></tr>
+</tbody></table></div>
+<footer>Слотов: 28. Собрано из <code>plan.yaml</code> — источника правды. Эта страница пересобирается командой <code>plan_render.py &lt;plan.yaml&gt; --projection system</code> и руками не правится.</footer>
+</div></body></html>
