@@ -12,6 +12,7 @@
 |---|---|---|
 | ПЦ | https://kseniyashev.github.io/masha-content-plan/ | системная версия: все поля слотов, распределения, ёмкость |
 | **Эксперту** | **https://kseniyashev.github.io/masha-content-plan/approve/** | пять полей и задание на запись голосового; адаптирована под телефон |
+| **На съёмку** | **https://kseniyashev.github.io/masha-content-plan/shoot/** | съёмочный пакет: постановка, хук дословно, биты «что делаете / что говорите», хук-дубли. Пока частичный — 3 слота из 14, на которые уже есть голосовые |
 
 Что внутри: 28 слотов — 14 рилсов, 3 сторис, 2 карусели, 3 поста в Telegram,
 6 в Threads. Голосовых записать 14. Съёмка 07.08, публикация с понедельника.
@@ -23,6 +24,8 @@ python3 engine/plan_render.py experts/maria/plans/2026-W33/plan.yaml --projectio
 python3 engine/plan_render.py experts/maria/plans/2026-W33/plan.yaml --projection approve
 cp experts/maria/plans/2026-W33/render/system.html  <этот репозиторий>/index.html
 cp experts/maria/plans/2026-W33/render/approve.html <этот репозиторий>/approve/index.html
+python3 engine/plan_render.py experts/maria/plans/2026-W33/plan.yaml --projection shoot --partial
+cp experts/maria/plans/2026-W33/render/shoot.html   <этот репозиторий>/shoot/index.html
 ```
 
 Правки вносятся в `plan.yaml` и страницы пересобираются — иначе они потеряются

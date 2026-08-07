@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Съёмочный пакет · maria · 2026-W33</title>
+<style>
+:root{--cream:#FDFBF6;--navy:#1F3A5F;--accent:#B9461D;--beige:#F4F0E6;
+--ink:#16181C;--muted:#6B7280;--line:#E4DCCB;--green:#2E7D32;--gold:#C79A2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+background:var(--beige);color:var(--navy);margin-right:6px}
+.badge.warn{background:#FBEEE7;color:var(--accent)}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0;font-size:14px}
+.note b{color:var(--navy)}
+h2{font-size:18px;color:var(--navy);margin:30px 0 10px;padding-top:14px;
+border-top:2px solid var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th{background:var(--beige);color:var(--navy);text-align:left;font-weight:600;
+padding:8px 10px;border:1px solid var(--line);font-size:12.5px}
+td{padding:9px 10px;border:1px solid var(--line);vertical-align:top}
+tr.daystart td{border-top:2px solid var(--navy)}
+.dt{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.topic{font-weight:600}
+.angle{color:#3d4450}
+.ask{background:#FAF7F0;font-size:13.5px;line-height:1.45}
+.ask.have{background:#EDF6ED;color:var(--green)}
+.askcol{width:38%}
+.sid{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.note.src{border-left-color:var(--muted);font-size:13px}
+.card.shot{flex:1 1 100%;margin:14px 0;padding:0;overflow:hidden}
+.cardhead{background:var(--navy);color:#fff;padding:10px 14px;font-size:15px}
+.cardhead b{margin-right:8px}
+.sid2{font-family:"SF Mono",Menlo,monospace;font-size:12px;opacity:.75;margin-right:8px}
+.meta2{float:right;font-size:12px;opacity:.8;font-weight:400}
+.setup{padding:12px 14px;background:#F7F9FB;border-bottom:1px solid var(--line);font-size:13.5px}
+.srow{display:flex;gap:10px;margin:5px 0;align-items:baseline}
+.skey{flex:0 0 132px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+ul.mv{margin:0;padding-left:16px}
+ul.mv li{margin:2px 0}
+@media (max-width:760px){.srow{display:block}.skey{display:block;margin-bottom:2px}}
+.stake{padding:10px 14px;background:#FAF7F0;font-size:13.5px;border-bottom:1px solid var(--line)}
+.hookbox{padding:12px 14px;background:#FBEEE7;border-bottom:1px solid var(--line)}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:4px}
+.hooktxt{font-size:19px;font-weight:700;color:var(--accent);line-height:1.3}
+table.beats{font-size:13.5px;margin:0}
+table.beats th{font-size:11.5px}
+table.beats td{border-left:none;border-right:none}
+table.beats tr.turn td{background:#FDF4F0}
+table.beats tr.turn .act{font-weight:600;color:var(--accent)}
+td.act{width:32%;color:#3d4450}
+td.line{font-size:15px;line-height:1.45}
+.takes{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+.takes ol{margin:4px 0 0;padding-left:20px}
+.takes li{margin:3px 0}
+.props{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px;background:#FAFAF7}
+.card.shot .note{margin:0;border-radius:0;border-top:1px solid var(--line);border-left:3px solid var(--gold)}
+@media print{.card.shot{page-break-inside:avoid}.cardhead{background:#1F3A5F !important;-webkit-print-color-adjust:exact}}
+@media (max-width:760px){
+  td.act{width:auto}
+  table.beats,table.beats tbody,table.beats tr,table.beats td{display:block;width:100%}
+  table.beats thead{display:none}
+  table.beats tr{border-bottom:1px solid var(--line);padding:8px 12px;margin:0;border-radius:0}
+  table.beats td{padding:2px 0;border:none}
+  .meta2{float:none;display:block;margin-top:3px}
+}
+.briefs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.brief{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-size:13.5px;line-height:1.45}
+.bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
+@media (max-width:760px){.brief{flex:1 1 100%}}
+.locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+.job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
+background:var(--beige);color:var(--navy)}
+.check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
+h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
+table.mini{font-size:13px}
+table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-weight:400}
+.caps{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cap{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:13.5px}
+.cap.over{border-color:var(--accent);background:#FDF4F0}
+.capttl{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:13px}
+.verdict{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;margin:6px 0 4px}
+.verdict.ok{background:#EDF6ED;color:var(--green)}
+.verdict.bad{background:#FBEEE7;color:var(--accent)}
+.warn{color:var(--accent)}
+.note.warn{border-left-color:var(--accent)}
+.scroll{overflow-x:auto}
+.scroll table{min-width:100%;font-size:12px}
+.scroll td{max-width:230px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}
+  tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+/* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
+   страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
+@media (max-width:760px){
+  .wrap{padding:18px 12px 40px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:#fff;border:1px solid var(--line);border-radius:10px;
+     margin:0 0 12px;padding:10px 12px;position:relative}
+  tr.daystart{border-top:1px solid var(--line)}
+  td{border:none;padding:4px 0 4px 0}
+  td:empty{display:none}
+  td[data-l]::before{content:attr(data-l);display:block;font-size:11px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:1px}
+  td.topic{font-size:16px;font-weight:600}
+  td.ask{background:var(--beige);border-radius:8px;padding:10px 12px;margin-top:6px}
+  .check{position:absolute;top:10px;right:12px;width:auto;text-align:right}
+  .askcol{width:auto}
+}
+</style></head><body>
+<div class="wrap">
+<h1>Съёмочный пакет</h1>
+<div class="sub">неделя 10.08 — 16.08<br><span class="badge">съёмка 07.08</span></div>
+<div class="note warn"><b>Это ЧАСТЬ недели.</b> Снимаем 3 слотов из 28 — те, на которые уже есть ваши голосовые. Остальные 25 ждут записи и будут сниматься отдельно: R-01, R-02, R-04, R-05, R-08, R-09, R-10, R-11, R-12, R-13, R-14, S-01, S-02, S-03, P-01, P-02, TG-01, TG-02, TG-03, TH-01, TH-02, TH-03, TH-04, TH-05, TH-06.</div>
+<div class="note"><b>Как этим пользоваться.</b> Порядок ниже — <b>порядок съёмки</b>, а не порядок выхода: слоты сгруппированы так, чтобы не переставлять свет и не менять образ лишний раз. Календарь публикаций — в конце страницы.<br><br>В карточке дословны только <b>хук</b>, цифры и названия. Всё остальное — ваши же слова из голосовых, но говорите живьём, а не читайте: реплика нужна как опора, не как суфлёр. Сбились — это нормально, снимем дубль.</div>
+<h2>клиника · talking-head <span class="muted">· 2</span></h2>
+<div class="note src"><b>Реквизит на группу:</b> напольные весы, ноутбук, стул для пациента</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-06</span> <b>Как устроен приём изнутри</b><span class="meta2">Закулисье · 85 сек · сложность средняя</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человек годами ходит с симптомом, а причина видна врачу с порога — если врач смотрит, а не открывает анализы.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Я не открываю анализы вместо «здрасьте».»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидит на стуле в кабинете, корпус развёрнут к камере, руки свободны — не сцеплены и не на столе.</div>
+<div class="srow"><span class="skey">Кадр</span>По грудь, камера на уровне глаз. Стул на расстоянии вытянутой руки от стола.</div>
+<div class="srow"><span class="skey">Фон</span>Кабинет. В кадре справа стол и на нём ЗАКРЫТЫЙ ноутбук — он понадобится в финале. Халат нельзя.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорите как на приёме, а не как на камеру: жестикулируйте свободно, руки не держите.</li><li>Один раз за ролик поменяйте положение корпуса — картинка оживёт, специально ничего отыгрывать не надо.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Показать</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-8</td><td class="act"></td><td class="line">Я не открываю анализы вместо «здрасьте». Наше тело умеет говорить. Визуальными проявлениями, запахом тела.</td></tr>
+<tr class=""><td class="tm">8-22</td><td class="act"></td><td class="line">Первые десять-пятнадцать минут я просто очень внимательно на человека смотрю. Пытаюсь уловить мельчайшие подробности, которые очень хорошо видно. Нужно просто уделить этому время.</td></tr>
+<tr class=""><td class="tm">22-36</td><td class="act"></td><td class="line">Открылась дверь, вошёл пациент. Как он идёт? С какой скоростью? Насколько симметрична походка? Насколько сбивается дыхание, когда он садится и начинает говорить?</td></tr>
+<tr class=""><td class="tm">36-48</td><td class="act"></td><td class="line">Как пациент пахнет? Как меняется запах, когда человек открывает рот и начинает рассказывать, что его привело? Темп речи? Глаза, где они, бегают, летают?</td></tr>
+<tr class=""><td class="tm">48-60</td><td class="act">провести рукой сверху вниз по корпусу — показать зоны</td><td class="line">Какое распределение подкожной жировой ткани? Это руки, ноги, это висцеральная область талии. Где стоит лимфа? Насколько симметричны щёки? С какой скоростью человек моргает и моргает ли вообще?</td></tr>
+<tr class=""><td class="tm">60-70</td><td class="act">сесть нога на ногу — показать ту самую позу</td><td class="line">Это поза, которую он принимает. Если он сидит нога на ногу, там уже есть перекос таза. Там уже, скорее всего, есть зажим между лопатками, там уже есть дисфункция позвонков шеи.</td></tr>
+<tr class="turn"><td class="tm">70-80</td><td class="act">ладонь на шею, потом медленно вниз по корпусу</td><td class="line">И если он скажет, что у него свеженький узел в щитовидке, ну далеко не факт, что это сама щитовидка. Может быть, просто регион её жизни перекошен, перекручен.</td></tr>
+<tr class=""><td class="tm">80-85</td><td class="act">открыть ноутбук</td><td class="line">Всё зависит от всего. И чтобы чётко составить диагностическую карту, нужно сначала очень внимательно на человека посмотреть.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Я не открываю анализы вместо «здрасьте».»</li>
+<li>«Первые пятнадцать минут приёма я вообще не смотрю в анализы.»</li>
+<li>«Наше тело умеет говорить. Даже запахом.»</li>
+<li>«Он ещё не сел, а я уже половину знаю.»</li>
+</ol></div>
+<div class="props"><b>Нужно на площадке:</b> ноутбук, стул для пациента</div>
+<div class="note src"><b>Про хук.</b> 🔁 hook_upgrade от сестры «речь». В Проходе A хук был написан вслепую: «Первые десять минут приёма я не смотрю в анализы». В надиктовке нашлась её собственная формулировка сильнее и короче — «Я не открываю анализы вместо здрасьте»: тот же смысл, но с живой интонацией и бытовым словом. Поднято в хук, прежняя формулировка оставлена вторым дублем. Решение хукера — подтвердить.</div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-07</span> <b>Что проверить до того, как урезать еду</b><span class="meta2">Список · 55 сек · сложность средняя</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человек третий месяц урезает еду, а причина в воспалении и дефицитах — и на весах этого не видно вообще.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Вы едите меньше всех за столом. И вес стоит.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Стоит, весы на полу в кадре. Руки свободны — на перечислении удобно загибать пальцы.</div>
+<div class="srow"><span class="skey">Кадр</span>По пояс, чтобы весы попадали в нижнюю часть кадра.</div>
+<div class="srow"><span class="skey">Фон</span>Кабинет или ровная стена. Халат нельзя.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>На каждом пункте списка — короткая пауза. Это единственное место ролика, где зритель ставит на паузу и записывает.</li><li>Загибайте пальцы, когда перечисляете: так список читается даже без звука.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Показать</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-5</td><td class="act"></td><td class="line">Вы едите меньше всех за столом. И вес стоит.</td></tr>
+<tr class=""><td class="tm">5-16</td><td class="act"></td><td class="line">Вставая на весы, мы видим цифру. Но мы не видим структуру этой цифры. То есть что это? Вода? Или жировая ткань?</td></tr>
+<tr class="turn"><td class="tm">16-26</td><td class="act">развести ладони — показать объём</td><td class="line">Чаще всего у людей самые обычные весы, на которых высвечивается цифра, которая их расстраивает. А все воспалительные реакции очень сильно держат воду, отёк.</td></tr>
+<tr class=""><td class="tm">26-32</td><td class="act"></td><td class="line">Если вы начали какую-то модификацию образа жизни, но влияния это не оказало вообще, вероятнее всего, следует пройти дообследование.</td></tr>
+<tr class=""><td class="tm">32-38</td><td class="act"></td><td class="line">Смотреть нужно шесть вещей. И тогда станет понятно, вода это или жировая ткань, и почему вес стоит.</td></tr>
+<tr class=""><td class="tm">38-50</td><td class="act"></td><td class="line">Проверить сосудистый фактор, это гомоцистеин. Общий белок. Ферритин, сывороточное железо, ОЖСС. Витамины группы B и электролиты. И анализ на состояние микрофлоры кишечника.</td></tr>
+<tr class=""><td class="tm">50-55</td><td class="act"></td><td class="line">И общий анализ крови. Это самый информативный анализ, который отражает работу практически всех систем организма. С этим списком идите к своему врачу.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Вставая на весы, мы видим цифру. Но не видим, из чего она.»</li>
+<li>«Вы едите меньше всех за столом. И вес стоит.»</li>
+<li>«Эта цифра вас расстраивает. А она может быть про воду.»</li>
+<li>«Прежде чем снова урезать еду — вот что проверить.»</li>
+</ol></div>
+<div class="props"><b>Нужно на площадке:</b> напольные весы</div>
+<div class="note src"><b>Правовая рамка.</b> 🔴 R8_med. Ролик перечисляет, ЧТО ПРОВЕРИТЬ, и ни в одном бите не назначает лечение, дозы и схемы. Финальный бит держит рамку её собственными словами. «Анализ по Осипову» заменён на «анализ на состояние микрофлоры кишечника» (ops: замена_alt_map) — название конкретной методики в ролике звучит как реклама услуги, описание — нет.</div>
+</div>
+<h2>стол · руки <span class="muted">· 1</span></h2>
+<div class="note src"><b>Реквизит на группу:</b> лист бумаги, маркер, напольные весы, сантиметровая лента</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-03</span> <b>Где мерить талию и что значит цифра</b><span class="meta2">Демонстрация · 30 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Весы отвечают не на тот вопрос. Человек год смотрит на цифру, которая не меняется, и не знает, что мерить надо другое.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Мы видим цифру, но мы не видим структуру этой цифры.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите или стоите у стола — в кадре только руки и предметы. Лицо не нужно, говорите за кадром.</div>
+<div class="srow"><span class="skey">Кадр</span>Сверху вниз на стол, руки входят в кадр сбоку. Снимать можно телефоном на подставке.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная поверхность стола. На ней сантиметровая лента, весы, лист и маркер.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Двигайте руками медленнее обычного — на крупном плане быстрые движения смазываются.</li><li>Замер показывайте одним движением, не перехватывая ленту.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Показать</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-4</td><td class="act">положить ленту рядом с весами</td><td class="line">Мы видим цифру, но мы не видим структуру этой цифры.</td></tr>
+<tr class=""><td class="tm">4-10</td><td class="act">показать ладонью ровную стойку</td><td class="line">Встать нужно ровно, в вертикальном положении, так, чтобы организм вам подсказывал, что вы стоите комфортно. Дышим ровно и спокойно.</td></tr>
+<tr class=""><td class="tm">10-18</td><td class="act">приложить ленту под рёбра, потом опустить на ладонь ниже</td><td class="line">Первая линия это нижняя граница рёбер. Вторая примерно на десять сантиметров ниже, портняжная талия. Где была бы юбка.</td></tr>
+<tr class="turn"><td class="tm">18-24</td><td class="act">лента на самой выпирающей части живота — задержать</td><td class="line">Но цели сейчас выведены лишь для самой выпирающей части талии.</td></tr>
+<tr class=""><td class="tm">24-30</td><td class="act">написать на листе 80 / 85</td><td class="line">Целевые показатели: для женщин восемьдесят, для мужчин восемьдесят пять.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Мы видим цифру, но не видим структуру этой цифры.»</li>
+<li>«Весы показывают цифру. Они не показывают, из чего она.»</li>
+<li>«Эта цифра вас расстраивает. И она не про то.»</li>
+<li>«Цель — восемьдесят. Показываю, где мерить.»</li>
+</ol></div>
+<div class="props"><b>Нужно на площадке:</b> сантиметровая лента, напольные весы, лист бумаги, маркер</div>
+<div class="note src"><b>Решение по объёму.</b> 🔴 ФЛАГ СЦЕНАРИСТА, решение принято. В надиктовке ЧЕТЫРЕ линии замера (рёбра · портняжная · подвздошные кости · бёдра по середине ягодиц) — это 124 слова, а в 30 секунд помещается ~75. Полный протокол из четырёх точек в ролик не влезает и не нужен зрителю: ему нужна одна линия, по которой есть целевая цифра. Оставлены две первые линии и самая выпирающая часть, целевые 80/85 вынесены в финал. 🔁 ПОЛНЫЙ ПРОТОКОЛ ПЕРЕНЕСЁН В КАРУСЕЛЬ P-01 — материал не теряется, меняет носитель. Там же место для замечания про бёдра и середину ягодиц.</div>
+</div>
+<h2>Лист доборов</h2><div class="note src">Короткие кадры без речи. Снимаются в конце группы, но снять их надо — без них монтаж не соберётся.</div><table><tbody>
+<tr><td class="sid2">R-03</td><td>крупно: цифра на весах</td></tr>
+<tr><td class="sid2">R-03</td><td>крупно: цифра на ленте</td></tr>
+<tr><td class="sid2">R-06</td><td>дверь кабинета изнутри</td></tr>
+<tr><td class="sid2">R-06</td><td>руки на клавиатуре закрытого ноутбука</td></tr>
+<tr><td class="sid2">R-07</td><td>крупно: ноги на весах</td></tr>
+<tr><td class="sid2">R-07</td><td>крупно: бланк анализов</td></tr>
+</tbody></table>
+<h2>Когда это выходит</h2>
+<table><thead><tr><th>Дата</th><th>Время</th><th>ID</th><th>Название</th></tr></thead><tbody>
+<tr><td class="dt">11.08 вт</td><td class="tm">08:30</td><td class="sid2">R-03</td><td>Где мерить талию и что значит цифра</td></tr>
+<tr><td class="dt">12.08 ср</td><td class="tm">19:00</td><td class="sid2">R-06</td><td>Как устроен приём изнутри</td></tr>
+<tr><td class="dt">13.08 чт</td><td class="tm">08:30</td><td class="sid2">R-07</td><td>Что проверить до того, как урезать еду</td></tr>
+</tbody></table>
+<footer>Слотов к съёмке: 3 · суммарный хронометраж готового материала: 170 сек. Собрано из <code>plan.yaml</code>, руками не правится.</footer>
+</div></body></html>
