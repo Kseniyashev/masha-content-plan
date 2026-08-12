@@ -78,7 +78,7 @@ td.line{font-size:15px;line-height:1.45}
 background:var(--beige);color:var(--navy)}
 .check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
 h3{font-size:14px;color:var(--navy);margin:0 0 8px}
-.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;align-items:flex-start}
 .card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
 .card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
 table.mini{font-size:13px}
@@ -95,12 +95,113 @@ table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
 .warn{color:var(--accent)}
 .note.warn{border-left-color:var(--accent)}
 .scroll{overflow-x:auto}
-.scroll table{min-width:100%;font-size:12px}
-.scroll td{max-width:230px}
+.scroll table{min-width:100%}
+.scroll td{vertical-align:top}
+.scroll td[data-l="От эксперта"]{min-width:250px}
+.scroll td[data-l="Тема и угол"],.scroll td[data-l="Тема"]{min-width:220px}
 footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
 color:var(--muted);font-size:12.5px}
 @media print{body{background:#fff}.wrap{max-width:none;padding:0}
   tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+
+/* ─── Вкладки. Системная версия несёт два разных вопроса: «что в канале» и
+   «что выходит в четверг». Раньше они лежали в одной простыне, и второй
+   не отвечался вовсе — календарь приходилось собирать в голове. ─── */
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;margin:18px 0 0;
+  padding:8px 0;background:var(--cream);border-bottom:1px solid var(--line)}
+.tabbtn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--navy);
+  font:600 13.5px/1 inherit;padding:9px 16px;border-radius:8px;cursor:pointer}
+.tabbtn:hover{border-color:var(--navy)}
+.tabbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabpane{display:none}
+.tabpane.on{display:block}
+@media print{.tabs{display:none}.tabpane{display:block !important}}
+
+/* ─── Раскрывающееся задание эксперту. Текст «что наговорить» длинный по
+   построению (§4 схемы: глагол + форма + количество + что раскрыть), и в
+   ячейке таблицы он раздувал строку так, что остальные поля переставали
+   читаться. Свёрнут по умолчанию, развёрнут по клику. ─── */
+details.ask{font-size:13px}
+details.ask>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:14px;
+  background:#FAF7F0;color:var(--navy);font-weight:600;font-size:12px;white-space:nowrap}
+details.ask>summary::-webkit-details-marker{display:none}
+details.ask>summary::before{content:"▸";font-size:11px;color:var(--muted)}
+details.ask[open]>summary::before{content:"▾"}
+details.ask>summary:hover{border-color:var(--navy)}
+details.ask>div{margin-top:8px;padding:10px 12px;background:#FAF7F0;
+  border-radius:8px;line-height:1.5;min-width:230px;max-width:460px}
+details.ask.have>summary{background:#EDF6ED;color:var(--green);border-color:#CFE6CF}
+details.ask.have>div{background:#EDF6ED}
+@media print{details.ask>div{display:block !important;max-width:none}}
+
+/* ─── Бейджи каналов: в сводном плане строки разных каналов идут вперемешку,
+   и канал должен читаться боковым зрением, а не вычитываться. ─── */
+.ch{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11.5px;
+  font-weight:600;white-space:nowrap;border:1px solid transparent}
+.ch.reel{background:#EDE7F6;color:#4527A0}
+.ch.story{background:#FFF3E0;color:#B9461D}
+.ch.post{background:#E3F2FD;color:#0D47A1}
+.ch.tg{background:#E0F2F1;color:#00695C}
+.ch.th{background:#F3E5F5;color:#6A1B9A}
+.ch.pr,.ch.sup{background:var(--beige);color:var(--navy)}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;
+  background:var(--beige);color:var(--navy);white-space:nowrap;margin:0 3px 3px 0}
+.tag.pin{background:#E3F2FD;color:#0D47A1}
+.tag.hl{background:#FFF3E0;color:#B9461D}
+.tag.rec{background:#FBEEE7;color:var(--accent);font-weight:600}
+.tag.ok{background:#EDF6ED;color:var(--green)}
+
+/* ─── Сводный план: день как блок, а не как строка таблицы. ─── */
+.day{background:#fff;border:1px solid var(--line);border-radius:10px;
+  margin:0 0 14px;overflow:hidden}
+.dayhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:10px 14px;background:var(--beige);border-bottom:1px solid var(--line)}
+.dayhead b{color:var(--navy);font-size:15px}
+.dayhead .muted{font-size:12.5px}
+.day table{border:none}
+.day td{border-left:none;border-right:none;border-top:none;
+  border-bottom:1px solid var(--beige);vertical-align:top}
+.day tr:last-child td{border-bottom:none}
+td.tm{white-space:nowrap;color:var(--muted);font-size:12.5px;width:66px}
+td.tm b{display:block;color:var(--ink);font-size:13.5px}
+td.what .tags{margin-top:6px;line-height:1}
+td.chc{width:92px}
+td.what b{color:var(--ink)}
+td.what .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+.ax{display:flex;gap:6px;align-items:baseline;margin:0 0 5px;line-height:1}
+.ax:last-child{margin-bottom:0}
+.axk{flex:0 0 54px;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);padding-top:2px}
+.ax .tag,.ax .job{margin:0 3px 0 0}
+details.note.why{padding:0;border-left-width:3px}
+details.note.why>summary{cursor:pointer;list-style:none;display:inline-flex;
+  align-items:center;gap:6px;padding:10px 16px;font-weight:600;color:var(--navy);
+  font-size:13px}
+details.note.why>summary::-webkit-details-marker{display:none}
+details.note.why>summary::before{content:"▸";color:var(--muted);font-size:11px}
+details.note.why[open]>summary::before{content:"▾"}
+details.note.why>div{padding:0 16px 12px;font-size:13.5px;line-height:1.5}
+@media print{details.note.why>div{display:block !important}}
+.axes-key{margin:14px 0 6px}
+.axes-key>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;font-size:13px;font-weight:600;color:var(--navy);padding:6px 12px;
+  border:1px solid var(--line);border-radius:8px;background:#fff}
+.axes-key>summary::-webkit-details-marker{display:none}
+.axes-key>summary::before{content:"▸";color:var(--muted)}
+.axes-key[open]>summary::before{content:"▾"}
+.axes-key table{margin-top:10px;font-size:13px}
+.axes-key td:first-child{width:120px;white-space:nowrap;color:var(--navy);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;font-size:12.5px;
+  color:var(--muted);align-items:center;line-height:1}
+.empty{padding:12px 14px;color:var(--muted);font-size:13px}
+@media (max-width:760px){
+  .day table,.day tbody,.day tr,.day td{display:block;width:100%}
+  .day tr{border:none;border-bottom:1px solid var(--beige);border-radius:0;
+    margin:0;padding:10px 12px;background:#fff}
+  .day td{padding:2px 0}
+  td.tm,td.chc{width:auto;display:inline-block;margin-right:8px}
+}
 /* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
    страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
 @media (max-width:760px){
@@ -159,14 +260,5 @@ color:var(--muted);font-size:12.5px}
 <tr><td class="check">☐<div class="sid">TG-02</div></td><td class="locked" data-l="Формат">Лонгрид</td><td class="topic" data-l="Тема">Почему «попить магнийчик» ничего не решает: что, кому, когда и сколько</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых.</td></tr>
 <tr><td class="check">☐<div class="sid">TG-03</div></td><td class="locked" data-l="Формат">Разбор</td><td class="topic" data-l="Тема">Стрелочка в бланке — ещё не диагноз: как читать свои анализы и когда идти к врачу</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых.</td></tr>
 </tbody></table>
-<h2>Threads <span class="muted">· 5</span></h2>
-<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
-<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th></tr></thead><tbody>
-<tr><td class="check">☐<div class="sid">TH-01</div></td><td class="locked" data-l="Формат">Из рилса</td><td class="topic" data-l="Тема">Самый честный прибор в доме не весы. Сантиметровая лента. Целевые показатели для женщин 80, для мужчин 85.</td></tr>
-<tr><td class="check">☐<div class="sid">TH-02</div></td><td class="locked" data-l="Формат">Вопрос</td><td class="topic" data-l="Тема">Что вам говорили про ваше самочувствие такого, что вы в итоге приняли за черту характера?</td></tr>
-<tr><td class="check">☐<div class="sid">TH-03</div></td><td class="locked" data-l="Формат">Самостоятельный</td><td class="topic" data-l="Тема">Хороший врач говорит «это не ко мне» вслух. Плохой лечит что-нибудь.</td></tr>
-<tr><td class="check">☐<div class="sid">TH-04</div></td><td class="locked" data-l="Формат">Из рилса</td><td class="topic" data-l="Тема">Первые пятнадцать минут приёма я не смотрю в анализы. Сначала надо понять, как человек живёт.</td></tr>
-<tr><td class="check">☐<div class="sid">TH-05</div></td><td class="locked" data-l="Формат">Вопрос</td><td class="topic" data-l="Тема">Какой вопрос вы стеснялись задать врачу?</td></tr>
-</tbody></table>
-<footer>Карточек на аппрув: 22 из 22 в плане. Записать голосовых: 3, ещё 14 карточек закрыты вашими прежними записями.<br>Собрано из <code>plan.yaml</code> (maria-2026-W34) — правки вносятся в него, эта страница пересобирается.</footer>
+<footer>Карточек на аппрув: 17 из 17 в плане. Записать голосовых: 3, ещё 14 карточек закрыты вашими прежними записями.<br>Собрано из <code>plan.yaml</code> (maria-2026-W34) — правки вносятся в него, эта страница пересобирается.</footer>
 </div></body></html>
