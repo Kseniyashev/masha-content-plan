@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>На аппрув · maria · 2026-W36</title>
+<style>
+:root{--cream:#FDFBF6;--navy:#1F3A5F;--accent:#B9461D;--beige:#F4F0E6;
+--ink:#16181C;--muted:#6B7280;--line:#E4DCCB;--green:#2E7D32;--gold:#C79A2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+background:var(--beige);color:var(--navy);margin-right:6px}
+.badge.warn{background:#FBEEE7;color:var(--accent)}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0;font-size:14px}
+.note b{color:var(--navy)}
+h2{font-size:18px;color:var(--navy);margin:30px 0 10px;padding-top:14px;
+border-top:2px solid var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th{background:var(--beige);color:var(--navy);text-align:left;font-weight:600;
+padding:8px 10px;border:1px solid var(--line);font-size:12.5px}
+td{padding:9px 10px;border:1px solid var(--line);vertical-align:top}
+tr.daystart td{border-top:2px solid var(--navy)}
+.dt{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.topic{font-weight:600}
+.angle{color:#3d4450}
+.ask{background:#FAF7F0;font-size:13.5px;line-height:1.45}
+.ask.have{background:#EDF6ED;color:var(--green)}
+.askcol{width:38%}
+.sid{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.note.src{border-left-color:var(--muted);font-size:13px}
+.card.shot{flex:1 1 100%;margin:14px 0;padding:0;overflow:hidden}
+.cardhead{background:var(--navy);color:#fff;padding:10px 14px;font-size:15px}
+.cardhead b{margin-right:8px}
+.sid2{font-family:"SF Mono",Menlo,monospace;font-size:12px;opacity:.75;margin-right:8px}
+.meta2{float:right;font-size:12px;opacity:.8;font-weight:400}
+.setup{padding:12px 14px;background:#F7F9FB;border-bottom:1px solid var(--line);font-size:13.5px}
+.srow{display:flex;gap:10px;margin:5px 0;align-items:baseline}
+.skey{flex:0 0 132px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+ul.mv{margin:0;padding-left:16px}
+ul.mv li{margin:2px 0}
+@media (max-width:760px){.srow{display:block}.skey{display:block;margin-bottom:2px}}
+.stake{padding:10px 14px;background:#FAF7F0;font-size:13.5px;border-bottom:1px solid var(--line)}
+.hookbox{padding:12px 14px;background:#FBEEE7;border-bottom:1px solid var(--line)}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:4px}
+.hooktxt{font-size:19px;font-weight:700;color:var(--accent);line-height:1.3}
+table.beats{font-size:13.5px;margin:0}
+table.beats th{font-size:11.5px}
+table.beats td{border-left:none;border-right:none}
+table.beats tr.turn td{background:#FDF4F0}
+table.beats tr.turn .act{font-weight:600;color:var(--accent)}
+td.act{width:32%;color:#3d4450}
+td.line{font-size:15px;line-height:1.45}
+.takes{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+.takes ol{margin:4px 0 0;padding-left:20px}
+.takes li{margin:3px 0}
+.props{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px;background:#FAFAF7}
+.card.shot .note{margin:0;border-radius:0;border-top:1px solid var(--line);border-left:3px solid var(--gold)}
+@media print{.card.shot{page-break-inside:avoid}.cardhead{background:#1F3A5F !important;-webkit-print-color-adjust:exact}}
+@media (max-width:760px){
+  td.act{width:auto}
+  table.beats,table.beats tbody,table.beats tr,table.beats td{display:block;width:100%}
+  table.beats thead{display:none}
+  table.beats tr{border-bottom:1px solid var(--line);padding:8px 12px;margin:0;border-radius:0}
+  table.beats td{padding:2px 0;border:none}
+  .meta2{float:none;display:block;margin-top:3px}
+}
+.briefs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.brief{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-size:13.5px;line-height:1.45}
+.bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
+@media (max-width:760px){.brief{flex:1 1 100%}}
+.locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* Ширины «Темы» и «Угла» заданы явно, иначе браузер делит место по объёму
+   текста, а в заданиях текста больше всего. */
+td.topic{min-width:150px}
+td.angle{min-width:150px}
+@media (max-width:760px){td.topic,td.angle{width:auto;min-width:0}}
+.job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
+background:var(--beige);color:var(--navy)}
+.check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
+h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;align-items:flex-start}
+.card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
+table.mini{font-size:13px}
+table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-weight:400}
+.caps{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cap{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:13.5px}
+.cap.over{border-color:var(--accent);background:#FDF4F0}
+.capttl{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:13px}
+.verdict{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;margin:6px 0 4px}
+.verdict.ok{background:#EDF6ED;color:var(--green)}
+.verdict.bad{background:#FBEEE7;color:var(--accent)}
+.warn{color:var(--accent)}
+/* ── слой текстов ──────────────────────────────────────────────────────── */
+.tx{background:#fff;border:1px solid var(--line);border-radius:8px;margin:16px 0;overflow:hidden}
+.tx .cardhead{background:var(--navy)}
+.txbody{padding:14px 16px;font-size:15px;line-height:1.55;white-space:pre-wrap;
+  border-bottom:1px solid var(--line)}
+.txbody .hook{font-weight:700;color:var(--accent)}
+.txcta{padding:12px 16px;background:#FBEEE7;font-size:15px;line-height:1.5;
+  border-bottom:1px solid var(--line)}
+.txcta .lbl{color:var(--accent)}
+.txcard{padding:12px 16px;border-bottom:1px solid var(--beige);font-size:14.5px;line-height:1.5}
+.txcard .cn{display:inline-block;min-width:26px;height:26px;line-height:26px;text-align:center;
+  border-radius:13px;background:var(--beige);color:var(--navy);font-size:12px;font-weight:700;
+  margin-right:9px;vertical-align:top}
+.txcard .ch{font-weight:700;color:var(--navy);display:block;margin-bottom:3px;font-size:13px}
+.txcard .cb{display:inline-block;width:calc(100% - 40px)}
+details.attr{border-top:1px solid var(--line);background:#FAFAF7}
+details.attr summary{padding:9px 16px;cursor:pointer;font-size:12.5px;color:var(--muted);
+  letter-spacing:.02em}
+details.attr[open] summary{border-bottom:1px solid var(--line)}
+table.attr{font-size:12.5px;margin:0}
+table.attr td{border-left:none;border-right:none;vertical-align:top}
+table.attr td.n{width:34px;color:var(--muted);text-align:right}
+table.attr td.src{width:22%;font-family:"SF Mono",Menlo,monospace;font-size:11.5px}
+.m{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;white-space:nowrap}
+.m.dословно,.m.d{background:#EDF6ED;color:var(--green)}
+.m.p{background:var(--beige);color:var(--navy)}
+.m.a{background:#FBEEE7;color:var(--accent)}
+.m.s{background:#EFEFEF;color:var(--muted)}
+.txstat{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.note.warn{border-left-color:var(--accent)}
+.scroll{overflow-x:auto}
+.scroll table{min-width:100%}
+.scroll td{vertical-align:top}
+.scroll td[data-l="От эксперта"]{min-width:250px}
+.scroll td[data-l="Тема и угол"],.scroll td[data-l="Тема"]{min-width:220px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}
+  tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+
+/* ─── Вкладки. Системная версия несёт два разных вопроса: «что в канале» и
+   «что выходит в четверг». Раньше они лежали в одной простыне, и второй
+   не отвечался вовсе — календарь приходилось собирать в голове. ─── */
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;margin:18px 0 0;
+  padding:8px 0;background:var(--cream);border-bottom:1px solid var(--line)}
+.tabbtn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--navy);
+  font:600 13.5px/1 inherit;padding:9px 16px;border-radius:8px;cursor:pointer}
+.tabbtn:hover{border-color:var(--navy)}
+.tabbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabpane{display:none}
+.tabpane.on{display:block}
+@media print{.tabs{display:none}.tabpane{display:block !important}}
+
+/* ─── Раскрывающееся задание эксперту. Текст «что наговорить» длинный по
+   построению (§4 схемы: глагол + форма + количество + что раскрыть), и в
+   ячейке таблицы он раздувал строку так, что остальные поля переставали
+   читаться. Свёрнут по умолчанию, развёрнут по клику. ─── */
+details.ask{font-size:13px}
+details.ask>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:14px;
+  background:#FAF7F0;color:var(--navy);font-weight:600;font-size:12px;white-space:nowrap}
+details.ask>summary::-webkit-details-marker{display:none}
+details.ask>summary::before{content:"▸";font-size:11px;color:var(--muted)}
+details.ask[open]>summary::before{content:"▾"}
+details.ask>summary:hover{border-color:var(--navy)}
+details.ask>div{margin-top:8px;padding:10px 12px;background:#FAF7F0;
+  border-radius:8px;line-height:1.5;min-width:230px;max-width:460px}
+details.ask.have>summary{background:#EDF6ED;color:var(--green);border-color:#CFE6CF}
+details.ask.have>div{background:#EDF6ED}
+@media print{details.ask>div{display:block !important;max-width:none}}
+
+/* ─── Бейджи каналов: в сводном плане строки разных каналов идут вперемешку,
+   и канал должен читаться боковым зрением, а не вычитываться. ─── */
+.ch{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11.5px;
+  font-weight:600;white-space:nowrap;border:1px solid transparent}
+.ch.reel{background:#EDE7F6;color:#4527A0}
+.ch.story{background:#FFF3E0;color:#B9461D}
+.ch.post{background:#E3F2FD;color:#0D47A1}
+.ch.tg{background:#E0F2F1;color:#00695C}
+.ch.th{background:#F3E5F5;color:#6A1B9A}
+.ch.pr,.ch.sup{background:var(--beige);color:var(--navy)}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;
+  background:var(--beige);color:var(--navy);white-space:nowrap;margin:0 3px 3px 0}
+.tag.pin{background:#E3F2FD;color:#0D47A1}
+.tag.hl{background:#FFF3E0;color:#B9461D}
+.tag.rec{background:#FBEEE7;color:var(--accent);font-weight:600}
+.tag.ok{background:#EDF6ED;color:var(--green)}
+
+/* ─── Сводный план: день как блок, а не как строка таблицы. ─── */
+.day{background:#fff;border:1px solid var(--line);border-radius:10px;
+  margin:0 0 14px;overflow:hidden}
+.dayhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:10px 14px;background:var(--beige);border-bottom:1px solid var(--line)}
+.dayhead b{color:var(--navy);font-size:15px}
+.dayhead .muted{font-size:12.5px}
+.day table{border:none}
+.day td{border-left:none;border-right:none;border-top:none;
+  border-bottom:1px solid var(--beige);vertical-align:top}
+.day tr:last-child td{border-bottom:none}
+td.tm{white-space:nowrap;color:var(--muted);font-size:12.5px;width:66px}
+td.tm b{display:block;color:var(--ink);font-size:13.5px}
+td.what .tags{margin-top:6px;line-height:1}
+td.chc{width:92px}
+td.what b{color:var(--ink)}
+td.what .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+.ax{display:flex;gap:6px;align-items:baseline;margin:0 0 5px;line-height:1}
+.ax:last-child{margin-bottom:0}
+.axk{flex:0 0 54px;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);padding-top:2px}
+.ax .tag,.ax .job{margin:0 3px 0 0}
+details.note.why{padding:0;border-left-width:3px}
+details.note.why>summary{cursor:pointer;list-style:none;display:inline-flex;
+  align-items:center;gap:6px;padding:10px 16px;font-weight:600;color:var(--navy);
+  font-size:13px}
+details.note.why>summary::-webkit-details-marker{display:none}
+details.note.why>summary::before{content:"▸";color:var(--muted);font-size:11px}
+details.note.why[open]>summary::before{content:"▾"}
+details.note.why>div{padding:0 16px 12px;font-size:13.5px;line-height:1.5}
+@media print{details.note.why>div{display:block !important}}
+.axes-key{margin:14px 0 6px}
+.axes-key>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;font-size:13px;font-weight:600;color:var(--navy);padding:6px 12px;
+  border:1px solid var(--line);border-radius:8px;background:#fff}
+.axes-key>summary::-webkit-details-marker{display:none}
+.axes-key>summary::before{content:"▸";color:var(--muted)}
+.axes-key[open]>summary::before{content:"▾"}
+.axes-key table{margin-top:10px;font-size:13px}
+.axes-key td:first-child{width:120px;white-space:nowrap;color:var(--navy);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;font-size:12.5px;
+  color:var(--muted);align-items:center;line-height:1}
+.empty{padding:12px 14px;color:var(--muted);font-size:13px}
+@media (max-width:760px){
+  .day table,.day tbody,.day tr,.day td{display:block;width:100%}
+  .day tr{border:none;border-bottom:1px solid var(--beige);border-radius:0;
+    margin:0;padding:10px 12px;background:#fff}
+  .day td{padding:2px 0}
+  td.tm,td.chc{width:auto;display:inline-block;margin-right:8px}
+}
+/* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
+   страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
+@media (max-width:760px){
+  .wrap{padding:18px 12px 40px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:#fff;border:1px solid var(--line);border-radius:10px;
+     margin:0 0 12px;padding:10px 12px;position:relative}
+  tr.daystart{border-top:1px solid var(--line)}
+  td{border:none;padding:4px 0 4px 0}
+  td:empty{display:none}
+  td[data-l]::before{content:attr(data-l);display:block;font-size:11px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:1px}
+  td.topic{font-size:16px;font-weight:600}
+  td.ask{background:var(--beige);border-radius:8px;padding:10px 12px;margin-top:6px}
+  .check{position:absolute;top:10px;right:12px;width:auto;text-align:right}
+  .askcol{width:auto}
+}
+</style></head><body>
+<div class="wrap">
+<h1>Контент-план на аппрув</h1>
+<div class="sub">неделя 31.08 — 06.09<br><span class="badge">съёмка 29.08</span></div>
+<div class="note"><b>Что с этим делать.</b> Посмотреть тему и угол каждой карточки. Тему и угол можно менять — это ваша территория. Формат заблокирован: он посчитан от ёмкости съёмочного дня, и правка одной строки двигает остальные.<br><br>Записывать нужно <b>не на каждую карточку</b>: там, где написано «записывать ничего не нужно», материал уже есть в ваших прежних голосовых. Где задание есть — <b>наговорите по нему</b>. Это не текст ролика и не пересказ: наговорите так, как объяснили бы клиенту, своими словами, 2–3 минуты. Из этого потом соберутся и реплики в кадре, и подписи. В названии файла — код карточки.</div>
+<h2>Instagram · рилсы <span class="muted">· 10</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">R-01</div></td><td class="locked" data-l="Формат">Разбор понятия</td><td class="topic" data-l="Тема">Отпуск был, вы вышли на работу, а сил не прибавилось, хотя анализы в норме</td><td class="angle" data-l="Угол">В режиме выживания анализы могут быть нормальными. Просаживается всё тогда, когда наконец отпустило</td><td class="" data-l="Название">Когда анализы в норме, а сил нет</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. Реплику про фазу выхода брать дословно: «выживание превращается в жизнь. Системы все такие... Хух... И понеслось».</td></tr>
+<tr><td class="check">☐<div class="sid">R-02</div></td><td class="locked" data-l="Формат">Список признаков</td><td class="topic" data-l="Тема">Муж второй год говорит «я просто устал»</td><td class="angle" data-l="Угол">Первые звоночки видит жена, а не он: после обеда тянет спать, сон вырос, сил нет, и главное это раздражительность</td><td class="" data-l="Название">Мужская усталость: что видно со стороны</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно — это самая длинная её надиктовка. ⚠️ Ролик адресован ЖЕНЕ, а не мужчине: в корпусе он и построен как пересказ жалоб супруги на приёме.</td></tr>
+<tr><td class="check">☐<div class="sid">R-03</div></td><td class="locked" data-l="Формат">Разбор понятия</td><td class="topic" data-l="Тема">Сердце частит, назначили таблетку от пульса</td><td class="angle" data-l="Угол">У одного симптома несколько развилок. Прежде чем лечить пульс, стоит посмотреть, не дефицит ли за ним</td><td class="" data-l="Название">Симптом лечат не с той стороны</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. 🔴 РАМКА ОБЯЗАТЕЛЬНА (TRUST_SAFETY_MED §3.1): ролик говорит «что стоит посмотреть», а НЕ «отменяйте назначенное». Ни доз, ни схем, ни «вместо таблетки». Формулировка «спросите у своего врача, смотрели ли…» — единственная безопасная.</td></tr>
+<tr><td class="check">☐<div class="sid">R-04</div></td><td class="locked" data-l="Формат">Техника-инструкция</td><td class="topic" data-l="Тема">Врач сказал «анализы в порядке», и на этом приём закончился</td><td class="angle" data-l="Угол">Три вопроса, которые стоит задать: про образ жизни, про дообследование и про анамнез семьи</td><td class="" data-l="Название">Три вопроса врачу</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. ⚠️ В нд16 она честно говорит, что не может сочинить ответ врача на второй вопрос («мне из воздуха сочинить, только чтобы галочку закрыть?») — в ролике второй вопрос даём как ВОПРОС, без выдуманного ответа. Третий вопрос произносится дословно по нд18.</td></tr>
+<tr><td class="check">☐<div class="sid">R-05</div></td><td class="locked" data-l="Формат">Демонстрация</td><td class="topic" data-l="Тема">Джинсы не сходятся, а весы показывают то же, что год назад</td><td class="angle" data-l="Угол">Сантиметр говорит правду там, где весы молчат: где мерить и что значит цифра</td><td class="" data-l="Название">Где мерить, если весы молчат</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. 🔴 Целевые цифры 80/85 подаются как ориентир ВОЗ, а не как персональная норма зрителя (claim_guardrails: без «и у вас так будет»).</td></tr>
+<tr><td class="check">☐<div class="sid">R-06</div></td><td class="locked" data-l="Формат">Разбор присланного</td><td class="topic" data-l="Тема">Принесли врачу расшифровку анализов от нейросети</td><td class="angle" data-l="Угол">Она пришла в панике, уверенная, что у неё онкология. Через час выяснилось, что причин нет вообще</td><td class="" data-l="Название">Что нейросеть прочитала не так</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. 🔴 Кейс подаётся ОБЕЗЛИЧЕННО, без деталей, по которым пациентку можно узнать (ФЗ-323 ст. 13; письменных согласий нет — решение Ксении 30.07). Скрин настоящей переписки в кадр не берём — только имитация на своём экране.</td></tr>
+<tr><td class="check">☐<div class="sid">R-07</div></td><td class="locked" data-l="Формат">Разбор понятия</td><td class="topic" data-l="Тема">Вас отправили к смежному специалисту, и вы не знаете, тот ли это врач</td><td class="angle" data-l="Угол">Хороший врач предупреждает, что будет происходить в ближайшие две недели, и работает с возражениями</td><td class="" data-l="Название">На что смотреть у смежного специалиста</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. ⚠️ Речь о СМЕЖНЫХ специалистах (психолог, невролог, психиатр), не о выборе эндокринолога — эта дыра индекса всё ещё открыта.</td></tr>
+<tr><td class="check">☐<div class="sid">R-08</div></td><td class="locked" data-l="Формат">Разбор понятия</td><td class="topic" data-l="Тема">Пять врачей, все анализы хорошие, а симптом никуда не делся</td><td class="angle" data-l="Угол">«Пять почему»: как я иду от симптома вглубь, а не от анализа к назначению</td><td class="" data-l="Название">Пять почему</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно.</td></tr>
+<tr><td class="check">☐<div class="sid">R-09</div></td><td class="locked" data-l="Формат">Личная история</td><td class="topic" data-l="Тема">«Я ничего не ем, а вес прибавляется»</td><td class="angle" data-l="Угол">Лекарство простое и бесплатное, это пищевой дневник. Волшебной таблетки в арсенале нет</td><td class="" data-l="Название">Чего у меня нет в арсенале</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. 🔴 РПП как диагноз — её red_line: в ролике НЕ ставим диагноз и не разбираем расстройство, говорим только о механике «дневник вместо таблетки». Образ сгущёнки берём её словами, без осуждения зрителя.</td></tr>
+<tr><td class="check">☐<div class="sid">R-10</div></td><td class="locked" data-l="Формат">Разбор понятия</td><td class="topic" data-l="Тема">После обеда вырубает так, что нужен кофе и десять минут тишины</td><td class="angle" data-l="Угол">Что происходит между обедом и провалом в сон, и когда это уже вопрос к врачу</td><td class="" data-l="Название">Что делает сахар после обеда</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно.</td></tr>
+</tbody></table>
+<h2>Instagram · сторис <span class="muted">· 2</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">S-01</div></td><td class="locked" data-l="Формат">серия</td><td class="topic" data-l="Тема">Серия под гайд по замеру талии</td><td class="angle" data-l="Угол">Раздача гайда тем, кто написал в комментариях под R-05</td><td class="" data-l="Название">Гайд по талии</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно — серия собирается из кадров R-05.</td></tr>
+<tr><td class="check">☐<div class="sid">S-02</div></td><td class="locked" data-l="Формат">опрос</td><td class="topic" data-l="Тема">Опрос по мужской усталости</td><td class="angle" data-l="Угол">«Узнали мужа?»: сбор откликов после R-02</td><td class="" data-l="Название">Узнали?</td><td class="ask" data-l="Что наговорить">Записывать ничего не нужно.</td></tr>
+</tbody></table>
+<h2>Instagram · посты <span class="muted">· 2</span></h2>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">P-01</div></td><td class="locked" data-l="Формат">карусель</td><td class="topic" data-l="Тема">Мнимое благополучие: сахар натощак был в норме пять лет подряд</td><td class="angle" data-l="Угол">При наследственном ожирении сахар надо мерить ПОСЛЕ еды: натощак он врёт годами</td><td class="" data-l="Название">Мнимое благополучие</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. 🔴 Формулировка «проверяйте сахар после еды» подаётся как «обсудите с врачом дополнительный контроль», без схем самоконтроля.</td></tr>
+<tr><td class="check">☐<div class="sid">P-02</div></td><td class="locked" data-l="Формат">карусель</td><td class="topic" data-l="Тема">Роспотребнадзор заблокировал 34 тысячи сайтов с незарегистрированными БАД</td><td class="angle" data-l="Угол">Как отличить зарегистрированную добавку от той, состав которой никто не проверял</td><td class="" data-l="Название">Как не купить пустышку</td><td class="ask" data-l="Что наговорить">Наговорите, как вы отличаете нормальную добавку от сомнительной, когда пациент приносит вам банку: на что вы смотрите в первую очередь, что вас останавливает, и что вы говорите человеку, который уже купил непонятное. Без марок и без доз — только на что смотреть.</td></tr>
+</tbody></table>
+<h2>Telegram <span class="muted">· 3</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">TG-01</div></td><td class="locked" data-l="Формат">лонгрид</td><td class="topic" data-l="Тема">Мужская усталость, которую не диагностируют по три-пять лет</td><td class="angle" data-l="Угол">Полный перечень звоночков и почему жена видит их раньше</td><td class="" data-l="Название">Он всегда был такой?</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно.</td></tr>
+<tr><td class="check">☐<div class="sid">TG-02</div></td><td class="locked" data-l="Формат">лонгрид</td><td class="topic" data-l="Тема">Три вопроса врачу, если сказали «анализы в порядке»: полная версия</td><td class="angle" data-l="Угол">Каждый вопрос с формулировкой и с тем, что на него отвечает врач</td><td class="" data-l="Название">Три вопроса целиком</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно. ⚠️ Её оговорку про второй вопрос («у меня таких вопросов на приёме нет, мы разжёвываем всё по полтора часа») в лонгриде оставляем — она честная и работает на доверие.</td></tr>
+<tr><td class="check">☐<div class="sid">TG-03</div></td><td class="locked" data-l="Формат">пост</td><td class="topic" data-l="Тема">Сентябрь: почему сил нет именно сейчас</td><td class="angle" data-l="Угол">Выход из режима выживания это тот момент, когда просадка становится видимой</td><td class="" data-l="Название">Почему просело в сентябре</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно.</td></tr>
+</tbody></table>
+<footer>Карточек на аппрув: 17 из 17 в плане. Записать голосовых: 1, ещё 15 карточек закрыты вашими прежними записями.<br>Собрано из <code>plan.yaml</code> (maria-2026-W36) — правки вносятся в него, эта страница пересобирается.</footer>
+</div></body></html>

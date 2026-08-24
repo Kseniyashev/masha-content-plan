@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Системный · maria · 2026-W36</title>
+<style>
+:root{--cream:#FDFBF6;--navy:#1F3A5F;--accent:#B9461D;--beige:#F4F0E6;
+--ink:#16181C;--muted:#6B7280;--line:#E4DCCB;--green:#2E7D32;--gold:#C79A2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+background:var(--beige);color:var(--navy);margin-right:6px}
+.badge.warn{background:#FBEEE7;color:var(--accent)}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0;font-size:14px}
+.note b{color:var(--navy)}
+h2{font-size:18px;color:var(--navy);margin:30px 0 10px;padding-top:14px;
+border-top:2px solid var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th{background:var(--beige);color:var(--navy);text-align:left;font-weight:600;
+padding:8px 10px;border:1px solid var(--line);font-size:12.5px}
+td{padding:9px 10px;border:1px solid var(--line);vertical-align:top}
+tr.daystart td{border-top:2px solid var(--navy)}
+.dt{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.topic{font-weight:600}
+.angle{color:#3d4450}
+.ask{background:#FAF7F0;font-size:13.5px;line-height:1.45}
+.ask.have{background:#EDF6ED;color:var(--green)}
+.askcol{width:38%}
+.sid{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.note.src{border-left-color:var(--muted);font-size:13px}
+.card.shot{flex:1 1 100%;margin:14px 0;padding:0;overflow:hidden}
+.cardhead{background:var(--navy);color:#fff;padding:10px 14px;font-size:15px}
+.cardhead b{margin-right:8px}
+.sid2{font-family:"SF Mono",Menlo,monospace;font-size:12px;opacity:.75;margin-right:8px}
+.meta2{float:right;font-size:12px;opacity:.8;font-weight:400}
+.setup{padding:12px 14px;background:#F7F9FB;border-bottom:1px solid var(--line);font-size:13.5px}
+.srow{display:flex;gap:10px;margin:5px 0;align-items:baseline}
+.skey{flex:0 0 132px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+ul.mv{margin:0;padding-left:16px}
+ul.mv li{margin:2px 0}
+@media (max-width:760px){.srow{display:block}.skey{display:block;margin-bottom:2px}}
+.stake{padding:10px 14px;background:#FAF7F0;font-size:13.5px;border-bottom:1px solid var(--line)}
+.hookbox{padding:12px 14px;background:#FBEEE7;border-bottom:1px solid var(--line)}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:4px}
+.hooktxt{font-size:19px;font-weight:700;color:var(--accent);line-height:1.3}
+table.beats{font-size:13.5px;margin:0}
+table.beats th{font-size:11.5px}
+table.beats td{border-left:none;border-right:none}
+table.beats tr.turn td{background:#FDF4F0}
+table.beats tr.turn .act{font-weight:600;color:var(--accent)}
+td.act{width:32%;color:#3d4450}
+td.line{font-size:15px;line-height:1.45}
+.takes{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+.takes ol{margin:4px 0 0;padding-left:20px}
+.takes li{margin:3px 0}
+.props{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px;background:#FAFAF7}
+.card.shot .note{margin:0;border-radius:0;border-top:1px solid var(--line);border-left:3px solid var(--gold)}
+@media print{.card.shot{page-break-inside:avoid}.cardhead{background:#1F3A5F !important;-webkit-print-color-adjust:exact}}
+@media (max-width:760px){
+  td.act{width:auto}
+  table.beats,table.beats tbody,table.beats tr,table.beats td{display:block;width:100%}
+  table.beats thead{display:none}
+  table.beats tr{border-bottom:1px solid var(--line);padding:8px 12px;margin:0;border-radius:0}
+  table.beats td{padding:2px 0;border:none}
+  .meta2{float:none;display:block;margin-top:3px}
+}
+.briefs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.brief{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-size:13.5px;line-height:1.45}
+.bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
+@media (max-width:760px){.brief{flex:1 1 100%}}
+.locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* Ширины «Темы» и «Угла» заданы явно, иначе браузер делит место по объёму
+   текста, а в заданиях текста больше всего. */
+td.topic{min-width:150px}
+td.angle{min-width:150px}
+@media (max-width:760px){td.topic,td.angle{width:auto;min-width:0}}
+.job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
+background:var(--beige);color:var(--navy)}
+.check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
+h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;align-items:flex-start}
+.card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
+table.mini{font-size:13px}
+table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-weight:400}
+.caps{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cap{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:13.5px}
+.cap.over{border-color:var(--accent);background:#FDF4F0}
+.capttl{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:13px}
+.verdict{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;margin:6px 0 4px}
+.verdict.ok{background:#EDF6ED;color:var(--green)}
+.verdict.bad{background:#FBEEE7;color:var(--accent)}
+.warn{color:var(--accent)}
+/* ── слой текстов ──────────────────────────────────────────────────────── */
+.tx{background:#fff;border:1px solid var(--line);border-radius:8px;margin:16px 0;overflow:hidden}
+.tx .cardhead{background:var(--navy)}
+.txbody{padding:14px 16px;font-size:15px;line-height:1.55;white-space:pre-wrap;
+  border-bottom:1px solid var(--line)}
+.txbody .hook{font-weight:700;color:var(--accent)}
+.txcta{padding:12px 16px;background:#FBEEE7;font-size:15px;line-height:1.5;
+  border-bottom:1px solid var(--line)}
+.txcta .lbl{color:var(--accent)}
+.txcard{padding:12px 16px;border-bottom:1px solid var(--beige);font-size:14.5px;line-height:1.5}
+.txcard .cn{display:inline-block;min-width:26px;height:26px;line-height:26px;text-align:center;
+  border-radius:13px;background:var(--beige);color:var(--navy);font-size:12px;font-weight:700;
+  margin-right:9px;vertical-align:top}
+.txcard .ch{font-weight:700;color:var(--navy);display:block;margin-bottom:3px;font-size:13px}
+.txcard .cb{display:inline-block;width:calc(100% - 40px)}
+details.attr{border-top:1px solid var(--line);background:#FAFAF7}
+details.attr summary{padding:9px 16px;cursor:pointer;font-size:12.5px;color:var(--muted);
+  letter-spacing:.02em}
+details.attr[open] summary{border-bottom:1px solid var(--line)}
+table.attr{font-size:12.5px;margin:0}
+table.attr td{border-left:none;border-right:none;vertical-align:top}
+table.attr td.n{width:34px;color:var(--muted);text-align:right}
+table.attr td.src{width:22%;font-family:"SF Mono",Menlo,monospace;font-size:11.5px}
+.m{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;white-space:nowrap}
+.m.dословно,.m.d{background:#EDF6ED;color:var(--green)}
+.m.p{background:var(--beige);color:var(--navy)}
+.m.a{background:#FBEEE7;color:var(--accent)}
+.m.s{background:#EFEFEF;color:var(--muted)}
+.txstat{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.note.warn{border-left-color:var(--accent)}
+.scroll{overflow-x:auto}
+.scroll table{min-width:100%}
+.scroll td{vertical-align:top}
+.scroll td[data-l="От эксперта"]{min-width:250px}
+.scroll td[data-l="Тема и угол"],.scroll td[data-l="Тема"]{min-width:220px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}
+  tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+
+/* ─── Вкладки. Системная версия несёт два разных вопроса: «что в канале» и
+   «что выходит в четверг». Раньше они лежали в одной простыне, и второй
+   не отвечался вовсе — календарь приходилось собирать в голове. ─── */
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;margin:18px 0 0;
+  padding:8px 0;background:var(--cream);border-bottom:1px solid var(--line)}
+.tabbtn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--navy);
+  font:600 13.5px/1 inherit;padding:9px 16px;border-radius:8px;cursor:pointer}
+.tabbtn:hover{border-color:var(--navy)}
+.tabbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabpane{display:none}
+.tabpane.on{display:block}
+@media print{.tabs{display:none}.tabpane{display:block !important}}
+
+/* ─── Раскрывающееся задание эксперту. Текст «что наговорить» длинный по
+   построению (§4 схемы: глагол + форма + количество + что раскрыть), и в
+   ячейке таблицы он раздувал строку так, что остальные поля переставали
+   читаться. Свёрнут по умолчанию, развёрнут по клику. ─── */
+details.ask{font-size:13px}
+details.ask>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:14px;
+  background:#FAF7F0;color:var(--navy);font-weight:600;font-size:12px;white-space:nowrap}
+details.ask>summary::-webkit-details-marker{display:none}
+details.ask>summary::before{content:"▸";font-size:11px;color:var(--muted)}
+details.ask[open]>summary::before{content:"▾"}
+details.ask>summary:hover{border-color:var(--navy)}
+details.ask>div{margin-top:8px;padding:10px 12px;background:#FAF7F0;
+  border-radius:8px;line-height:1.5;min-width:230px;max-width:460px}
+details.ask.have>summary{background:#EDF6ED;color:var(--green);border-color:#CFE6CF}
+details.ask.have>div{background:#EDF6ED}
+@media print{details.ask>div{display:block !important;max-width:none}}
+
+/* ─── Бейджи каналов: в сводном плане строки разных каналов идут вперемешку,
+   и канал должен читаться боковым зрением, а не вычитываться. ─── */
+.ch{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11.5px;
+  font-weight:600;white-space:nowrap;border:1px solid transparent}
+.ch.reel{background:#EDE7F6;color:#4527A0}
+.ch.story{background:#FFF3E0;color:#B9461D}
+.ch.post{background:#E3F2FD;color:#0D47A1}
+.ch.tg{background:#E0F2F1;color:#00695C}
+.ch.th{background:#F3E5F5;color:#6A1B9A}
+.ch.pr,.ch.sup{background:var(--beige);color:var(--navy)}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;
+  background:var(--beige);color:var(--navy);white-space:nowrap;margin:0 3px 3px 0}
+.tag.pin{background:#E3F2FD;color:#0D47A1}
+.tag.hl{background:#FFF3E0;color:#B9461D}
+.tag.rec{background:#FBEEE7;color:var(--accent);font-weight:600}
+.tag.ok{background:#EDF6ED;color:var(--green)}
+
+/* ─── Сводный план: день как блок, а не как строка таблицы. ─── */
+.day{background:#fff;border:1px solid var(--line);border-radius:10px;
+  margin:0 0 14px;overflow:hidden}
+.dayhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:10px 14px;background:var(--beige);border-bottom:1px solid var(--line)}
+.dayhead b{color:var(--navy);font-size:15px}
+.dayhead .muted{font-size:12.5px}
+.day table{border:none}
+.day td{border-left:none;border-right:none;border-top:none;
+  border-bottom:1px solid var(--beige);vertical-align:top}
+.day tr:last-child td{border-bottom:none}
+td.tm{white-space:nowrap;color:var(--muted);font-size:12.5px;width:66px}
+td.tm b{display:block;color:var(--ink);font-size:13.5px}
+td.what .tags{margin-top:6px;line-height:1}
+td.chc{width:92px}
+td.what b{color:var(--ink)}
+td.what .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+.ax{display:flex;gap:6px;align-items:baseline;margin:0 0 5px;line-height:1}
+.ax:last-child{margin-bottom:0}
+.axk{flex:0 0 54px;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);padding-top:2px}
+.ax .tag,.ax .job{margin:0 3px 0 0}
+details.note.why{padding:0;border-left-width:3px}
+details.note.why>summary{cursor:pointer;list-style:none;display:inline-flex;
+  align-items:center;gap:6px;padding:10px 16px;font-weight:600;color:var(--navy);
+  font-size:13px}
+details.note.why>summary::-webkit-details-marker{display:none}
+details.note.why>summary::before{content:"▸";color:var(--muted);font-size:11px}
+details.note.why[open]>summary::before{content:"▾"}
+details.note.why>div{padding:0 16px 12px;font-size:13.5px;line-height:1.5}
+@media print{details.note.why>div{display:block !important}}
+.axes-key{margin:14px 0 6px}
+.axes-key>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;font-size:13px;font-weight:600;color:var(--navy);padding:6px 12px;
+  border:1px solid var(--line);border-radius:8px;background:#fff}
+.axes-key>summary::-webkit-details-marker{display:none}
+.axes-key>summary::before{content:"▸";color:var(--muted)}
+.axes-key[open]>summary::before{content:"▾"}
+.axes-key table{margin-top:10px;font-size:13px}
+.axes-key td:first-child{width:120px;white-space:nowrap;color:var(--navy);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;font-size:12.5px;
+  color:var(--muted);align-items:center;line-height:1}
+.empty{padding:12px 14px;color:var(--muted);font-size:13px}
+@media (max-width:760px){
+  .day table,.day tbody,.day tr,.day td{display:block;width:100%}
+  .day tr{border:none;border-bottom:1px solid var(--beige);border-radius:0;
+    margin:0;padding:10px 12px;background:#fff}
+  .day td{padding:2px 0}
+  td.tm,td.chc{width:auto;display:inline-block;margin-right:8px}
+}
+/* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
+   страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
+@media (max-width:760px){
+  .wrap{padding:18px 12px 40px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:#fff;border:1px solid var(--line);border-radius:10px;
+     margin:0 0 12px;padding:10px 12px;position:relative}
+  tr.daystart{border-top:1px solid var(--line)}
+  td{border:none;padding:4px 0 4px 0}
+  td:empty{display:none}
+  td[data-l]::before{content:attr(data-l);display:block;font-size:11px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:1px}
+  td.topic{font-size:16px;font-weight:600}
+  td.ask{background:var(--beige);border-radius:8px;padding:10px 12px;margin-top:6px}
+  .check{position:absolute;top:10px;right:12px;width:auto;text-align:right}
+  .askcol{width:auto}
+}
+</style></head><body>
+<div class="wrap">
+<h1>Контент-план · системная версия</h1>
+<div class="sub">maria &middot; неделя 2026-W36 (2026-08-31 — 2026-09-06) &middot; план <code>maria-2026-W36</code> &middot; алгоритм v1.22<br><span class="badge">С1</span><span class="badge">статус: draft</span><span class="badge">съёмка 29.08</span></div>
+<div class="note"><b>Провенанс.</b> Проход A · срез ДНК-лифта 2026-08-02 · банк тем <code>experts/maria/topic_bank.yaml</code> · линтеры: lint_plan.py --expert maria, fact_ref_check.py, surface_check.py, plan_refs_check.py<br>Трендвотчинг: trendwatching/masha/agenda/trend_rows_2026-08-24.json + срез панели A 24.08</div>
+<div class="note"><b>Стадия и волна.</b> Попадание · вторая неделя ведения. Критерий выхода на С2 (≥1 000 подписчиков И ≥3 ролика с sends per reach выше собственной медианы ×2) не проверялся: метрик за W34 нет. &middot; Продающих слотов нет по построению: на С1 J4 = 0%, конверсия только встроенная (CTA-комментарий под R-05).</div>
+<div class="tabs"><button class="tabbtn on" data-t="t-ch">По каналам</button><button class="tabbtn" data-t="t-cal">Сводный план</button></div>
+<div class="tabpane on" id="t-ch"><details class="axes-key"><summary>Что значат оси в колонке «Оси»</summary><table><tbody><tr><td>Работа<div class="sid">§5.4</div></td><td>Что слот делает с человеком: <b>охват</b> — попасть к тем, кто вас не знает (метрика: пересылки на охват) · <b>доверие</b> — стать «своим экспертом» · <b>конверсия</b> — снять барьер и получить контакт · <b>продажа</b> · <b>связь</b> — удержать своих. Именно эта ось делит бюджет недели.<div class="sid" style="margin-top:5px">в этой неделе: J1 · J2 · J3</div></td></tr><tr><td>Источник<div class="sid">§5.3</div></td><td>Откуда взято сырьё: <b>эвергрин</b> — проверенные драйверы ниши по ДНК-лифту · <b>тренд</b> и <b>ставка</b> — из недельного среза Радара · <b>повестка</b> · <b>продукт</b> · <b>лайф</b>.<div class="sid" style="margin-top:5px">в этой неделе: повестка · ставка · тренд · эвергрин</div></td></tr><tr><td>Заход<div class="sid">§14.5</div></td><td>Ширина: <b>reach</b> — широкий relatable контент, <b>depth</b> — нишевый глубокий, под покупателя. Квота недели 60–70% / 30–40%. 🔴 <b>Не путать с работой:</b> «охват» — это ЗАДАЧА слота, <code>reach</code> — ШИРИНА захода. Оси независимы, слот бывает «доверие + reach».<div class="sid" style="margin-top:5px">в этой неделе: depth · reach</div></td></tr><tr><td>Интент<div class="sid">§14.5</div></td><td>Какое доверие строит: <b>Growth</b> — охват · <b>Authority</b> — доказательство экспертизы · <b>Authenticity</b> — личное и ценности. Все три обязаны присутствовать в неделе.<div class="sid" style="margin-top:5px">в этой неделе: Authenticity · Authority · Growth</div></td></tr><tr><td>ЦА<div class="sid">profile.yaml</div></td><td><b>bad_curious</b> — интересующиеся БАД и нутрициологией, «которым не хватает системной, не рефералочной экспертизы»<br><b>main</b> — 30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»<br><b>women_overloaded</b> — женщина 30+ с тройной нагрузкой (дом/дети/работа)</td></tr></tbody></table></details>
+<h2>Распределение</h2><div class="cards">
+<div class="card"><h3>Работы · рилсы <span class="muted">· 10</span></h3><table class="mini"><tbody><tr><td>охват</td><td class="num">7</td><td class="num muted">70%</td></tr><tr><td>доверие</td><td class="num">3</td><td class="num muted">30%</td></tr><tr><td>конверсия</td><td class="num">0</td><td class="num muted">0%</td></tr><tr><td>продажа</td><td class="num">0</td><td class="num muted">0%</td></tr><tr><td>связь</td><td class="num">0</td><td class="num muted">0%</td></tr></tbody></table></div>
+<div class="card"><h3>Источники · внутри J1+J2 <span class="muted">· 10</span></h3><table class="mini"><tbody><tr><td>повестка</td><td class="num">2</td><td class="num muted">20%</td></tr><tr><td>ставка</td><td class="num">1</td><td class="num muted">10%</td></tr><tr><td>тренд</td><td class="num">2</td><td class="num muted">20%</td></tr><tr><td>эвергрин</td><td class="num">5</td><td class="num muted">50%</td></tr></tbody></table></div>
+<div class="card"><h3>Чем закрыт вал · рилсы <span class="muted">· 10</span></h3><table class="mini"><tbody><tr><td>съёмка</td><td class="num">10</td><td class="num muted">100%</td></tr></tbody></table></div>
+<div class="card"><h3>Разнообразие <span class="muted">· 10</span></h3><table class="mini"><tbody><tr><td>ЦА: main</td><td class="num">10</td><td class="num muted">100%</td></tr><tr><td>depth</td><td class="num">3</td><td class="num muted">30%</td></tr><tr><td>reach</td><td class="num">7</td><td class="num muted">70%</td></tr></tbody></table></div>
+</div>
+<h2>Ёмкость</h2><div class="caps"><div class="cap"><div class="capttl">ЭКСПЕРТ В КАДРЕ</div><div>10 слотов · 186 из 360 мин<br><span class="muted">52%</span></div></div></div><div class="verdict ok">✅ Неделя помещается в ёмкость</div>
+<h2>Instagram · рилсы <span class="muted">· 10</span></h2>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Когда</th><th>Формат</th><th>Тема и угол</th><th>Хук</th><th>Оси</th><th>От эксперта</th></tr></thead><tbody>
+<tr class="daystart"><td data-l="ID">R-01</td><td data-l="Когда"><div class="dt">31.08 пн</div><div><b>08:30</b></div></td><td data-l="Формат"><div><b>Разбор понятия</b></div><div class="sid">T01 · 45 с · съёмка</div><div class="sid">K2 · Почему у меня всё в норме, а симптомы остались</div></td><td data-l="Тема и угол"><div class="topic">Отпуск был, вы вышли на работу, а сил не прибавилось, хотя анализы в норме</div><div class="angle">В режиме выживания анализы могут быть нормальными. Просаживается всё тогда, когда наконец отпустило</div></td><td data-l="Хук"><span class="tag">paradoks</span><div>Отпуск был, а усталость никуда не делась.</div><div class="sid">назв.: Когда анализы в норме, а сил нет</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">охват</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">повестка</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">reach</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Growth</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. Реплику про фазу выхода брать дословно: «выживание превращается в жизнь. Системы все такие... Хух... И понеслось».<div class="sid" style="margin-top:6px">корпус: корпус «маша нд9 · эндокринных нарушений нет — что дальше» (14.08): «когда мы в диком тонусе выживания находимся, у нас отклонений может и не быть»</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">R-02</td><td data-l="Когда"><div class="dt">01.09 вт</div><div><b>08:30</b></div></td><td data-l="Формат"><div><b>Список признаков</b></div><div class="sid">T01 · 50 с · съёмка</div><div class="sid">B1 · Список признаков по телу</div></td><td data-l="Тема и угол"><div class="topic">Муж второй год говорит «я просто устал»</div><div class="angle">Первые звоночки видит жена, а не он: после обеда тянет спать, сон вырос, сил нет, и главное это раздражительность</div></td><td data-l="Хук"><span class="tag">tihaya_kontroversiya</span><div>Муж спит больше, а энергии у него не прибавилось.</div><div class="sid">назв.: Мужская усталость: что видно со стороны</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">охват</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">reach</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Growth</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">отправить мужу</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно — это самая длинная её надиктовка. ⚠️ Ролик адресован ЖЕНЕ, а не мужчине: в корпусе он и построен как пересказ жалоб супруги на приёме.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд12 · мужская усталость» (14.08), 1 937 слов: «человек начинает больше спать, но у него не становится больше сил»</div></div></details></td></tr>
+<tr class=""><td data-l="ID">R-03</td><td data-l="Когда"><div class="dt">01.09 вт</div><div><b>19:30</b></div></td><td data-l="Формат"><div><b>Разбор понятия</b></div><div class="sid">T01 · 45 с · съёмка</div><div class="sid">D4 · Один симптом — четыре связки</div></td><td data-l="Тема и угол"><div class="topic">Сердце частит, назначили таблетку от пульса</div><div class="angle">У одного симптома несколько развилок. Прежде чем лечить пульс, стоит посмотреть, не дефицит ли за ним</div></td><td data-l="Хук"><span class="tag">pozicionnyy</span><div>Сердце частит, назначили таблетку, а ферритин никто не смотрел.</div><div class="sid">назв.: Симптом лечат не с той стороны</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">охват</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">тренд</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">reach</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Growth</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. 🔴 РАМКА ОБЯЗАТЕЛЬНА (TRUST_SAFETY_MED §3.1): ролик говорит «что стоит посмотреть», а НЕ «отменяйте назначенное». Ни доз, ни схем, ни «вместо таблетки». Формулировка «спросите у своего врача, смотрели ли…» — единственная безопасная.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд1 · вес-анализы» (ферритин и железо разобраны) плюс метод развилки из «маша нд9 · эндокринных нарушений нет — что дальше»</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">R-04</td><td data-l="Когда"><div class="dt">02.09 ср</div><div><b>08:30</b></div></td><td data-l="Формат"><div><b>Техника-инструкция</b></div><div class="sid">T01 · 55 с · съёмка</div><div class="sid">E5 · Мой протокол по пунктам</div></td><td data-l="Тема и угол"><div class="topic">Врач сказал «анализы в порядке», и на этом приём закончился</div><div class="angle">Три вопроса, которые стоит задать: про образ жизни, про дообследование и про анамнез семьи</div></td><td data-l="Хук"><span class="tag">how_to</span><div>Врач сказал: анализы в порядке. А что спросить дальше?</div><div class="sid">назв.: Три вопроса врачу</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">доверие</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">depth</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authority</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. ⚠️ В нд16 она честно говорит, что не может сочинить ответ врача на второй вопрос («мне из воздуха сочинить, только чтобы галочку закрыть?») — в ролике второй вопрос даём как ВОПРОС, без выдуманного ответа. Третий вопрос произносится дословно по нд18.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд16 · три вопроса врачу», «маша нд17 · третий вопрос: анамнез семьи», «маша нд18 · как звучит третий вопрос», «маша нд19 · что на это ответит врач» (14.08)</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">R-05</td><td data-l="Когда"><div class="dt">03.09 чт</div><div><b>08:30</b></div></td><td data-l="Формат"><div><b>Демонстрация</b></div><div class="sid">TXD · 35 с · съёмка</div><div class="sid">G4 · Техника замера на себе</div></td><td data-l="Тема и угол"><div class="topic">Джинсы не сходятся, а весы показывают то же, что год назад</div><div class="angle">Сантиметр говорит правду там, где весы молчат: где мерить и что значит цифра</div></td><td data-l="Хук"><span class="tag">sravnenie</span><div>Живот не убирается, хотя вес не меняется годами.</div><div class="sid">назв.: Где мерить, если весы молчат</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">охват</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">повестка</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">reach</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Growth</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">забрать гайд в комментариях</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. 🔴 Целевые цифры 80/85 подаются как ориентир ВОЗ, а не как персональная норма зрителя (claim_guardrails: без «и у вас так будет»).<div class="sid" style="margin-top:6px">корпус: корпус «маша нд4 · талия» (06.08): четыре линии замера, дыхание, целевые 80/85</div></div></details></td></tr>
+<tr class=""><td data-l="ID">R-06</td><td data-l="Когда"><div class="dt">03.09 чт</div><div><b>19:30</b></div></td><td data-l="Формат"><div><b>Разбор присланного</b></div><div class="sid">T01 · 50 с · съёмка</div><div class="sid">K4 · Разбор присланного добавки/схемы</div></td><td data-l="Тема и угол"><div class="topic">Принесли врачу расшифровку анализов от нейросети</div><div class="angle">Она пришла в панике, уверенная, что у неё онкология. Через час выяснилось, что причин нет вообще</div></td><td data-l="Хук"><span class="tag">story_open</span><div>Она пришла с расшифровкой от нейросети, хотя анализы нормальные.</div><div class="sid">назв.: Что нейросеть прочитала не так</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">охват</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">тренд</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">reach</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Growth</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. 🔴 Кейс подаётся ОБЕЗЛИЧЕННО, без деталей, по которым пациентку можно узнать (ФЗ-323 ст. 13; письменных согласий нет — решение Ксении 30.07). Скрин настоящей переписки в кадр не берём — только имитация на своём экране.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд9 · эндокринных нарушений нет — что дальше» (14.08): «пациент пришёл готовенький, ему GPT сказал, что ему к эндокринологу»; фон по нейросетям в «маш 3 10» и «маша 2 7»</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">R-07</td><td data-l="Когда"><div class="dt">04.09 пт</div><div><b>08:30</b></div></td><td data-l="Формат"><div><b>Разбор понятия</b></div><div class="sid">T01 · 55 с · съёмка</div><div class="sid">B3 · Что проверить перед тем, как</div></td><td data-l="Тема и угол"><div class="topic">Вас отправили к смежному специалисту, и вы не знаете, тот ли это врач</div><div class="angle">Хороший врач предупреждает, что будет происходить в ближайшие две недели, и работает с возражениями</div></td><td data-l="Хук"><span class="tag">kategoriya</span><div>Как понять, что врач хороший, а не просто вежливый?</div><div class="sid">назв.: На что смотреть у смежного специалиста</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">доверие</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">depth</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authority</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. ⚠️ Речь о СМЕЖНЫХ специалистах (психолог, невролог, психиатр), не о выборе эндокринолога — эта дыра индекса всё ещё открыта.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд8 · как выбирать смежного специалиста» (14.08): «не существует учебника имени тебя»</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">R-08</td><td data-l="Когда"><div class="dt">05.09 сб</div><div><b>11:00</b></div></td><td data-l="Формат"><div><b>Разбор понятия</b></div><div class="sid">T01 · 55 с · съёмка</div><div class="sid">D3 · Цепочка следствий</div></td><td data-l="Тема и угол"><div class="topic">Пять врачей, все анализы хорошие, а симптом никуда не делся</div><div class="angle">«Пять почему»: как я иду от симптома вглубь, а не от анализа к назначению</div></td><td data-l="Хук"><span class="tag">kvalifikaciya</span><div>Пять врачей, все анализы хорошие, а симптом остался.</div><div class="sid">назв.: Пять почему</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">доверие</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">depth</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authority</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно.<div class="sid" style="margin-top:6px">корпус: корпус «Маш ауд 3» и «маш 3 6»: метод «пять почему» описан ею самой</div></div></details></td></tr>
+<tr class=""><td data-l="ID">R-09</td><td data-l="Когда"><div class="dt">05.09 сб</div><div><b>19:30</b></div></td><td data-l="Формат"><div><b>Личная история</b></div><div class="sid">T01 · 50 с · съёмка</div><div class="sid">J1 · Что я не лечу</div></td><td data-l="Тема и угол"><div class="topic">«Я ничего не ем, а вес прибавляется»</div><div class="angle">Лекарство простое и бесплатное, это пищевой дневник. Волшебной таблетки в арсенале нет</div></td><td data-l="Хук"><span class="tag">razoblachenie</span><div>«Я ничего не ем, а вес растёт». Слышу это каждый день.</div><div class="sid">назв.: Чего у меня нет в арсенале</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">охват</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">ставка</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">reach</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authenticity</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">написать в комментариях</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. 🔴 РПП как диагноз — её red_line: в ролике НЕ ставим диагноз и не разбираем расстройство, говорим только о механике «дневник вместо таблетки». Образ сгущёнки берём её словами, без осуждения зрителя.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд7 · РПП: пищевой дневник вместо волшебной таблетки» (14.08): «просто, пожалуйста, поведите дневник и через неделю придите на повторную консультацию»</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">R-10</td><td data-l="Когда"><div class="dt">06.09 вс</div><div><b>11:00</b></div></td><td data-l="Формат"><div><b>Разбор понятия</b></div><div class="sid">T01 · 45 с · съёмка</div><div class="sid">D1 · Физиология по шагам с риторическими вопросами</div></td><td data-l="Тема и угол"><div class="topic">После обеда вырубает так, что нужен кофе и десять минут тишины</div><div class="angle">Что происходит между обедом и провалом в сон, и когда это уже вопрос к врачу</div></td><td data-l="Хук"><span class="tag">vopros</span><div>Почему после обеда вырубает, хотя вы выспались?</div><div class="sid">назв.: Что делает сахар после обеда</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">охват</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">reach</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authority</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно.<div class="sid" style="margin-top:6px">корпус: корпус «маш 3 9» и «маша 28» (постпрандиальная сонливость); тот же признак назван первым звоночком в «маша нд12 · мужская усталость»</div></div></details></td></tr>
+</tbody></table></div>
+<h2>Instagram · сторис <span class="muted">· 2</span></h2>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Когда</th><th>Серия</th><th>От эксперта</th></tr></thead><tbody>
+<tr class="daystart"><td data-l="ID">S-01</td><td data-l="Когда"><div class="dt">03.09 чт</div><div><b>12:00</b></div></td><td data-l="Серия"><div><b></b></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно — серия собирается из кадров R-05.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд4 · талия» (06.08)</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">S-02</td><td data-l="Когда"><div class="dt">05.09 сб</div><div><b>12:00</b></div></td><td data-l="Серия"><div><b></b></div></td><td data-l="От эксперта"><details class="ask"><summary>что наговорить</summary><div>Записывать ничего не нужно.</div></details></td></tr>
+</tbody></table></div>
+<h2>Instagram · посты <span class="muted">· 2</span></h2>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Когда</th><th>Формат</th><th>Тема</th><th>Первая строка</th><th>Оси</th><th>От эксперта</th></tr></thead><tbody>
+<tr class="daystart"><td data-l="ID">P-01</td><td data-l="Когда"><div class="dt">02.09 ср</div><div><b>19:30</b></div></td><td data-l="Формат"><div><b>карусель</b></div></td><td data-l="Тема"><div class="topic">Мнимое благополучие: сахар натощак был в норме пять лет подряд</div><div class="angle">При наследственном ожирении сахар надо мерить ПОСЛЕ еды: натощак он врёт годами</div></td><td data-l="Первая строка"><span class="tag">tihaya_kontroversiya</span><div>«У меня же сахар всё это время был в норме».</div><div class="sid">назв.: Мнимое благополучие</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">доверие</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">depth</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authority</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. 🔴 Формулировка «проверяйте сахар после еды» подаётся как «обсудите с врачом дополнительный контроль», без схем самоконтроля.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд11 · диспансеризация и мнимое благополучие» (14.08): «ну как же, у меня же сахар всё это время был в норме»</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">P-02</td><td data-l="Когда"><div class="dt">06.09 вс</div><div><b>19:30</b></div></td><td data-l="Формат"><div><b>карусель</b></div></td><td data-l="Тема"><div class="topic">Роспотребнадзор заблокировал 34 тысячи сайтов с незарегистрированными БАД</div><div class="angle">Как отличить зарегистрированную добавку от той, состав которой никто не проверял</div></td><td data-l="Первая строка"><span class="tag">cifra</span><div>34 тысячи сайтов с добавками закрыли за неделю.</div><div class="sid">назв.: Как не купить пустышку</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">доверие</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">повестка</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">depth</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authority</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="интересующиеся БАД и нутрициологией, «которым не хватает системной, не рефералочной экспертизы»">bad_curious</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask"><summary>что наговорить</summary><div>Наговорите, как вы отличаете нормальную добавку от сомнительной, когда пациент приносит вам банку: на что вы смотрите в первую очередь, что вас останавливает, и что вы говорите человеку, который уже купил непонятное. Без марок и без доз — только на что смотреть.</div></details></td></tr>
+</tbody></table></div>
+<h2>Telegram <span class="muted">· 3</span></h2>
+<div class="scroll"><table><thead><tr><th>ID</th><th>Когда</th><th>Формат</th><th>Тема</th><th>Оси</th><th>От эксперта</th></tr></thead><tbody>
+<tr class="daystart"><td data-l="ID">TG-01</td><td data-l="Когда"><div class="dt">01.09 вт</div><div><b>20:00</b></div></td><td data-l="Формат">лонгрид</td><td data-l="Тема"><div class="topic">Мужская усталость, которую не диагностируют по три-пять лет</div><div class="angle">Полный перечень звоночков и почему жена видит их раньше</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">доверие</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">depth</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authority</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">переслать</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд12 · мужская усталость» (14.08), 1 937 слов: на лонгрид хватает целиком</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">TG-02</td><td data-l="Когда"><div class="dt">03.09 чт</div><div><b>20:00</b></div></td><td data-l="Формат">лонгрид</td><td data-l="Тема"><div class="topic">Три вопроса врачу, если сказали «анализы в порядке»: полная версия</div><div class="angle">Каждый вопрос с формулировкой и с тем, что на него отвечает врач</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">доверие</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">depth</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authority</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">сохранить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно. ⚠️ Её оговорку про второй вопрос («у меня таких вопросов на приёме нет, мы разжёвываем всё по полтора часа») в лонгриде оставляем — она честная и работает на доверие.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд16 · три вопроса врачу» — «маша нд19 · что на это ответит врач» (14.08)</div></div></details></td></tr>
+<tr class="daystart"><td data-l="ID">TG-03</td><td data-l="Когда"><div class="dt">05.09 сб</div><div><b>20:00</b></div></td><td data-l="Формат">пост</td><td data-l="Тема"><div class="topic">Сентябрь: почему сил нет именно сейчас</div><div class="angle">Выход из режима выживания это тот момент, когда просадка становится видимой</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">доверие</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">повестка</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">depth</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authenticity</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="женщина 30+ с тройной нагрузкой (дом/дети/работа)">women_overloaded</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">ответить</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно.<div class="sid" style="margin-top:6px">корпус: корпус «маша нд9 · эндокринных нарушений нет — что дальше»: «минимальный гормональный чек-ап раз в год»</div></div></details></td></tr>
+</tbody></table></div></div>
+<div class="tabpane" id="t-cal"><div class="note"><b>Что выходит и когда.</b> Все каналы вперемешку, в том порядке, в каком человек это увидит. Эта вкладка отвечает на вопрос «что у нас в четверг», на который разбивка по каналам не отвечает в принципе: чтобы собрать день, приходилось читать пять таблиц и складывать в голове.</div>
+<div class="legend"><span class="ch reel">Рилс</span><span class="ch story">Сторис</span><span class="ch post">Пост</span><span class="ch tg">Telegram</span><span class="tag rec">нужна запись</span><span class="tag pin">в закреп</span><span class="tag hl">в хайлайтс</span></div>
+<div class="day"><div class="dayhead"><b>пн 31.08</b><span class="muted">1 публикация</span><span class="muted">· Рилс 1</span></div><table><tbody>
+<tr><td class="tm"><b>08:30</b>R-01</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Когда анализы в норме, а сил нет</b><div class="sub">Отпуск был, вы вышли на работу, а сил не прибавилось, хотя анализы в норме · Разбор понятия · 45 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+</tbody></table></div>
+<div class="day"><div class="dayhead"><b>вт 01.09</b><span class="muted">3 публикации</span><span class="muted">· Рилс 2 · Telegram 1</span></div><table><tbody>
+<tr><td class="tm"><b>08:30</b>R-02</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Мужская усталость: что видно со стороны</b><div class="sub">Муж второй год говорит «я просто устал» · Список признаков · 50 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>19:30</b>R-03</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Симптом лечат не с той стороны</b><div class="sub">Сердце частит, назначили таблетку от пульса · Разбор понятия · 45 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>20:00</b>TG-01</td><td class="chc"><span class="ch tg">Telegram</span></td><td class="what"><b>Он всегда был такой?</b><div class="sub">Мужская усталость, которую не диагностируют по три-пять лет · лонгрид</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+</tbody></table></div>
+<div class="day"><div class="dayhead"><b>ср 02.09</b><span class="muted">2 публикации</span><span class="muted">· Пост 1 · Рилс 1</span></div><table><tbody>
+<tr><td class="tm"><b>08:30</b>R-04</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Три вопроса врачу</b><div class="sub">Врач сказал «анализы в порядке», и на этом приём закончился · Техника-инструкция · 55 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>19:30</b>P-01</td><td class="chc"><span class="ch post">Пост</span></td><td class="what"><b>Мнимое благополучие</b><div class="sub">Мнимое благополучие: сахар натощак был в норме пять лет подряд · карусель</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+</tbody></table></div>
+<div class="day"><div class="dayhead"><b>чт 03.09</b><span class="muted">4 публикации</span><span class="muted">· Рилс 2 · Сторис 1 · Telegram 1</span></div><table><tbody>
+<tr><td class="tm"><b>08:30</b>R-05</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Где мерить, если весы молчат</b><div class="sub">Джинсы не сходятся, а весы показывают то же, что год назад · Демонстрация · 35 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>12:00</b>S-01</td><td class="chc"><span class="ch story">Сторис</span></td><td class="what"><b>Гайд по талии</b><div class="sub">Серия под гайд по замеру талии · серия</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>19:30</b>R-06</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Что нейросеть прочитала не так</b><div class="sub">Принесли врачу расшифровку анализов от нейросети · Разбор присланного · 50 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>20:00</b>TG-02</td><td class="chc"><span class="ch tg">Telegram</span></td><td class="what"><b>Три вопроса целиком</b><div class="sub">Три вопроса врачу, если сказали «анализы в порядке»: полная версия · лонгрид</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+</tbody></table></div>
+<div class="day"><div class="dayhead"><b>пт 04.09</b><span class="muted">1 публикация</span><span class="muted">· Рилс 1</span></div><table><tbody>
+<tr><td class="tm"><b>08:30</b>R-07</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>На что смотреть у смежного специалиста</b><div class="sub">Вас отправили к смежному специалисту, и вы не знаете, тот ли это врач · Разбор понятия · 55 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+</tbody></table></div>
+<div class="day"><div class="dayhead"><b>сб 05.09</b><span class="muted">4 публикации</span><span class="muted">· Рилс 2 · Сторис 1 · Telegram 1</span><span class="tag rec">записать: 1</span></div><table><tbody>
+<tr><td class="tm"><b>11:00</b>R-08</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Пять почему</b><div class="sub">Пять врачей, все анализы хорошие, а симптом никуда не делся · Разбор понятия · 55 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>12:00</b>S-02</td><td class="chc"><span class="ch story">Сторис</span></td><td class="what"><b>Узнали?</b><div class="sub">Опрос по мужской усталости · опрос</div><div class="tags"><span class="tag rec">нужна запись</span></div></td></tr>
+<tr><td class="tm"><b>19:30</b>R-09</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Чего у меня нет в арсенале</b><div class="sub">«Я ничего не ем, а вес прибавляется» · Личная история · 50 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>20:00</b>TG-03</td><td class="chc"><span class="ch tg">Telegram</span></td><td class="what"><b>Почему просело в сентябре</b><div class="sub">Сентябрь: почему сил нет именно сейчас · пост</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+</tbody></table></div>
+<div class="day"><div class="dayhead"><b>вс 06.09</b><span class="muted">2 публикации</span><span class="muted">· Пост 1 · Рилс 1</span><span class="tag rec">записать: 1</span></div><table><tbody>
+<tr><td class="tm"><b>11:00</b>R-10</td><td class="chc"><span class="ch reel">Рилс</span></td><td class="what"><b>Что делает сахар после обеда</b><div class="sub">После обеда вырубает так, что нужен кофе и десять минут тишины · Разбор понятия · 45 с</div><div class="tags"><span class="tag ok">материал есть</span></div></td></tr>
+<tr><td class="tm"><b>19:30</b>P-02</td><td class="chc"><span class="ch post">Пост</span></td><td class="what"><b>Как не купить пустышку</b><div class="sub">Роспотребнадзор заблокировал 34 тысячи сайтов с незарегистрированными БАД · карусель</div><div class="tags"><span class="tag rec">нужна запись</span></div></td></tr>
+</tbody></table></div></div>
+<footer>Слотов: 17. Собрано из <code>plan.yaml</code> — источника правды. Эта страница пересобирается командой <code>plan_render.py &lt;plan.yaml&gt; --projection system</code> и руками не правится.</footer>
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.tabbtn'));
+  function show(id){
+    btns.forEach(function(b){b.classList.toggle('on',b.dataset.t===id);});
+    [].forEach.call(document.querySelectorAll('.tabpane'),function(p){
+      p.classList.toggle('on',p.id===id);});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    show(b.dataset.t);
+    history.replaceState(null,'','#'+b.dataset.t);
+  });});
+  function fromHash(){
+    var id=location.hash.slice(1);
+    if(id && document.getElementById(id)) show(id);
+  }
+  // Ссылка вида …/system.html#t-cal, открытая на УЖЕ загруженной странице, меняет
+  // только хеш и документ не перезагружает — без этого слушателя вкладка не
+  // переключалась, и ссылка на сводный план молча вела «по каналам».
+  window.addEventListener('hashchange',fromHash);
+  fromHash();
+})();
+</script>
+</div></body></html>
