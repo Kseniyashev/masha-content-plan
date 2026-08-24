@@ -74,6 +74,11 @@ td.line{font-size:15px;line-height:1.45}
 .bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
 @media (max-width:760px){.brief{flex:1 1 100%}}
 .locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* Ширины «Темы» и «Угла» заданы явно, иначе браузер делит место по объёму
+   текста, а в заданиях текста больше всего. */
+td.topic{min-width:150px}
+td.angle{min-width:150px}
+@media (max-width:760px){td.topic,td.angle{width:auto;min-width:0}}
 .job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
 background:var(--beige);color:var(--navy)}
 .check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
@@ -93,6 +98,35 @@ table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
 .verdict.ok{background:#EDF6ED;color:var(--green)}
 .verdict.bad{background:#FBEEE7;color:var(--accent)}
 .warn{color:var(--accent)}
+/* ── слой текстов ──────────────────────────────────────────────────────── */
+.tx{background:#fff;border:1px solid var(--line);border-radius:8px;margin:16px 0;overflow:hidden}
+.tx .cardhead{background:var(--navy)}
+.txbody{padding:14px 16px;font-size:15px;line-height:1.55;white-space:pre-wrap;
+  border-bottom:1px solid var(--line)}
+.txbody .hook{font-weight:700;color:var(--accent)}
+.txcta{padding:12px 16px;background:#FBEEE7;font-size:15px;line-height:1.5;
+  border-bottom:1px solid var(--line)}
+.txcta .lbl{color:var(--accent)}
+.txcard{padding:12px 16px;border-bottom:1px solid var(--beige);font-size:14.5px;line-height:1.5}
+.txcard .cn{display:inline-block;min-width:26px;height:26px;line-height:26px;text-align:center;
+  border-radius:13px;background:var(--beige);color:var(--navy);font-size:12px;font-weight:700;
+  margin-right:9px;vertical-align:top}
+.txcard .ch{font-weight:700;color:var(--navy);display:block;margin-bottom:3px;font-size:13px}
+.txcard .cb{display:inline-block;width:calc(100% - 40px)}
+details.attr{border-top:1px solid var(--line);background:#FAFAF7}
+details.attr summary{padding:9px 16px;cursor:pointer;font-size:12.5px;color:var(--muted);
+  letter-spacing:.02em}
+details.attr[open] summary{border-bottom:1px solid var(--line)}
+table.attr{font-size:12.5px;margin:0}
+table.attr td{border-left:none;border-right:none;vertical-align:top}
+table.attr td.n{width:34px;color:var(--muted);text-align:right}
+table.attr td.src{width:22%;font-family:"SF Mono",Menlo,monospace;font-size:11.5px}
+.m{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;white-space:nowrap}
+.m.dословно,.m.d{background:#EDF6ED;color:var(--green)}
+.m.p{background:var(--beige);color:var(--navy)}
+.m.a{background:#FBEEE7;color:var(--accent)}
+.m.s{background:#EFEFEF;color:var(--muted)}
+.txstat{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
 .note.warn{border-left-color:var(--accent)}
 .scroll{overflow-x:auto}
 .scroll table{min-width:100%}

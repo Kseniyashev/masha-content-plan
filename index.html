@@ -74,6 +74,11 @@ td.line{font-size:15px;line-height:1.45}
 .bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
 @media (max-width:760px){.brief{flex:1 1 100%}}
 .locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* Ширины «Темы» и «Угла» заданы явно, иначе браузер делит место по объёму
+   текста, а в заданиях текста больше всего. */
+td.topic{min-width:150px}
+td.angle{min-width:150px}
+@media (max-width:760px){td.topic,td.angle{width:auto;min-width:0}}
 .job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
 background:var(--beige);color:var(--navy)}
 .check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
@@ -93,6 +98,35 @@ table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
 .verdict.ok{background:#EDF6ED;color:var(--green)}
 .verdict.bad{background:#FBEEE7;color:var(--accent)}
 .warn{color:var(--accent)}
+/* ── слой текстов ──────────────────────────────────────────────────────── */
+.tx{background:#fff;border:1px solid var(--line);border-radius:8px;margin:16px 0;overflow:hidden}
+.tx .cardhead{background:var(--navy)}
+.txbody{padding:14px 16px;font-size:15px;line-height:1.55;white-space:pre-wrap;
+  border-bottom:1px solid var(--line)}
+.txbody .hook{font-weight:700;color:var(--accent)}
+.txcta{padding:12px 16px;background:#FBEEE7;font-size:15px;line-height:1.5;
+  border-bottom:1px solid var(--line)}
+.txcta .lbl{color:var(--accent)}
+.txcard{padding:12px 16px;border-bottom:1px solid var(--beige);font-size:14.5px;line-height:1.5}
+.txcard .cn{display:inline-block;min-width:26px;height:26px;line-height:26px;text-align:center;
+  border-radius:13px;background:var(--beige);color:var(--navy);font-size:12px;font-weight:700;
+  margin-right:9px;vertical-align:top}
+.txcard .ch{font-weight:700;color:var(--navy);display:block;margin-bottom:3px;font-size:13px}
+.txcard .cb{display:inline-block;width:calc(100% - 40px)}
+details.attr{border-top:1px solid var(--line);background:#FAFAF7}
+details.attr summary{padding:9px 16px;cursor:pointer;font-size:12.5px;color:var(--muted);
+  letter-spacing:.02em}
+details.attr[open] summary{border-bottom:1px solid var(--line)}
+table.attr{font-size:12.5px;margin:0}
+table.attr td{border-left:none;border-right:none;vertical-align:top}
+table.attr td.n{width:34px;color:var(--muted);text-align:right}
+table.attr td.src{width:22%;font-family:"SF Mono",Menlo,monospace;font-size:11.5px}
+.m{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;white-space:nowrap}
+.m.dословно,.m.d{background:#EDF6ED;color:var(--green)}
+.m.p{background:var(--beige);color:var(--navy)}
+.m.a{background:#FBEEE7;color:var(--accent)}
+.m.s{background:#EFEFEF;color:var(--muted)}
+.txstat{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
 .note.warn{border-left-color:var(--accent)}
 .scroll{overflow-x:auto}
 .scroll table{min-width:100%}
@@ -247,6 +281,7 @@ details.note.why>div{padding:0 16px 12px;font-size:13.5px;line-height:1.5}
 <tr class="daystart"><td data-l="ID">R-07</td><td data-l="Когда"><div class="dt">23.08 вс</div><div><b>11:00</b></div></td><td data-l="Формат"><div><b>Сценка</b></div><div class="sid">T02 · 30 с · съёмка</div><div class="sid">H3 · Сцена из коридора профессии</div></td><td data-l="Тема и угол"><div class="topic">Как устроена государственная медицина изнутри, глазами врача, который в неё пришёл</div><div class="angle">Главврач на собеседовании спросил: вы уверены, что вам надо именно к нам? Через полгода я поняла, что он имел в виду</div><div class="sid">OZ-05</div></td><td data-l="Хук"><span class="tag">POV</span><div>Главврач перелистал мои дипломы, поднял глаза и спросил: вы уверены, что вам надо именно к нам?</div><div class="sid">назв.: Один вопрос на собеседовании</div></td><td data-l="Оси"><div class="ax"><span class="axk">работа</span><span><span class="job" title="что слот делает с человеком (§5.4)">охват</span></span></div><div class="ax"><span class="axk">источник</span><span><span class="tag" title="откуда взято сырьё (§5.3)">эвергрин</span></span></div><div class="ax"><span class="axk">заход</span><span><span class="tag" title="широкий relatable против нишевого глубокого; квота недели 60–70% / 30–40% (§14.5)">reach</span></span></div><div class="ax"><span class="axk">интент</span><span><span class="tag" title="какое доверие строит: Growth охват, Authority экспертиза, Authenticity личное (§14.5)">Authenticity</span></span></div><div class="ax"><span class="axk">ЦА</span><span><span class="tag" title="30–38, ядро 30–35 — «единственная возрастная точка, когда ещё можно откатить назад»">main</span></span></div><div class="ax"><span class="axk">CTA</span><span><span class="tag rec">коммент</span></span></div></td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. Записывать ничего не нужно, но это ЕДИНСТВЕННАЯ сценка недели: вы играете обе стороны. Аргумент, что вы это сможете, ваш собственный: «во мне живёт какая-то нереализованная актриса». Ставим последней в съёмочный день. 🔴 Про госсистему — без иронии и без обвинения: у неё в корпусе уважение к системе, и оно должно остаться в кадре.<br><div class="sid" style="margin-top:6px">корпус: корпус «маш ауд 8» — закрыт целиком</div></div></details></td></tr>
 </tbody></table></div>
 <h2>Instagram · сторис <span class="muted">· 4</span></h2><details class="note why"><summary>почему так</summary><div>4 серии, 15 кадров. Снимаются телефоном, без подготовки, НЕ в съёмочный день. Каждая серия имеет адрес в хайлайтсах — иначе она проживёт сутки и исчезнет, а на С1 это единственная поверхность, которая работает на зашедшего в профиль постоянно. 🔴 Халат в кадре запрещён — ФЗ «О рекламе» ст. 24, она знает сама.</div></details>
+<div class="note src"><b>Статусы в канале разные:</b> draft 1 · ready 3</div>
 <div class="scroll"><table><thead><tr><th>ID</th><th>Когда</th><th>Серия</th><th>Содержание</th><th>Механика</th><th>Кадров</th><th>От эксперта</th></tr></thead><tbody>
 <tr class="daystart"><td data-l="ID">S-01</td><td data-l="Когда"><div class="dt">17.08 пн</div><div><b>12:00</b></div></td><td data-l="Серия"><div><b>Знакомство</b></div><span class="tag hl">хайлайт «Обо мне»</span></td><td data-l="Содержание">Кто я, где принимаю, для кого этот аккаунт и чего здесь НЕ будет. Без регалий и без халата: три кадра про то, что я делаю с человеком, четвёртый — чего здесь не будет (диагнозов по фото, схем приёма, чудо-добавок)</td><td data-l="Механика">стикер-вопрос «что вы всегда хотели спросить у эндокринолога, но не спросили»</td><td data-l="Кадров">4</td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе.<div class="sid" style="margin-top:6px">корпус: «М ауд 2» (в одну фразу: настраиваю тонкую гормональную систему, это профилактика преждевременного старения, «годы здоровья плюсом»), «маш 3 18» («свой эндокринолог»)</div></div></details></td></tr>
 <tr class="daystart"><td data-l="ID">S-02</td><td data-l="Когда"><div class="dt">19.08 ср</div><div><b>13:00</b></div></td><td data-l="Серия"><div><b>Рабочее место</b></div><span class="tag hl">хайлайт «Приём»</span></td><td data-l="Содержание">Кабинет глазами пациента: что лежит на столе, зачем здесь сантиметровая лента, почему я без халата</td><td data-l="Механика"></td><td data-l="Кадров">3</td><td data-l="От эксперта"><details class="ask have"><summary>записывать не нужно</summary><div>✓ Записывать ничего не нужно — материал уже есть в корпусе. 🔴 Халат в кадре запрещён. Снимается телефоном в клинике, не в съёмочный день.<div class="sid" style="margin-top:6px">корпус: «маша нд3 · приём» — то же сырьё, что у R-06, другой срез</div></div></details></td></tr>
