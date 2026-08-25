@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Съёмочный пакет · maria · 2026-W36</title>
+<style>
+:root{--cream:#FDFBF6;--navy:#1F3A5F;--accent:#B9461D;--beige:#F4F0E6;
+--ink:#16181C;--muted:#6B7280;--line:#E4DCCB;--green:#2E7D32;--gold:#C79A2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+background:var(--beige);color:var(--navy);margin-right:6px}
+.badge.warn{background:#FBEEE7;color:var(--accent)}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0;font-size:14px}
+.note b{color:var(--navy)}
+h2{font-size:18px;color:var(--navy);margin:30px 0 10px;padding-top:14px;
+border-top:2px solid var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th{background:var(--beige);color:var(--navy);text-align:left;font-weight:600;
+padding:8px 10px;border:1px solid var(--line);font-size:12.5px}
+td{padding:9px 10px;border:1px solid var(--line);vertical-align:top}
+tr.daystart td{border-top:2px solid var(--navy)}
+.dt{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.topic{font-weight:600}
+.angle{color:#3d4450}
+.ask{background:#FAF7F0;font-size:13.5px;line-height:1.45}
+.ask.have{background:#EDF6ED;color:var(--green)}
+.askcol{width:38%}
+.sid{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.note.src{border-left-color:var(--muted);font-size:13px}
+.card.shot{flex:1 1 100%;margin:14px 0;padding:0;overflow:hidden}
+.cardhead{background:var(--navy);color:#fff;padding:10px 14px;font-size:15px}
+.cardhead b{margin-right:8px}
+.sid2{font-family:"SF Mono",Menlo,monospace;font-size:12px;opacity:.75;margin-right:8px}
+.meta2{float:right;font-size:12px;opacity:.8;font-weight:400}
+.setup{padding:12px 14px;background:#F7F9FB;border-bottom:1px solid var(--line);font-size:13.5px}
+.srow{display:flex;gap:10px;margin:5px 0;align-items:baseline}
+.skey{flex:0 0 132px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+ul.mv{margin:0;padding-left:16px}
+ul.mv li{margin:2px 0}
+@media (max-width:760px){.srow{display:block}.skey{display:block;margin-bottom:2px}}
+.stake{padding:10px 14px;background:#FAF7F0;font-size:13.5px;border-bottom:1px solid var(--line)}
+.hookbox{padding:12px 14px;background:#FBEEE7;border-bottom:1px solid var(--line)}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:4px}
+.hooktxt{font-size:19px;font-weight:700;color:var(--accent);line-height:1.3}
+table.beats{font-size:13.5px;margin:0}
+table.beats th{font-size:11.5px}
+table.beats td{border-left:none;border-right:none}
+table.beats tr.turn td{background:#FDF4F0}
+table.beats tr.turn .act{font-weight:600;color:var(--accent)}
+td.act{width:32%;color:#3d4450}
+td.line{font-size:15px;line-height:1.45}
+.takes{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+.takes ol{margin:4px 0 0;padding-left:20px}
+.takes li{margin:3px 0}
+.props{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px;background:#FAFAF7}
+.card.shot .note{margin:0;border-radius:0;border-top:1px solid var(--line);border-left:3px solid var(--gold)}
+@media print{.card.shot{page-break-inside:avoid}.cardhead{background:#1F3A5F !important;-webkit-print-color-adjust:exact}}
+@media (max-width:760px){
+  td.act{width:auto}
+  table.beats,table.beats tbody,table.beats tr,table.beats td{display:block;width:100%}
+  table.beats thead{display:none}
+  table.beats tr{border-bottom:1px solid var(--line);padding:8px 12px;margin:0;border-radius:0}
+  table.beats td{padding:2px 0;border:none}
+  .meta2{float:none;display:block;margin-top:3px}
+}
+.briefs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.brief{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-size:13.5px;line-height:1.45}
+.bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
+@media (max-width:760px){.brief{flex:1 1 100%}}
+.locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* Ширины «Темы» и «Угла» заданы явно, иначе браузер делит место по объёму
+   текста, а в заданиях текста больше всего. */
+td.topic{min-width:150px}
+td.angle{min-width:150px}
+@media (max-width:760px){td.topic,td.angle{width:auto;min-width:0}}
+.job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
+background:var(--beige);color:var(--navy)}
+.check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
+h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;align-items:flex-start}
+.card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
+table.mini{font-size:13px}
+table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-weight:400}
+.caps{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cap{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:13.5px}
+.cap.over{border-color:var(--accent);background:#FDF4F0}
+.capttl{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:13px}
+.verdict{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;margin:6px 0 4px}
+.verdict.ok{background:#EDF6ED;color:var(--green)}
+.verdict.bad{background:#FBEEE7;color:var(--accent)}
+.warn{color:var(--accent)}
+/* ── слой текстов ──────────────────────────────────────────────────────── */
+.tx{background:#fff;border:1px solid var(--line);border-radius:8px;margin:16px 0;overflow:hidden}
+.tx .cardhead{background:var(--navy)}
+.txbody{padding:14px 16px;font-size:15px;line-height:1.55;white-space:pre-wrap;
+  border-bottom:1px solid var(--line)}
+.txbody .hook{font-weight:700;color:var(--accent)}
+.txcta{padding:12px 16px;background:#FBEEE7;font-size:15px;line-height:1.5;
+  border-bottom:1px solid var(--line)}
+.txcta .lbl{color:var(--accent)}
+.txcard{padding:12px 16px;border-bottom:1px solid var(--beige);font-size:14.5px;line-height:1.5}
+.txcard .cn{display:inline-block;min-width:26px;height:26px;line-height:26px;text-align:center;
+  border-radius:13px;background:var(--beige);color:var(--navy);font-size:12px;font-weight:700;
+  margin-right:9px;vertical-align:top}
+.txcard .ch{font-weight:700;color:var(--navy);display:block;margin-bottom:3px;font-size:13px}
+.txcard .cb{display:inline-block;width:calc(100% - 40px)}
+details.attr{border-top:1px solid var(--line);background:#FAFAF7}
+details.attr summary{padding:9px 16px;cursor:pointer;font-size:12.5px;color:var(--muted);
+  letter-spacing:.02em}
+details.attr[open] summary{border-bottom:1px solid var(--line)}
+table.attr{font-size:12.5px;margin:0}
+table.attr td{border-left:none;border-right:none;vertical-align:top}
+table.attr td.n{width:34px;color:var(--muted);text-align:right}
+table.attr td.src{width:22%;font-family:"SF Mono",Menlo,monospace;font-size:11.5px}
+.m{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;white-space:nowrap}
+.m.dословно,.m.d{background:#EDF6ED;color:var(--green)}
+.m.p{background:var(--beige);color:var(--navy)}
+.m.a{background:#FBEEE7;color:var(--accent)}
+.m.s{background:#EFEFEF;color:var(--muted)}
+.txstat{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.note.warn{border-left-color:var(--accent)}
+.scroll{overflow-x:auto}
+.scroll table{min-width:100%}
+.scroll td{vertical-align:top}
+.scroll td[data-l="От эксперта"]{min-width:250px}
+.scroll td[data-l="Тема и угол"],.scroll td[data-l="Тема"]{min-width:220px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}
+  tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+
+/* ─── Вкладки. Системная версия несёт два разных вопроса: «что в канале» и
+   «что выходит в четверг». Раньше они лежали в одной простыне, и второй
+   не отвечался вовсе — календарь приходилось собирать в голове. ─── */
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;margin:18px 0 0;
+  padding:8px 0;background:var(--cream);border-bottom:1px solid var(--line)}
+.tabbtn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--navy);
+  font:600 13.5px/1 inherit;padding:9px 16px;border-radius:8px;cursor:pointer}
+.tabbtn:hover{border-color:var(--navy)}
+.tabbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabpane{display:none}
+.tabpane.on{display:block}
+@media print{.tabs{display:none}.tabpane{display:block !important}}
+
+/* ─── Раскрывающееся задание эксперту. Текст «что наговорить» длинный по
+   построению (§4 схемы: глагол + форма + количество + что раскрыть), и в
+   ячейке таблицы он раздувал строку так, что остальные поля переставали
+   читаться. Свёрнут по умолчанию, развёрнут по клику. ─── */
+details.ask{font-size:13px}
+details.ask>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:14px;
+  background:#FAF7F0;color:var(--navy);font-weight:600;font-size:12px;white-space:nowrap}
+details.ask>summary::-webkit-details-marker{display:none}
+details.ask>summary::before{content:"▸";font-size:11px;color:var(--muted)}
+details.ask[open]>summary::before{content:"▾"}
+details.ask>summary:hover{border-color:var(--navy)}
+details.ask>div{margin-top:8px;padding:10px 12px;background:#FAF7F0;
+  border-radius:8px;line-height:1.5;min-width:230px;max-width:460px}
+details.ask.have>summary{background:#EDF6ED;color:var(--green);border-color:#CFE6CF}
+details.ask.have>div{background:#EDF6ED}
+@media print{details.ask>div{display:block !important;max-width:none}}
+
+/* ─── Бейджи каналов: в сводном плане строки разных каналов идут вперемешку,
+   и канал должен читаться боковым зрением, а не вычитываться. ─── */
+.ch{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11.5px;
+  font-weight:600;white-space:nowrap;border:1px solid transparent}
+.ch.reel{background:#EDE7F6;color:#4527A0}
+.ch.story{background:#FFF3E0;color:#B9461D}
+.ch.post{background:#E3F2FD;color:#0D47A1}
+.ch.tg{background:#E0F2F1;color:#00695C}
+.ch.th{background:#F3E5F5;color:#6A1B9A}
+.ch.pr,.ch.sup{background:var(--beige);color:var(--navy)}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;
+  background:var(--beige);color:var(--navy);white-space:nowrap;margin:0 3px 3px 0}
+.tag.pin{background:#E3F2FD;color:#0D47A1}
+.tag.hl{background:#FFF3E0;color:#B9461D}
+.tag.rec{background:#FBEEE7;color:var(--accent);font-weight:600}
+.tag.ok{background:#EDF6ED;color:var(--green)}
+
+/* ─── Сводный план: день как блок, а не как строка таблицы. ─── */
+.day{background:#fff;border:1px solid var(--line);border-radius:10px;
+  margin:0 0 14px;overflow:hidden}
+.dayhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:10px 14px;background:var(--beige);border-bottom:1px solid var(--line)}
+.dayhead b{color:var(--navy);font-size:15px}
+.dayhead .muted{font-size:12.5px}
+.day table{border:none}
+.day td{border-left:none;border-right:none;border-top:none;
+  border-bottom:1px solid var(--beige);vertical-align:top}
+.day tr:last-child td{border-bottom:none}
+td.tm{white-space:nowrap;color:var(--muted);font-size:12.5px;width:66px}
+td.tm b{display:block;color:var(--ink);font-size:13.5px}
+td.what .tags{margin-top:6px;line-height:1}
+td.chc{width:92px}
+td.what b{color:var(--ink)}
+td.what .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+.ax{display:flex;gap:6px;align-items:baseline;margin:0 0 5px;line-height:1}
+.ax:last-child{margin-bottom:0}
+.axk{flex:0 0 54px;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);padding-top:2px}
+.ax .tag,.ax .job{margin:0 3px 0 0}
+details.note.why{padding:0;border-left-width:3px}
+details.note.why>summary{cursor:pointer;list-style:none;display:inline-flex;
+  align-items:center;gap:6px;padding:10px 16px;font-weight:600;color:var(--navy);
+  font-size:13px}
+details.note.why>summary::-webkit-details-marker{display:none}
+details.note.why>summary::before{content:"▸";color:var(--muted);font-size:11px}
+details.note.why[open]>summary::before{content:"▾"}
+details.note.why>div{padding:0 16px 12px;font-size:13.5px;line-height:1.5}
+@media print{details.note.why>div{display:block !important}}
+.axes-key{margin:14px 0 6px}
+.axes-key>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;font-size:13px;font-weight:600;color:var(--navy);padding:6px 12px;
+  border:1px solid var(--line);border-radius:8px;background:#fff}
+.axes-key>summary::-webkit-details-marker{display:none}
+.axes-key>summary::before{content:"▸";color:var(--muted)}
+.axes-key[open]>summary::before{content:"▾"}
+.axes-key table{margin-top:10px;font-size:13px}
+.axes-key td:first-child{width:120px;white-space:nowrap;color:var(--navy);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;font-size:12.5px;
+  color:var(--muted);align-items:center;line-height:1}
+.empty{padding:12px 14px;color:var(--muted);font-size:13px}
+@media (max-width:760px){
+  .day table,.day tbody,.day tr,.day td{display:block;width:100%}
+  .day tr{border:none;border-bottom:1px solid var(--beige);border-radius:0;
+    margin:0;padding:10px 12px;background:#fff}
+  .day td{padding:2px 0}
+  td.tm,td.chc{width:auto;display:inline-block;margin-right:8px}
+}
+/* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
+   страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
+@media (max-width:760px){
+  .wrap{padding:18px 12px 40px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:#fff;border:1px solid var(--line);border-radius:10px;
+     margin:0 0 12px;padding:10px 12px;position:relative}
+  tr.daystart{border-top:1px solid var(--line)}
+  td{border:none;padding:4px 0 4px 0}
+  td:empty{display:none}
+  td[data-l]::before{content:attr(data-l);display:block;font-size:11px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:1px}
+  td.topic{font-size:16px;font-weight:600}
+  td.ask{background:var(--beige);border-radius:8px;padding:10px 12px;margin-top:6px}
+  .check{position:absolute;top:10px;right:12px;width:auto;text-align:right}
+  .askcol{width:auto}
+}
+</style></head><body>
+<div class="wrap">
+<h1>Съёмочный пакет</h1>
+<div class="sub">неделя 31.08 — 06.09<br><span class="badge">съёмка 29.08</span></div>
+<div class="note"><b>Как этим пользоваться.</b> Порядок ниже — <b>порядок съёмки</b>, а не порядок выхода: слоты сгруппированы так, чтобы не переставлять свет и не менять образ лишний раз. Календарь публикаций — в конце страницы.<br><br>В карточке дословны только <b>хук</b>, цифры и названия. Всё остальное — ваши же слова из голосовых, но говорите живьём, а не читайте: реплика нужна как опора, не как суфлёр. Сбились — это нормально, снимем дубль.</div>
+<h2>точка 1 · стол (предмет в кадре) <span class="muted">· 1</span></h2>
+<div class="note src"><b>Реквизит на группу:</b> бланк анализа крови</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-03</span> <b>Симптом лечат не с той стороны</b><span class="meta2">Разбор понятия · 45 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человеку назначили препарат по симптому, симптом придавили, а причину не искали. Ролик не отменяет назначение — он говорит, о чём ещё спросить врача.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Таблетки от тахикардии не решат проблему, если причина — дефицит железа.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Стоите у стола, в кадре руки и бланк анализа.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера чуть выше стола, лицо появляется в начале и в конце.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная столешница.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Показываете бланк, ведёте пальцем по строкам.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-6</td><td class="line">Таблетки от тахикардии не решат проблему, если причина — дефицит железа.</td></tr>
+<tr class=""><td class="tm">6-14</td><td class="line">Сразу оговорюсь: назначенное врачом не отменяем. Речь о том, что ещё имеет смысл посмотреть.</td></tr>
+<tr class=""><td class="tm">14-26</td><td class="line">Если вы уже поменяли образ жизни, а влияния это не оказало никакого — вероятнее всего, стоит пройти дообследование.</td></tr>
+<tr class=""><td class="tm">26-38</td><td class="line">Смотрим сосудистый фактор — это гомоцистеин. Общий белок. Ферритин, сывороточное железо, ОЖСС.</td></tr>
+<tr class=""><td class="tm">38-45</td><td class="line">И общий анализ крови — это самый информативный анализ, он отражает работу практически всех систем.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Таблетки от тахикардии не решат проблему, если причина — дефицит железа.»</li>
+<li>«Сердце частит, а ферритин никто не смотрел.»</li>
+<li>«Симптом придавили. Причину не нашли.»</li>
+</ol></div>
+<div class="props"><b>Нужно на площадке:</b> бланк анализа крови</div>
+</div>
+<h2>точка 2 · стена (говорящая голова) <span class="muted">· 8</span></h2>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-01</span> <b>Когда анализы в норме, а сил нет</b><span class="meta2">Разбор понятия · 45 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человек сходил в отпуск, вернулся на работу и не понимает, почему сил не прибавилось. Анализы при этом в норме, и это сбивает с толку сильнее всего.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Отпуск был, а усталость никуда не делась.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите на стуле, кадр по грудь.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне глаз, телефон на штативе или на стопке книг.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорите спокойно, как на приёме.</li><li>Руки в кадре не нужны.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-5</td><td class="line">Отпуск был, а усталость никуда не делась.</td></tr>
+<tr class=""><td class="tm">5-17</td><td class="line">Бывает так: разбираем полтора часа, собираем диагностическую карту, а на повторном приёме выясняется, что эндокринных нарушений нет.</td></tr>
+<tr class=""><td class="tm">17-30</td><td class="line">Пока вы в диком тонусе выживания, отклонений может и не быть. Особенно если вы там год, два, три.</td></tr>
+<tr class=""><td class="tm">30-40</td><td class="line">А потом вас отпускает, тонус падает, выживание превращается в жизнь. И вот тогда всё и вылезает.</td></tr>
+<tr class=""><td class="tm">40-45</td><td class="line">Поэтому чек-ап нужен именно в фазе выхода из ситуации.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Отпуск был, а усталость никуда не делась.»</li>
+<li>«Вы отдохнули. Сил не прибавилось.»</li>
+<li>«Отпуск закончился, а легче не стало.»</li>
+</ol></div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-02</span> <b>Мужская усталость: что видно со стороны</b><span class="meta2">Список признаков · 50 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Жена видит, что мужа как подменили: он отстранился, всё время лежит, огрызается. Она читает это как охлаждение к семье, а это может быть гормональная история.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Муж постоянно говорит, что устал.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите на стуле, кадр по грудь.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне глаз.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Признаки перечисляете загибая пальцы — это единственное движение.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-5</td><td class="line">Муж постоянно говорит, что устал.</td></tr>
+<tr class=""><td class="tm">5-15</td><td class="line">Мужская усталость часто остаётся недиагностированной очень долго, в среднем это три-пять лет.</td></tr>
+<tr class=""><td class="tm">15-26</td><td class="line">Первое: после обеда тянет спать. И это списывается на «я устал», «я рано встаю» и на что угодно, кроме гормонов.</td></tr>
+<tr class=""><td class="tm">26-36</td><td class="line">Второе: спит он больше, а сил не прибавляется.</td></tr>
+<tr class=""><td class="tm">36-50</td><td class="line">И самый первый звоночек — раздражительность. Когда всё, что ты готов вывозить, это работа, а на семью уже не остаётся.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Муж постоянно говорит, что устал.»</li>
+<li>«Он всегда был такой? Или стало три года назад?»</li>
+<li>«Муж стал водителем дивана.»</li>
+</ol></div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-04</span> <b>Три вопроса врачу</b><span class="meta2">Техника-инструкция · 55 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человеку сказали «анализы в порядке» и на этом приём закончился, а самочувствие осталось прежним. Он уходит без единого следующего шага.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Что спрашивать у врача, если он говорит, что анализы в порядке?»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите на стуле, кадр по грудь.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне глаз.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Три вопроса отмечаете пальцами.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-6</td><td class="line">Что спрашивать у врача, если он говорит, что анализы в порядке?</td></tr>
+<tr class=""><td class="tm">6-20</td><td class="line">Первый вопрос: что мне пересмотреть в текущем образе жизни? Может ли причина лежать в поведенческой плоскости?</td></tr>
+<tr class=""><td class="tm">20-32</td><td class="line">Второй: не стоит ли провести дополнительную диагностику? Первая встреча часто даёт только поверхностный чек-ап.</td></tr>
+<tr class=""><td class="tm">32-48</td><td class="line">И третий, дословно: в моей семье есть вот такой-то список заболеваний. Может ли моя жалоба быть начальным периодом одного из них?</td></tr>
+<tr class=""><td class="tm">48-55</td><td class="line">Третий — самый важный. Это информация, которую ни при каком обследовании получить невозможно. Её можете рассказать только вы.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Что спрашивать у врача, если он говорит, что анализы в порядке?»</li>
+<li>«Три вопроса, если приём закончился на «всё в норме».»</li>
+<li>««Анализы в порядке» — и что дальше?»</li>
+</ol></div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-06</span> <b>Что нейросеть прочитала не так</b><span class="meta2">Разбор присланного · 50 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человек получает от нейросети ответ на вопрос, который сам же неточно задал, и приходит к врачу уже в панике. Разбираем, где именно сломалась цепочка.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Девушка была уверена, что у неё рак, потому что так сказала нейросеть, посмотрев её анализы.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите на стуле, кадр по грудь.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне глаз.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Рассказываете как случай с приёма, без показа экрана.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-7</td><td class="line">Девушка была уверена, что у неё рак, потому что так сказала нейросеть, посмотрев её анализы.</td></tr>
+<tr class=""><td class="tm">7-18</td><td class="line">Человек пришёл перепуганный, уверенный, что у него онкология.</td></tr>
+<tr class=""><td class="tm">18-32</td><td class="line">Началось это не с нейросети. Сначала предыдущий доктор, видимо, не уделил достаточного количества времени.</td></tr>
+<tr class=""><td class="tm">32-42</td><td class="line">А потом чат ответил на те вопросы, которые ему задали. А вопросы были не совсем те.</td></tr>
+<tr class=""><td class="tm">42-50</td><td class="line">А через час разбора выяснилось, что причин для беспокойства нет вообще. Ни для такого уж точно.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Она пришла в панике с расшифровкой от нейросети.»</li>
+<li>«Пациентка была уверена, что у неё онкология.»</li>
+<li>«Чат ответил точно. На не тот вопрос.»</li>
+</ol></div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-07</span> <b>На что смотреть у смежного специалиста</b><span class="meta2">Разбор понятия · 55 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человека отправили к смежному специалисту, он сходил один раз и не понимает, тот ли это врач и стоит ли продолжать.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Как выбрать своего врача? Чек-лист из 5 признаков.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите на стуле, кадр по грудь.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне глаз.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Признаки отмечаете пальцами.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-6</td><td class="line">Как выбрать своего врача? Чек-лист из 5 признаков.</td></tr>
+<tr class=""><td class="tm">6-16</td><td class="line">Первый: если это психолог, то выходя с первой встречи, уже присутствует ощущение облегчения.</td></tr>
+<tr class=""><td class="tm">16-26</td><td class="line">Второй: у невролога схема раскрывается примерно к концу второй недели приёма. Раньше выводы делать рано.</td></tr>
+<tr class=""><td class="tm">26-36</td><td class="line">Третий: врач вас слышит и готов работать с возражениями.</td></tr>
+<tr class=""><td class="tm">36-48</td><td class="line">Четвёртый: врач заранее предупреждает, что в ближайшие две-три недели у вас могут быть вот такие изменения в самочувствии.</td></tr>
+<tr class=""><td class="tm">48-55</td><td class="line">И пятый: хороший специалист не должен ввергать пациента в стресс и тревогу дополнительно.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Как выбрать своего врача? Чек-лист из 5 признаков.»</li>
+<li>«Пять признаков, что вы попали к своему специалисту.»</li>
+<li>«Хороший врач предупреждает заранее.»</li>
+</ol></div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-08</span> <b>Пять почему</b><span class="meta2">Разбор понятия · 55 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человек обошёл несколько врачей, все анализы хорошие, а симптом никуда не делся. Он не понимает, что вообще делать дальше.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Что делать, если причину ваших симптомов не могут найти в анализах?»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите на стуле, кадр по грудь.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне глаз.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорите спокойно, руки почти не подключаете.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-7</td><td class="line">Что делать, если причину ваших симптомов не могут найти в анализах?</td></tr>
+<tr class=""><td class="tm">7-18</td><td class="line">Ключевая моя экспертиза — это глубина диагностики. Поэтому первичная консультация часовая.</td></tr>
+<tr class=""><td class="tm">18-30</td><td class="line">Чаще всего уже на первой консультации удаётся найти точку, которая случилась три-пять лет назад.</td></tr>
+<tr class=""><td class="tm">30-42</td><td class="line">Она осталась без внимания и превратилась с годами в снежный ком, который уже невозможно игнорировать.</td></tr>
+<tr class=""><td class="tm">42-55</td><td class="line">Пациенты иногда говорят: вы копаете как экскаватор. Да. Потому что когда докопался до начальной точки, не нужно двадцать бадиков и половина аптеки.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Что делать, если причину ваших симптомов не могут найти в анализах?»</li>
+<li>«Пять врачей, а симптом остался.»</li>
+<li>«Пациенты говорят: вы копаете как экскаватор.»</li>
+</ol></div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-09</span> <b>Чего у меня нет в арсенале</b><span class="meta2">Личная история · 50 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Человек искренне считает, что почти не ест, и ждёт от врача препарат. Вместо препарата получает дневник и обижается.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Если вы ничего не едите, а вес всё равно растёт, причина только в одном.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите на стуле, кадр по грудь.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне глаз.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорите без осуждения, спокойно.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-7</td><td class="line">Если вы ничего не едите, а вес всё равно растёт, причина только в одном.</td></tr>
+<tr class=""><td class="tm">7-18</td><td class="line">Вопрос у человека один: а откуда тогда вес? Я же ничего не ем.</td></tr>
+<tr class=""><td class="tm">18-30</td><td class="line">Лекарство очень простое и бесплатное. Называется пищевой дневник.</td></tr>
+<tr class=""><td class="tm">30-42</td><td class="line">Вы сами прекрасно увидите, откуда ваш вес, пролистав свой дневник за неделю.</td></tr>
+<tr class=""><td class="tm">42-50</td><td class="line">Волшебной таблетки у меня в арсенале нет. Тут я честно говорю сразу.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Если вы ничего не едите, а вес всё равно растёт, причина только в одном.»</li>
+<li>««Я ничего не ем, а вес растёт». Слышу это каждый день.»</li>
+<li>«Волшебной таблетки у меня нет.»</li>
+</ol></div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-10</span> <b>Что делает сахар после обеда</b><span class="meta2">Разбор понятия · 45 сек · сложность низкая</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> После обеда человека вырубает так, что нужен кофе. Он списывает это на усталость и на то, что рано встал.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Почему клонит в сон после обеда, даже если вы выспались?»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидите на стуле, кадр по грудь.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне глаз.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорите спокойно.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-6</td><td class="line">Почему клонит в сон после обеда, даже если вы выспались?</td></tr>
+<tr class=""><td class="tm">6-18</td><td class="line">Если после обеда тянет спать, это списывается на «я устал», «я рано встаю» и на что угодно, кроме гормональных отклонений.</td></tr>
+<tr class=""><td class="tm">18-28</td><td class="line">Рядом обычно стоит второе: спит человек больше, а сил не прибавляется.</td></tr>
+<tr class=""><td class="tm">28-40</td><td class="line">Из трёх вещей, которыми я занимаюсь целенаправленно, одна — инсулинорезистентность, которая приводит к ожирению.</td></tr>
+<tr class=""><td class="tm">40-45</td><td class="line">Поэтому это вопрос к врачу, а не к третьей чашке кофе.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Почему клонит в сон после обеда, даже если вы выспались?»</li>
+<li>«После обеда вырубает так, что нужен кофе.»</li>
+<li>«Спите больше, а сил не прибавляется.»</li>
+</ol></div>
+</div>
+<h2>точка 3 · стена в рост (замер на себе) <span class="muted">· 1</span></h2>
+<div class="note src"><b>Реквизит на группу:</b> сантиметровая лента</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-05</span> <b>Где мерить, если весы молчат</b><span class="meta2">Демонстрация · 35 сек · сложность средняя</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Женщина считает себя стройной, весы не двигаются, а живот год от года растёт. Весы этого не показывают, сантиметр показывает.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Вы стройная, а живот всё равно растет год от года»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Стоите, кадр по пояс, в руках сантиметровая лента.</div>
+<div class="srow"><span class="skey">Кадр</span>Камера на уровне груди, видно корпус и руки.</div>
+<div class="srow"><span class="skey">Фон</span>Однотонная светлая стена.</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Показываете линии замера на себе поверх одежды.</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-5</td><td class="line">Вы стройная, а живот всё равно растет год от года</td></tr>
+<tr class=""><td class="tm">5-11</td><td class="line">Встаём ровно, в вертикальном положении. Дышим ровно и спокойно.</td></tr>
+<tr class=""><td class="tm">11-17</td><td class="line">Первая линия — нижняя граница рёбер.</td></tr>
+<tr class=""><td class="tm">17-24</td><td class="line">Вторая — примерно на десять сантиметров ниже, там, где у вас была бы юбка.</td></tr>
+<tr class=""><td class="tm">24-30</td><td class="line">Третья — по подвздошным костям. Четвёртая — бёдра, проходим по середине ягодиц.</td></tr>
+<tr class=""><td class="tm">30-35</td><td class="line">Ориентир по самой выпирающей части: для женщин восемьдесят, для мужчин восемьдесят пять.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Вы стройная, а живот всё равно растет год от года»</li>
+<li>«Весы те же. Живот другой.»</li>
+<li>«Четыре линии, которые видят то, что не видят весы.»</li>
+</ol></div>
+<div class="props"><b>Нужно на площадке:</b> сантиметровая лента</div>
+</div>
+<h2>Лист доборов</h2><div class="note src">Короткие кадры без речи. Снимаются в конце группы, но снять их надо — без них монтаж не соберётся.</div><table><tbody>
+<tr><td class="sid2">R-03</td><td>бланк крупно</td></tr>
+<tr><td class="sid2">R-05</td><td>лента крупно</td></tr>
+</tbody></table>
+<h2>Когда это выходит</h2>
+<table><thead><tr><th>Дата</th><th>Время</th><th>ID</th><th>Название</th></tr></thead><tbody>
+<tr><td class="dt">31.08 пн</td><td class="tm">08:30</td><td class="sid2">R-01</td><td>Когда анализы в норме, а сил нет</td></tr>
+<tr><td class="dt">01.09 вт</td><td class="tm">08:30</td><td class="sid2">R-02</td><td>Мужская усталость: что видно со стороны</td></tr>
+<tr><td class="dt">01.09 вт</td><td class="tm">19:30</td><td class="sid2">R-03</td><td>Симптом лечат не с той стороны</td></tr>
+<tr><td class="dt">02.09 ср</td><td class="tm">08:30</td><td class="sid2">R-04</td><td>Три вопроса врачу</td></tr>
+<tr><td class="dt">03.09 чт</td><td class="tm">08:30</td><td class="sid2">R-05</td><td>Где мерить, если весы молчат</td></tr>
+<tr><td class="dt">03.09 чт</td><td class="tm">19:30</td><td class="sid2">R-06</td><td>Что нейросеть прочитала не так</td></tr>
+<tr><td class="dt">04.09 пт</td><td class="tm">08:30</td><td class="sid2">R-07</td><td>На что смотреть у смежного специалиста</td></tr>
+<tr><td class="dt">05.09 сб</td><td class="tm">11:00</td><td class="sid2">R-08</td><td>Пять почему</td></tr>
+<tr><td class="dt">05.09 сб</td><td class="tm">19:30</td><td class="sid2">R-09</td><td>Чего у меня нет в арсенале</td></tr>
+<tr><td class="dt">06.09 вс</td><td class="tm">11:00</td><td class="sid2">R-10</td><td>Что делает сахар после обеда</td></tr>
+</tbody></table>
+<footer>Слотов к съёмке: 10 · суммарный хронометраж готового материала: 485 сек. Собрано из <code>plan.yaml</code>, руками не правится.</footer>
+</div></body></html>
