@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>На аппрув · maria · 2026-W37</title>
+<style>
+:root{--cream:#FDFBF6;--navy:#1F3A5F;--accent:#B9461D;--beige:#F4F0E6;
+--ink:#16181C;--muted:#6B7280;--line:#E4DCCB;--green:#2E7D32;--gold:#C79A2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+background:var(--beige);color:var(--navy);margin-right:6px}
+.badge.warn{background:#FBEEE7;color:var(--accent)}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0;font-size:14px}
+.note b{color:var(--navy)}
+h2{font-size:18px;color:var(--navy);margin:30px 0 10px;padding-top:14px;
+border-top:2px solid var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th{background:var(--beige);color:var(--navy);text-align:left;font-weight:600;
+padding:8px 10px;border:1px solid var(--line);font-size:12.5px}
+td{padding:9px 10px;border:1px solid var(--line);vertical-align:top}
+tr.daystart td{border-top:2px solid var(--navy)}
+.dt{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.topic{font-weight:600}
+.angle{color:#3d4450}
+.ask{background:#FAF7F0;font-size:13.5px;line-height:1.55}
+.ask.have{background:#EDF6ED;color:var(--green)}
+.askcol{width:38%}
+.sid{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.note.src{border-left-color:var(--muted);font-size:13px}
+.card.shot{flex:1 1 100%;margin:14px 0;padding:0;overflow:hidden}
+.cardhead{background:var(--navy);color:#fff;padding:10px 14px;font-size:15px}
+.cardhead b{margin-right:8px}
+.sid2{font-family:"SF Mono",Menlo,monospace;font-size:12px;opacity:.75;margin-right:8px}
+.meta2{float:right;font-size:12px;opacity:.8;font-weight:400}
+.setup{padding:12px 14px;background:#F7F9FB;border-bottom:1px solid var(--line);font-size:13.5px}
+.srow{display:flex;gap:10px;margin:5px 0;align-items:baseline}
+.skey{flex:0 0 132px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+ul.mv{margin:0;padding-left:16px}
+ul.mv li{margin:2px 0}
+@media (max-width:760px){.srow{display:block}.skey{display:block;margin-bottom:2px}}
+.stake{padding:10px 14px;background:#FAF7F0;font-size:13.5px;border-bottom:1px solid var(--line)}
+.hookbox{padding:12px 14px;background:#FBEEE7;border-bottom:1px solid var(--line)}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:4px}
+.hooktxt{font-size:19px;font-weight:700;color:var(--accent);line-height:1.3}
+table.beats{font-size:13.5px;margin:0}
+table.beats th{font-size:11.5px}
+table.beats td{border-left:none;border-right:none}
+table.beats tr.turn td{background:#FDF4F0}
+table.beats tr.turn .act{font-weight:600;color:var(--accent)}
+table.beats tr.payoff td{background:#F1F7F2}
+table.beats tr.turn.payoff td{background:linear-gradient(90deg,#FDF4F0,#F1F7F2)}
+td.act{width:32%;color:#3d4450}
+td.line{font-size:15px;line-height:1.45}
+.takes{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+.takes ol{margin:4px 0 0;padding-left:20px}
+.takes li{margin:3px 0}
+.props{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px;background:#FAFAF7}
+.card.shot .note{margin:0;border-radius:0;border-top:1px solid var(--line);border-left:3px solid var(--gold)}
+@media print{.card.shot{page-break-inside:avoid}.cardhead{background:#1F3A5F !important;-webkit-print-color-adjust:exact}}
+@media (max-width:760px){
+  td.act{width:auto}
+  table.beats,table.beats tbody,table.beats tr,table.beats td{display:block;width:100%}
+  table.beats thead{display:none}
+  table.beats tr{border-bottom:1px solid var(--line);padding:8px 12px;margin:0;border-radius:0}
+  table.beats td{padding:2px 0;border:none}
+  .meta2{float:none;display:block;margin-top:3px}
+}
+.briefs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.brief{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-size:13.5px;line-height:1.45}
+.bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
+@media (max-width:760px){.brief{flex:1 1 100%}}
+.locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* Ширины «Темы» и «Угла» заданы явно, иначе браузер делит место по объёму
+   текста, а в заданиях текста больше всего. */
+td.topic{min-width:150px}
+td.angle{min-width:150px}
+@media (max-width:760px){td.topic,td.angle{width:auto;min-width:0}}
+.job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
+background:var(--beige);color:var(--navy)}
+.check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
+h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;align-items:flex-start}
+.card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
+table.mini{font-size:13px}
+table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-weight:400}
+.caps{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cap{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:13.5px}
+.cap.over{border-color:var(--accent);background:#FDF4F0}
+.capttl{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:13px}
+.verdict{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;margin:6px 0 4px}
+.verdict.ok{background:#EDF6ED;color:var(--green)}
+.verdict.bad{background:#FBEEE7;color:var(--accent)}
+.warn{color:var(--accent)}
+/* ── слой текстов ──────────────────────────────────────────────────────── */
+.tx{background:#fff;border:1px solid var(--line);border-radius:8px;margin:16px 0;overflow:hidden}
+.tx .cardhead{background:var(--navy)}
+.txbody{padding:14px 16px;font-size:15px;line-height:1.55;white-space:pre-wrap;
+  border-bottom:1px solid var(--line)}
+.txbody .hook{font-weight:700;color:var(--accent)}
+.txcta{padding:12px 16px;background:#FBEEE7;font-size:15px;line-height:1.5;
+  border-bottom:1px solid var(--line)}
+.txcta .lbl{color:var(--accent)}
+.txcard{padding:12px 16px;border-bottom:1px solid var(--beige);font-size:14.5px;line-height:1.5}
+.txcard .cn{display:inline-block;min-width:26px;height:26px;line-height:26px;text-align:center;
+  border-radius:13px;background:var(--beige);color:var(--navy);font-size:12px;font-weight:700;
+  margin-right:9px;vertical-align:top}
+.txcard .ch{font-weight:700;color:var(--navy);display:block;margin-bottom:3px;font-size:13px}
+.txcard .cb{display:inline-block;width:calc(100% - 40px)}
+details.attr{border-top:1px solid var(--line);background:#FAFAF7}
+details.attr summary{padding:9px 16px;cursor:pointer;font-size:12.5px;color:var(--muted);
+  letter-spacing:.02em}
+details.attr[open] summary{border-bottom:1px solid var(--line)}
+table.attr{font-size:12.5px;margin:0}
+table.attr td{border-left:none;border-right:none;vertical-align:top}
+table.attr td.n{width:34px;color:var(--muted);text-align:right}
+table.attr td.src{width:22%;font-family:"SF Mono",Menlo,monospace;font-size:11.5px}
+.m{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;white-space:nowrap}
+.m.dословно,.m.d{background:#EDF6ED;color:var(--green)}
+.m.p{background:var(--beige);color:var(--navy)}
+.m.a{background:#FBEEE7;color:var(--accent)}
+.m.s{background:#EFEFEF;color:var(--muted)}
+.txstat{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.note.warn{border-left-color:var(--accent)}
+.scroll{overflow-x:auto}
+.scroll table{min-width:100%}
+.scroll td{vertical-align:top}
+.scroll td[data-l="От эксперта"]{min-width:250px}
+.scroll td[data-l="Тема и угол"],.scroll td[data-l="Тема"]{min-width:220px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}
+  tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+
+/* ─── Вкладки. Системная версия несёт два разных вопроса: «что в канале» и
+   «что выходит в четверг». Раньше они лежали в одной простыне, и второй
+   не отвечался вовсе — календарь приходилось собирать в голове. ─── */
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;margin:18px 0 0;
+  padding:8px 0;background:var(--cream);border-bottom:1px solid var(--line)}
+.tabbtn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--navy);
+  font:600 13.5px/1 inherit;padding:9px 16px;border-radius:8px;cursor:pointer}
+.tabbtn:hover{border-color:var(--navy)}
+.tabbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabpane{display:none}
+.tabpane.on{display:block}
+@media print{.tabs{display:none}.tabpane{display:block !important}}
+
+/* ─── Раскрывающееся задание эксперту. Текст «что наговорить» длинный по
+   построению (§4 схемы: глагол + форма + количество + что раскрыть), и в
+   ячейке таблицы он раздувал строку так, что остальные поля переставали
+   читаться. Свёрнут по умолчанию, развёрнут по клику. ─── */
+details.ask{font-size:13px}
+details.ask>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:14px;
+  background:#FAF7F0;color:var(--navy);font-weight:600;font-size:12px;white-space:nowrap}
+details.ask>summary::-webkit-details-marker{display:none}
+details.ask>summary::before{content:"▸";font-size:11px;color:var(--muted)}
+details.ask[open]>summary::before{content:"▾"}
+details.ask>summary:hover{border-color:var(--navy)}
+details.ask>div{margin-top:8px;padding:10px 12px;background:#FAF7F0;
+  border-radius:8px;line-height:1.5;min-width:230px;max-width:460px}
+details.ask.have>summary{background:#EDF6ED;color:var(--green);border-color:#CFE6CF}
+details.ask.have>div{background:#EDF6ED}
+@media print{details.ask>div{display:block !important;max-width:none}}
+
+/* ─── Бейджи каналов: в сводном плане строки разных каналов идут вперемешку,
+   и канал должен читаться боковым зрением, а не вычитываться. ─── */
+.ch{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11.5px;
+  font-weight:600;white-space:nowrap;border:1px solid transparent}
+.ch.reel{background:#EDE7F6;color:#4527A0}
+.ch.story{background:#FFF3E0;color:#B9461D}
+.ch.post{background:#E3F2FD;color:#0D47A1}
+.ch.tg{background:#E0F2F1;color:#00695C}
+.ch.th{background:#F3E5F5;color:#6A1B9A}
+.ch.pr,.ch.sup{background:var(--beige);color:var(--navy)}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;
+  background:var(--beige);color:var(--navy);white-space:nowrap;margin:0 3px 3px 0}
+.tag.pin{background:#E3F2FD;color:#0D47A1}
+.tag.hl{background:#FFF3E0;color:#B9461D}
+.tag.rec{background:#FBEEE7;color:var(--accent);font-weight:600}
+.tag.ok{background:#EDF6ED;color:var(--green)}
+
+/* ─── Сводный план: день как блок, а не как строка таблицы. ─── */
+.day{background:#fff;border:1px solid var(--line);border-radius:10px;
+  margin:0 0 14px;overflow:hidden}
+.dayhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:10px 14px;background:var(--beige);border-bottom:1px solid var(--line)}
+.dayhead b{color:var(--navy);font-size:15px}
+.dayhead .muted{font-size:12.5px}
+.day table{border:none}
+.day td{border-left:none;border-right:none;border-top:none;
+  border-bottom:1px solid var(--beige);vertical-align:top}
+.day tr:last-child td{border-bottom:none}
+td.tm{white-space:nowrap;color:var(--muted);font-size:12.5px;width:66px}
+td.tm b{display:block;color:var(--ink);font-size:13.5px}
+td.what .tags{margin-top:6px;line-height:1}
+td.chc{width:92px}
+td.what b{color:var(--ink)}
+td.what .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+.ax{display:flex;gap:6px;align-items:baseline;margin:0 0 5px;line-height:1}
+.ax:last-child{margin-bottom:0}
+.axk{flex:0 0 54px;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);padding-top:2px}
+.ax .tag,.ax .job{margin:0 3px 0 0}
+details.note.why{padding:0;border-left-width:3px}
+details.note.why>summary{cursor:pointer;list-style:none;display:inline-flex;
+  align-items:center;gap:6px;padding:10px 16px;font-weight:600;color:var(--navy);
+  font-size:13px}
+details.note.why>summary::-webkit-details-marker{display:none}
+details.note.why>summary::before{content:"▸";color:var(--muted);font-size:11px}
+details.note.why[open]>summary::before{content:"▾"}
+details.note.why>div{padding:0 16px 12px;font-size:13.5px;line-height:1.5}
+@media print{details.note.why>div{display:block !important}}
+.axes-key{margin:14px 0 6px}
+.axes-key>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;font-size:13px;font-weight:600;color:var(--navy);padding:6px 12px;
+  border:1px solid var(--line);border-radius:8px;background:#fff}
+.axes-key>summary::-webkit-details-marker{display:none}
+.axes-key>summary::before{content:"▸";color:var(--muted)}
+.axes-key[open]>summary::before{content:"▾"}
+.axes-key table{margin-top:10px;font-size:13px}
+.axes-key td:first-child{width:120px;white-space:nowrap;color:var(--navy);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;font-size:12.5px;
+  color:var(--muted);align-items:center;line-height:1}
+.empty{padding:12px 14px;color:var(--muted);font-size:13px}
+@media (max-width:760px){
+  .day table,.day tbody,.day tr,.day td{display:block;width:100%}
+  .day tr{border:none;border-bottom:1px solid var(--beige);border-radius:0;
+    margin:0;padding:10px 12px;background:#fff}
+  .day td{padding:2px 0}
+  td.tm,td.chc{width:auto;display:inline-block;margin-right:8px}
+}
+/* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
+   страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
+@media (max-width:760px){
+  .wrap{padding:18px 12px 40px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:#fff;border:1px solid var(--line);border-radius:10px;
+     margin:0 0 12px;padding:10px 12px;position:relative}
+  tr.daystart{border-top:1px solid var(--line)}
+  td{border:none;padding:4px 0 4px 0}
+  td:empty{display:none}
+  td[data-l]::before{content:attr(data-l);display:block;font-size:11px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:1px}
+  td.topic{font-size:16px;font-weight:600}
+  td.ask{background:var(--beige);border-radius:8px;padding:10px 12px;margin-top:6px}
+  .check{position:absolute;top:10px;right:12px;width:auto;text-align:right}
+  .askcol{width:auto}
+}
+</style></head><body>
+<div class="wrap">
+<h1>Контент-план на аппрув</h1>
+<div class="sub">неделя 07.09 — 13.09<br><span class="badge">съёмка 05.09</span></div>
+<div class="note"><b>Что с этим делать.</b> Посмотреть тему и угол каждой карточки. Тему и угол можно менять — это ваша территория. Формат заблокирован: он посчитан от ёмкости съёмочного дня, и правка одной строки двигает остальные.<br><br>Записывать нужно <b>не на каждую карточку</b>: там, где написано «записывать ничего не нужно», материал уже есть в ваших прежних голосовых. Где задание есть — <b>наговорите по нему</b>. Это не текст ролика и не пересказ: наговорите так, как объяснили бы клиенту, своими словами, 2–3 минуты. Из этого потом соберутся и реплики в кадре, и подписи. В названии файла — код карточки.</div>
+<h2>Что от вас нужно в каждом формате</h2><div class="briefs"><div class="brief"><div class="bttl">Кейс из практики</div><div>История одного пациента без имени, возраста, города и профессии вместе. Наговорите с чем пришёл, что пробовал до вас, что менялось по шагам и чем кончилось. Итог одним числом не нужен — нужна лестница: что ушло первым, что вторым. Обязательно скажите вслух, что это история одного человека и у другого может быть иначе.</div></div><div class="brief"><div class="bttl">Список признаков</div><div>Сначала одной фразой, во что вписывается список и сколько в нём пунктов, потом сами пункты. Каждый пункт — то, что человек может заметить у себя дома, а не термин. В конце попросите сверить с собой и написать.</div></div><div class="brief"><div class="bttl">Что проверить перед тем, как</div><div>Человек уже собрался что-то сделать, и вы его останавливаете: сначала проверь вот это. Число пунктов называете до первого пункта, зачем проверять — до списка. По каждому пункту: как это увидеть. Заканчиваете тем, что с этим списком идти к врачу или выбирать.</div></div><div class="brief"><div class="bttl">Почему всё в норме, а симптом есть</div><div>Начинаете с вопроса так, как его задаёт пациентка. Первый ответ — то, на что обычно не смотрят. Объяснение одной фразой, потом второй эшелон: что смотрите, если первое оказалось в порядке. Без диагноза и без обещаний.</div></div><div class="brief"><div class="bttl">Ответ на возражение</div><div>Сначала возражение пациентки дословно, как его говорят. Потом что за ним стоит на самом деле. Потом две противоположные группы из вашей практики, обезличенно. В конце — по чему вы судите об эффекте на самом деле.</div></div><div class="brief"><div class="bttl">Два подхода рядом</div><div>Две ситуации рядом, как два подхода: когда что. Не «лучше или хуже», а в каком случае какой. Главное отличие одной фразой, и та же фраза повторяется в конце.</div></div><div class="brief"><div class="bttl">Цепочка следствий</div><div>Начинаете с бытового наблюдения, которое видите каждый сентябрь. Спрашиваете «почему?» и отвечаете цепочкой: одно звено тянет следующее, не больше четырёх звеньев, каждое можно проверить. Заканчиваете тем, к чему эта привычка приводит и что проверить у себя.</div></div><div class="brief"><div class="bttl">Четыре причины по пунктам</div><div>Сначала говорите, что причин четыре, и только потом первую. К каждой — одна бытовая картинка, как это выглядит у человека дома или на работе. Одной фразой — почему именно эти четыре. В конце: нашли причину, значит понятно, с чем работать.</div></div><div class="brief"><div class="bttl">Бланк в кадре</div><div>Ролик без лица: в кадре ваши руки и чистый бланк анализов, вы показываете строки и говорите за кадром. Поэтому в голосовом нужны сами слова, которые вы произнесёте: какая строка, что значит стрелочка и чего она не значит. Цифры-нормативы не называем — норма лаборатории не равна цели человека, это ваша же мысль.</div></div><div class="brief"><div class="bttl">Карусель</div><div>Пост из нескольких карточек, который читают глазами и сохраняют. Снимать ничего не надо, нужен связный рассказ голосом — из него соберём карточки.</div></div><div class="brief"><div class="bttl">Сторис-серия</div><div>Собирается из кадров рилсов и записей к ним, отдельных голосовых не нужно.</div></div><div class="brief"><div class="bttl">Сторис</div><div>Сбор вопросов стикером и ответы по материалу записей к рилсам. Отдельных голосовых не нужно.</div></div><div class="brief"><div class="bttl">Лонгрид Telegram</div><div>Текст, который читают целиком, собирается из ваших прежних голосовых. На этой неделе все три лонгрида закрыты тем, что уже записано, наговаривать ничего не надо.</div></div></div>
+<h2>Instagram · рилсы <span class="muted">· 10</span></h2>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">R-01</div></td><td class="locked" data-l="Формат">Кейс из практики</td><td class="topic" data-l="Тема">Худеете и боитесь, что придётся удалять желчный, как подруге</td><td class="angle" data-l="Угол">Минус 23 килограмма за год и четыре месяца, желчный на месте, печень уменьшилась почти на пять сантиметров: чем медленный путь отличается от быстрого</td><td class="" data-l="Название">Желчный остался, вес ушёл</td><td class="ask" data-l="Что наговорить">Ролик 60 секунд · голосовое 2 минуты<br>Пациентка, которая пришла со 100 килограммами и направлением на удаление желчного, а через год и четыре месяца весит на 23 меньше и желчный на месте. Итог у нас уже записан, его пересказывать не надо. Она сама говорила «Всё, я больше не могу» — три раза.<br>1. Назовите, что именно она пробовала до вас: два-три конкретных способа, как она их сама называла.<br>2. Наговорите лестницу: что ушло первым, что вторым, что третьим, и примерно через сколько месяцев каждое. Не итогом, а по ступенькам, и у каждой ступеньки — за счёт чего это случилось, а не только сколько.<br>3. Скажите одной фразой, что изменилось у неё за пределами веса и желчного.<br>Не надо: имени, возраста, города, профессии; названий препаратов; «и у вас так будет».<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-02</div></td><td class="locked" data-l="Формат">Список признаков</td><td class="topic" data-l="Тема">Живот вздувается к вечеру так, что расстёгиваете юбку, и вы списываете это на «съела не то»</td><td class="angle" data-l="Угол">Признаки по телу, что вечернее вздутие связано с обменом, а не только с ужином; и что с этим списком попросить проверить у врача</td><td class="" data-l="Название">Когда вздутие не про ужин</td><td class="ask" data-l="Что наговорить">Ролик 55 секунд · голосовое 3 минуты<br>Женщина к вечеру расстёгивает юбку, потому что живот вздулся, и списывает это на «съела не то».<br>1. Скажите первой фразой, в каком случае вздутие к вечеру — уже не про ужин, и пообещайте признаки.<br>2. Назовите пять-шесть признаков, по которым это видно дома, без анализов: каждый как бытовая сцена, что человек замечает на себе, а не как термин. Хотя бы один пусть будет неожиданным.<br>3. Скажите, что с этим списком делать — конкретно: какой показатель попросить проверить или какой вопрос задать врачу. Не «сходите к специалисту», а именно что. Одно на весь список или по одному на признак.<br>4. В конце попросите сверить с собой и написать, сколько совпало.<br>Не надо: ферментов, препаратов и схем; «у вас СРК» и любого диагноза зрительнице; «чистки» и «детокса».<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-03</div></td><td class="locked" data-l="Формат">Ответ на возражение</td><td class="topic" data-l="Тема">«Подружки колются сами, и у них всё ок»: уколы для похудения без врача</td><td class="angle" data-l="Угол">Через два-три месяца подружки приходят к ней с побочками. Две группы её пациентов и по чему она на самом деле судит, что терапия работает</td><td class="" data-l="Название">Уколы для похудения как у подружки</td><td class="ask" data-l="Что наговорить">Ролик 60 секунд · голосовое 3 минуты<br>Пациентка на приёме говорит: «подружки колются сами, без врачей, и у них всё ок» — по сути «дайте волшебные таблетки, чтобы за 3 месяца минус 30 кг», только уколом. Что подружки через два-три месяца приходят к вам с побочками, у нас записано, пересказывать не надо.<br>1. Скажите, как это убеждение звучит у пациентов дословно: одну-две фразы так, как их говорят.<br>2. Скажите, что за ним стоит на самом деле: чем укол под наблюдением отличается от укола «как у подружки». Не в дозах, а в том, кто и что смотрит до и во время.<br>3. Назовите две противоположные группы из вашей практики, обезличенно: кому это было противопоказано и как они шли без укола; и кто колол сам и с чем пришёл. По два-три предложения на группу.<br>4. Скажите, по чему вы судите, что терапия работает: не по цифре на весах, а по чему. Такой признак, который человек может проверить на себе сам, не только врач.<br>5. Закончите тем, с каким одним вопросом идти к врачу до укола.<br>Не надо: названий препаратов, доз, схем; «кому подойдёт / не подойдёт» как правила для зрительницы; «отменяйте» или «не колите»; узнаваемых деталей пациентов.<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-04</div></td><td class="locked" data-l="Формат">Почему всё в норме, а симптом есть</td><td class="topic" data-l="Тема">Второй год не наступает беременность, и все анализы «в порядке»</td><td class="angle" data-l="Угол">На приёме это звучит «Где моя овуляция, почему нет детей». Первое, на что она смотрит и что обычно не смотрят до неё; и почему пять процентов веса иногда возвращают то, что искали два года</td><td class="" data-l="Название">Чего не смотрят при «всё в норме»</td><td class="ask" data-l="Что наговорить">Ролик 45 секунд · голосовое 2 минуты<br>Женщина второй год не может забеременеть, все анализы «в порядке», и на приёме звучит: «Где моя овуляция, почему нет детей».<br>1. Начните с этой фразы и с парадокса: анализы в порядке, а овуляции нет.<br>2. Назовите первое, на что вы смотрите в такой ситуации и что обычно не смотрят до вас — по имени показателя, а не «доп. обследование». Как «что обсудить с врачом», не как назначение. Одну вещь.<br>3. Объясните одной фразой, почему это решает. Про пять процентов веса у нас уже записано — не повторяйте, одной строкой сошлитесь.<br>4. Назовите второй эшелон: что смотрите, если первое оказалось в порядке — тоже по имени.<br>Не надо: диагноза зрительнице; «похудеете и забеременеете» как обещания; препаратов и схем.<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-05</div></td><td class="locked" data-l="Формат">Что проверить перед тем, как</td><td class="topic" data-l="Тема">Выбираете врача-эндокринолога и не знаете, на что смотреть, кроме отзывов</td><td class="angle" data-l="Угол">Четыре-пять признаков, что вы попали к тому врачу, и один — что стоит уйти. Глазами пациента, до записи и на первом приёме</td><td class="" data-l="Название">Что проверить до записи к эндокринологу</td><td class="ask" data-l="Что наговорить">Ролик 60 секунд · голосовое 3 минуты<br>Человек выбирает эндокринолога и не знает, на что смотреть, кроме отзывов. Вы сами называли это нужной темой. Ваша сторона — «стена в дипломах пациентам ничего не даст», «не лезу не в своё, но скажу, кому пойти» — записана, пересказывать не надо.<br>1. Скажите первой фразой: прежде чем записываться, проверьте столько-то пунктов, и назовите число сразу.<br>2. Скажите одной фразой, зачем: что человек получит, если проверит.<br>3. Наговорите четыре-пять признаков, что вы попали к тому врачу, глазами пациента. По каждому: как это увидеть до записи или на первом приёме. И один признак, что стоит уйти.<br>4. Закончите: с этим списком и выбирайте.<br>Не надо: имён коллег, клиник и городов; «все врачи вокруг плохие»; себя как примера хорошего врача.<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-06</div></td><td class="locked" data-l="Формат">Два подхода рядом</td><td class="topic" data-l="Тема">Гипотиреоз, и вам сказали «гормоны пожизненно», а пить их не хочется</td><td class="angle" data-l="Угол">Два гипотиреоза рядом: тот, где щитовидка действительно выключена, и тот, за которым стоит дефицит. По её картам за год у большинства оказался второй. По чему она это различает и что проверить у врача</td><td class="" data-l="Название">Два гипотиреоза рядом</td><td class="ask" data-l="Что наговорить">Ролик 55 секунд · голосовое 2 минуты<br>Женщина с гипотиреозом говорит: «не хочу пить гормоны», или ей сказали, «что придётся садиться на гормоны пожизненно». Ваша цифра по картам — у восьмидесяти процентов дело было в дефицитах — записана, пересказывать не надо.<br>1. Начните с этого возражения так, как его говорят на приёме.<br>2. Поставьте рядом две ситуации, как два подхода: гипотиреоз, где щитовидка действительно выключена, и гипотиреоз, за которым стоит дефицит. По каждой — когда это так и как выглядит человек. Не «лучше или хуже», а «когда что».<br>3. Скажите, по чему вы это различаете на приёме: что попросить проверить у врача, чтобы понять, какой из двух случаев.<br>4. Скажите главное отличие одной фразой и повторите его в самом конце.<br>Не надо: «отменяйте гормоны», «можно не пить», «без гормонов навсегда»; «и у вас так будет»; диагноза зрительнице; названий препаратов и доз. Ваш процент — только как наблюдение по своим картам за год, с оговоркой, что у конкретного человека может быть иначе.<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-07</div></td><td class="locked" data-l="Формат">Кейс из практики</td><td class="topic" data-l="Тема">Мужчина сбросил 23 килограмма и встал, а все врачи до неё говорили «пациент врёт»</td><td class="angle" data-l="Угол">Причина оказалась не в гормонах и не в еде: человек до панических атак боится стать заметным, и лишние килограммы работали защитой от внимания. «Я склонна людям верить», и в итоге ему больше не нужен эндокринолог</td><td class="" data-l="Название">Приём из мединститута, который я никогда не применяла</td><td class="ask" data-l="Что наговорить">Ролик 60 секунд · голосовое 1,5 минуты<br>Мужчина со 135 килограммами, который сбросил 23 и встал, а причина оказалась не в гормонах. История записана целиком, пересказывать не надо. Он говорил, что «перепробовал всё — центры похудения, коучей, нутрициологов; результат всегда откатывался».<br>1. Назовите, что вы у него проверили и исключили до того, как отправили к психологу: сколько всего и что именно, коротко, без цифр анализов.<br>2. Скажите, по какому признаку вы поняли, что дело не в вашей системе: что именно было видно на приёме, кроме «встаём, как будто что-то держит».<br>Не надо: пересказывать историю заново; возраста, города, профессии; названий препаратов; смежного диагноза («у него было…») — только «направила».<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-08</div></td><td class="locked" data-l="Формат">Цепочка следствий</td><td class="topic" data-l="Тема">Сентябрь, дети пошли в школу, а вы живёте на кофе и перекусах: к вечеру сахар качает и тянет на сладкое</td><td class="angle" data-l="Угол">Не про ребёнка — про маму: подъём в шесть, завтрак на бегу, «не было сил дожить до обеда». Цепочка, которая за месяц превращает сентябрьский режим в «снежный ком», и что проверить у себя, не дожидаясь диспансеризации</td><td class="" data-l="Название">Сентябрьский снежный ком</td><td class="ask" data-l="Что наговорить">Ролик 55 секунд · голосовое 3 минуты<br>Мама в сентябре: дети пошли в школу и в сад, подъём в шесть, завтрак на бегу, кофе вместо еды, вечером уроки, и на приёме она говорит: «Не было сил дожить до обеда». Речь про неё, не про ребёнка.<br>1. Начните с этого наблюдения: что вы видите на приёме у мам каждый сентябрь.<br>2. Спросите «почему?» и ответьте цепочкой: одно звено тянет следующее, не больше четырёх звеньев, и каждое такое, которое можно проверить, а не «стресс». Дойдите до вашего «снежного кома».<br>3. Назовите привычку, которая запускает цепочку, одним словом, и что в ней поменять — про образ жизни, не «следите за питанием» и не препараты.<br>4. Закончите: поэтому вот эта сентябрьская привычка приводит вот к этому. И что маме проверить у себя, не откладывая до следующей диспансеризации.<br>Если хотите — пару фраз от себя: у вас трое, сентябрьский режим вы знаете изнутри. Без деталей о детях.<br>Не надо: про ребёнка и его здоровье; «у вас инсулинорезистентность» как диагноза; препаратов и схем; пугать.<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-09</div></td><td class="locked" data-l="Формат">Четыре причины по пунктам</td><td class="topic" data-l="Тема">Все анализы по кругу, а причину не назвали: четыре причины гормонального дисбаланса, которые она ищет первыми</td><td class="angle" data-l="Угол">Её метод, ни разу не перечисленный: четыре причины, выведенные из практики, по одной бытовой картинке на каждую, и почему, найдя причину, не нужно «20 бадиков»</td><td class="" data-l="Название">Четыре причины, которые я ищу первыми</td><td class="ask" data-l="Что наговорить">Ролик 60 секунд · голосовое 3 минуты<br>Человек, который «был у всех, кого только можно, все говорят, что со мной всё хорошо, а мне плохо». Вы много раз говорили, что ищете четыре основные причины гормонального дисбаланса, которые вывели из практики, но ни разу их не перечисляли. Что они основа энергии, внешности и преждевременного старения — записано, пересказывать не надо.<br>1. Скажите первой фразой, что причин четыре, до того как назвать первую.<br>2. Назовите все четыре по очереди. К каждой — одна бытовая картинка: как это выглядит у человека дома или на работе, а не термин. И к каждой — признак, по которому человек узнает, что это его причина: что посмотреть, а не «разберёмся на приёме».<br>3. Скажите одной фразой, почему именно эти четыре: что в практике на это указало.<br>4. Закончите: нашли причину — понятно, с чем работать. И что с этим человеку проверить у врача.<br>Не надо: «сдайте» с перечнем анализов; препаратов и схем; «у вас причина номер два» как диагноза зрителю.<br></td></tr>
+<tr><td class="check">☐<div class="sid">R-10</div></td><td class="locked" data-l="Формат">Бланк в кадре</td><td class="topic" data-l="Тема">В бланке анализов стрелочка рядом с показателем, и вы уже гуглите диагноз</td><td class="angle" data-l="Угол">Три стрелочки, которые чаще всего пугают, и по каждой — что она значит и чего не значит. Норма лаборатории не равна цели для вас: «подумаешь 5,8, норма же до 6»</td><td class="" data-l="Название">Три стрелочки, которые пугают чаще всего</td><td class="ask" data-l="Что наговорить">Ролик 40 секунд · голосовое 2 минуты<br>Человек получил бланк, увидел стрелочку рядом с показателем и уже гуглит диагноз. Что норма лаборатории не равна цели для человека — «подумаешь 5,8, норма же до 6» — записано, пересказывать не надо.<br>1. Назовите три стрелочки, которые чаще всего пугают в бланке: какие это обычно строки.<br>2. По каждой переведите на человеческий: что эта стрелочка значит и чего она НЕ значит. Термин назвали — и тут же перевели бытовым сравнением.<br>3. Закончите одним проверяемым действием: что с этим бланком спросить у врача.<br>Не надо: цифр-нормативов «должно быть столько-то»; «у вас гипотиреоз / диабет» по бланку; названий препаратов; чужих реальных цифр из бланков пациентов.<br></td></tr>
+</tbody></table>
+<h2>Instagram · сторис <span class="muted">· 2</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">S-01</div></td><td class="locked" data-l="Формат">Сторис-серия</td><td class="topic" data-l="Тема">Серия под гайд по замеру талии (продолжение W36)</td><td class="angle" data-l="Угол">Раздача гайда тем, кто написал ТАЛИЯ в комментариях под R-01 и R-08; кадры замера из W36 R-05</td><td class="" data-l="Название">Гайд по талии</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно — серия собирается из кадров R-05 недели W36 и надиктовки нд4. 🔴 Правовая рамка: целевые 80/85 — ориентир, а не персональная норма зрителя («без „и у вас так будет“»); сантиметровая лента — не диагностика. 🔴 Механика выдачи не задана: бот @lukianova_doc_bot заведён под «Ферритин», под слово ТАЛИЯ — ничего; открытый вопрос недели, не решение.</td></tr>
+<tr><td class="check">☐<div class="sid">S-02</div></td><td class="locked" data-l="Формат">Сторис</td><td class="topic" data-l="Тема">Сбор вопросов «что спросить у эндокринолога на первом приёме»</td><td class="angle" data-l="Угол">Стикер вопросов после R-05; ответы — по материалу записей недели, без новых голосовых</td><td class="" data-l="Название">Что спросить у эндокринолога</td><td class="ask" data-l="Что наговорить">Записывать ничего не нужно — вопросы собираются стикером, ответы берутся из записи к R-05 и из прежних голосовых (нд16–нд19 «три вопроса врачу» — уже опубликованы в W36, повторно не пересказываем, только отсылка). 🔴 Правовая рамка: в ответах на вопросы подписчиц — никаких заочных диагнозов и назначений; формула «это к врачу на приёме», ФЗ-323.</td></tr>
+</tbody></table>
+<h2>Instagram · посты <span class="muted">· 2</span></h2>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">P-01</div></td><td class="locked" data-l="Формат">Карусель</td><td class="topic" data-l="Тема">Пять признаков сниженной щитовидной железы, которые видно по телу: от «будильник ещё пять минут» до дёсен</td><td class="angle" data-l="Угол">Пять телесных признаков — размер одежды раз в три месяца при ЗОЖ, просевший овал лица, пропавший утренний аппетит, рецессия дёсен; и почему самый первый обычно замечает стоматолог, а не эндокринолог</td><td class="" data-l="Название">Пять признаков по телу</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно — пять признаков и механизм за ними записаны в надиктовках 14.08. 🔴 Правовая рамка (ФЗ-323; стоп-лист «диагноз по симптомам», «сдайте ТТГ»): признаки — повод проверить у врача, не диагноз; без «сдайте ТТГ» и без препаратов. ⚠️ Секция нд13 стояла в рилсе W34 R-02 три недели назад (вместе с нд15 «через характер») — здесь другой носитель и полный список без «характера»; нд15 не берём.</td></tr>
+<tr><td class="check">☐<div class="sid">P-02</div></td><td class="locked" data-l="Формат">Карусель</td><td class="topic" data-l="Тема">Сдали двадцать анализов по совету из интернета и не понимаете, что с этим делать</td><td class="angle" data-l="Угол">Половину из этого списка она бы не назначила, и почему отказ от лишнего говорит о точности. Что бывает, когда лечат анализ вместо человека: «нет сил», дефицит белка по бланку и желание капельницы за двести тысяч</td><td class="" data-l="Название">Двадцать анализов из интернета</td><td class="ask" data-l="Что наговорить">Карусель · голосовое 3 минуты<br>Человек сдал двадцать анализов по списку из интернета, принёс стопку бланков и не понимает, что с этим делать. Запрос обычно звучит как «давайте перекрасим крышу и пересадим клумбу, чтобы было повеселее жить». История про «нет сил, по анализам дефицит белка, а хочется капельницу за двести тысяч» записана, пересказывать не надо.<br>1. Скажите, как это выглядит на приёме: одной сценой, что человек кладёт на стол и что говорит.<br>2. Скажите, по какому принципу вы решаете, что из этого лишнее, а что нужно. Принцип, а не перечень анализов.<br>3. Скажите, почему половину вы бы не назначили и почему это не экономия, а точность.<br>4. Скажите, чем заканчивается, когда лечат анализ, а не человека.<br>Не надо: перечня «нужных» и «ненужных» анализов; «не сдавайте»; названий препаратов и капельниц как рекомендаций.<br></td></tr>
+</tbody></table>
+<h2>Telegram <span class="muted">· 3</span></h2>
+<div class="note src">Отдельных голосовых не нужно: материал берётся из записей к рилсам выше — одно голосовое раскладывается и в ролик, и в текст. Утвердите темы.</div>
+<table><thead><tr><th class="check">✓</th><th>Формат</th><th>Тема</th><th>Угол</th><th>Название</th><th class="askcol">Что наговорить</th></tr></thead><tbody>
+<tr><td class="check">☐<div class="sid">TG-01</div></td><td class="locked" data-l="Формат">Лонгрид Telegram</td><td class="topic" data-l="Тема">«Пациент не мой — скажу честно»: почему ко второй консультации она говорит это прямо</td><td class="angle" data-l="Угол">Иначе человек теряет время в уверенности «я здоров, просто плохо себя чувствую» — её термин «мнимое благополучие»; и почему «возможно, я вам не смогу помочь» она говорит вслух</td><td class="" data-l="Название">Скажу честно: не мой пациент</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно — надиктовка 08.08 и секция «маша 4 3» закрывают лонгрид целиком. 🔴 Правовая рамка (ФЗ-323): «пациент не мой» — про границы компетенции и маршрут к другому специалисту, без диагнозов и без имён; мост к сахару из нд10 («мнимое благополучие» и сахар натощак) в W37 не разворачиваем — нд11 потрачена W36 P-01. ⚠️ Оборот «на дух не переношу» из нд10 — резче, чем годится для канала: мысль оставляем, слово убираем.</td></tr>
+<tr><td class="check">☐<div class="sid">TG-02</div></td><td class="locked" data-l="Формат">Лонгрид Telegram</td><td class="topic" data-l="Тема">У каждой болячки есть точка невозврата: две дороги от тридцати пяти</td><td class="angle" data-l="Угол">Классический сценарий, если ничего не делать: диагноз на пол-листа, вросший ноготь, который не заживает, операция, на которую не берут, «считай калории и ходи пешком», когда ходить уже нельзя. И почему она хочет ловить людей раньше — ради 15–20 лет адекватной жизни</td><td class="" data-l="Название">Две дороги от тридцати пяти</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно — обе секции старого корпуса закрывают лонгрид целиком. 🔴 Правовая рамка (ФЗ-323; risk шаблона D5 «пугающий»): только по подтверждённым исходам и без «умрёте»; её фраза про современные препараты («умрёшь от них быстрее, чем без них») в текст не идёт — это и претензия к препаратам, и запугивание. РПП как диагноз — red line, не касаемся. Сценарий подаётся как «классический путь», не как прогноз конкретному читателю; без названий препаратов.</td></tr>
+<tr><td class="check">☐<div class="sid">TG-03</div></td><td class="locked" data-l="Формат">Лонгрид Telegram</td><td class="topic" data-l="Тема">Тянете дом, работу и детей, пока однажды тело не откажет</td><td class="angle" data-l="Угол">Её собственный перелом: «упала и лежала без сознания 40 минут и не могла встать». После этого начала раскручивать себя теми же «пятью почему», что и пациентов, и за год «дом перестал давить»</td><td class="" data-l="Название">Сорок минут без сознания</td><td class="ask have" data-l="Что наговорить">✓ Записывать ничего не нужно — этот материал у нас уже есть в ваших голосовых. Записывать ничего не нужно — секция «маш 3 13» закрывает лонгрид целиком. 🔴 Правовая рамка (ФЗ-323; red_lines.family): рассказывать о семье можно, показывать — нет; без деталей о детях, без диагноза себе задним числом («это был…» — не пишем), «выученная беспомощность это тоже гормоны» — её слова, оставляем как позицию, не как диагноз читательнице. Дистанция врач-пациент (§9.3/5): собственная трансформация — как история, не как «я вылечила себя».</td></tr>
+</tbody></table>
+<footer>Карточек на аппрув: 17 из 17 в плане. Записать голосовых: 11, ещё 5 карточек закрыты вашими прежними записями.<br>Собрано из <code>plan.yaml</code> (maria-2026-W37) — правки вносятся в него, эта страница пересобирается.</footer>
+</div></body></html>
