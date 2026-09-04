@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Съёмочный пакет · maria · 2026-W37</title>
+<style>
+:root{--cream:#FDFBF6;--navy:#1F3A5F;--accent:#B9461D;--beige:#F4F0E6;
+--ink:#16181C;--muted:#6B7280;--line:#E4DCCB;--green:#2E7D32;--gold:#C79A2B}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;color:var(--navy)}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;
+background:var(--beige);color:var(--navy);margin-right:6px}
+.badge.warn{background:#FBEEE7;color:var(--accent)}
+.note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);
+border-radius:0 8px 8px 0;padding:12px 16px;margin:18px 0;font-size:14px}
+.note b{color:var(--navy)}
+h2{font-size:18px;color:var(--navy);margin:30px 0 10px;padding-top:14px;
+border-top:2px solid var(--navy)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th{background:var(--beige);color:var(--navy);text-align:left;font-weight:600;
+padding:8px 10px;border:1px solid var(--line);font-size:12.5px}
+td{padding:9px 10px;border:1px solid var(--line);vertical-align:top}
+tr.daystart td{border-top:2px solid var(--navy)}
+.dt{white-space:nowrap;color:var(--muted);font-size:12.5px}
+.topic{font-weight:600}
+.angle{color:#3d4450}
+.ask{background:#FAF7F0;font-size:13.5px;line-height:1.55}
+.ask.have{background:#EDF6ED;color:var(--green)}
+.askcol{width:38%}
+.sid{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+.note.src{border-left-color:var(--muted);font-size:13px}
+.card.shot{flex:1 1 100%;margin:14px 0;padding:0;overflow:hidden}
+.cardhead{background:var(--navy);color:#fff;padding:10px 14px;font-size:15px}
+.cardhead b{margin-right:8px}
+.sid2{font-family:"SF Mono",Menlo,monospace;font-size:12px;opacity:.75;margin-right:8px}
+.meta2{float:right;font-size:12px;opacity:.8;font-weight:400}
+.setup{padding:12px 14px;background:#F7F9FB;border-bottom:1px solid var(--line);font-size:13.5px}
+.srow{display:flex;gap:10px;margin:5px 0;align-items:baseline}
+.skey{flex:0 0 132px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+ul.mv{margin:0;padding-left:16px}
+ul.mv li{margin:2px 0}
+@media (max-width:760px){.srow{display:block}.skey{display:block;margin-bottom:2px}}
+.stake{padding:10px 14px;background:#FAF7F0;font-size:13.5px;border-bottom:1px solid var(--line)}
+.hookbox{padding:12px 14px;background:#FBEEE7;border-bottom:1px solid var(--line)}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:4px}
+.hooktxt{font-size:19px;font-weight:700;color:var(--accent);line-height:1.3}
+table.beats{font-size:13.5px;margin:0}
+table.beats th{font-size:11.5px}
+table.beats td{border-left:none;border-right:none}
+table.beats tr.turn td{background:#FDF4F0}
+table.beats tr.turn .act{font-weight:600;color:var(--accent)}
+table.beats tr.payoff td{background:#F1F7F2}
+table.beats tr.turn.payoff td{background:linear-gradient(90deg,#FDF4F0,#F1F7F2)}
+td.act{width:32%;color:#3d4450}
+td.line{font-size:15px;line-height:1.45}
+.takes{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px}
+.takes ol{margin:4px 0 0;padding-left:20px}
+.takes li{margin:3px 0}
+.props{padding:10px 14px;border-top:1px solid var(--line);font-size:13.5px;background:#FAFAF7}
+.card.shot .note{margin:0;border-radius:0;border-top:1px solid var(--line);border-left:3px solid var(--gold)}
+@media print{.card.shot{page-break-inside:avoid}.cardhead{background:#1F3A5F !important;-webkit-print-color-adjust:exact}}
+@media (max-width:760px){
+  td.act{width:auto}
+  table.beats,table.beats tbody,table.beats tr,table.beats td{display:block;width:100%}
+  table.beats thead{display:none}
+  table.beats tr{border-bottom:1px solid var(--line);padding:8px 12px;margin:0;border-radius:0}
+  table.beats td{padding:2px 0;border:none}
+  .meta2{float:none;display:block;margin-top:3px}
+}
+.briefs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.brief{flex:1 1 300px;background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;font-size:13.5px;line-height:1.45}
+.bttl{font-weight:700;color:var(--navy);margin-bottom:4px}
+@media (max-width:760px){.brief{flex:1 1 100%}}
+.locked{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* Ширины «Темы» и «Угла» заданы явно, иначе браузер делит место по объёму
+   текста, а в заданиях текста больше всего. */
+td.topic{min-width:150px}
+td.angle{min-width:150px}
+@media (max-width:760px){td.topic,td.angle{width:auto;min-width:0}}
+.job{display:inline-block;padding:1px 7px;border-radius:12px;font-size:11.5px;
+background:var(--beige);color:var(--navy)}
+.check{width:52px;text-align:center;color:var(--line);font-size:17px;white-space:nowrap}
+h3{font-size:14px;color:var(--navy);margin:0 0 8px}
+.cards{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0;align-items:flex-start}
+.card{flex:1 1 250px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .note{margin:10px 0 0;font-size:12.5px;padding:8px 10px}
+table.mini{font-size:13px}
+table.mini td{border:none;border-bottom:1px solid var(--beige);padding:4px 0}
+.num{text-align:right;white-space:nowrap}
+.muted{color:var(--muted);font-weight:400}
+.caps{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.cap{flex:1 1 220px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:13.5px}
+.cap.over{border-color:var(--accent);background:#FDF4F0}
+.capttl{font-weight:600;color:var(--navy);margin-bottom:6px;font-size:13px}
+.verdict{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;margin:6px 0 4px}
+.verdict.ok{background:#EDF6ED;color:var(--green)}
+.verdict.bad{background:#FBEEE7;color:var(--accent)}
+.warn{color:var(--accent)}
+/* ── слой текстов ──────────────────────────────────────────────────────── */
+.tx{background:#fff;border:1px solid var(--line);border-radius:8px;margin:16px 0;overflow:hidden}
+.tx .cardhead{background:var(--navy)}
+.txbody{padding:14px 16px;font-size:15px;line-height:1.55;white-space:pre-wrap;
+  border-bottom:1px solid var(--line)}
+.txbody .hook{font-weight:700;color:var(--accent)}
+.txcta{padding:12px 16px;background:#FBEEE7;font-size:15px;line-height:1.5;
+  border-bottom:1px solid var(--line)}
+.txcta .lbl{color:var(--accent)}
+.txcard{padding:12px 16px;border-bottom:1px solid var(--beige);font-size:14.5px;line-height:1.5}
+.txcard .cn{display:inline-block;min-width:26px;height:26px;line-height:26px;text-align:center;
+  border-radius:13px;background:var(--beige);color:var(--navy);font-size:12px;font-weight:700;
+  margin-right:9px;vertical-align:top}
+.txcard .ch{font-weight:700;color:var(--navy);display:block;margin-bottom:3px;font-size:13px}
+.txcard .cb{display:inline-block;width:calc(100% - 40px)}
+details.attr{border-top:1px solid var(--line);background:#FAFAF7}
+details.attr summary{padding:9px 16px;cursor:pointer;font-size:12.5px;color:var(--muted);
+  letter-spacing:.02em}
+details.attr[open] summary{border-bottom:1px solid var(--line)}
+table.attr{font-size:12.5px;margin:0}
+table.attr td{border-left:none;border-right:none;vertical-align:top}
+table.attr td.n{width:34px;color:var(--muted);text-align:right}
+table.attr td.src{width:22%;font-family:"SF Mono",Menlo,monospace;font-size:11.5px}
+.m{display:inline-block;padding:1px 6px;border-radius:10px;font-size:10.5px;white-space:nowrap}
+.m.dословно,.m.d{background:#EDF6ED;color:var(--green)}
+.m.p{background:var(--beige);color:var(--navy)}
+.m.a{background:#FBEEE7;color:var(--accent)}
+.m.s{background:#EFEFEF;color:var(--muted)}
+.txstat{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.note.warn{border-left-color:var(--accent)}
+.scroll{overflow-x:auto}
+.scroll table{min-width:100%}
+.scroll td{vertical-align:top}
+.scroll td[data-l="От эксперта"]{min-width:250px}
+.scroll td[data-l="Тема и угол"],.scroll td[data-l="Тема"],.scroll td[data-l="Фокус"]{min-width:220px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}
+  tr{page-break-inside:avoid}h2{page-break-after:avoid}}
+
+/* ─── Вкладки. Системная версия несёт два разных вопроса: «что в канале» и
+   «что выходит в четверг». Раньше они лежали в одной простыне, и второй
+   не отвечался вовсе — календарь приходилось собирать в голове. ─── */
+.tabs{position:sticky;top:0;z-index:5;display:flex;gap:6px;margin:18px 0 0;
+  padding:8px 0;background:var(--cream);border-bottom:1px solid var(--line)}
+.tabbtn{appearance:none;border:1px solid var(--line);background:#fff;color:var(--navy);
+  font:600 13.5px/1 inherit;padding:9px 16px;border-radius:8px;cursor:pointer}
+.tabbtn:hover{border-color:var(--navy)}
+.tabbtn.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabpane{display:none}
+.tabpane.on{display:block}
+@media print{.tabs{display:none}.tabpane{display:block !important}}
+
+/* ─── Раскрывающееся задание эксперту. Текст «что наговорить» длинный по
+   построению (§4 схемы: глагол + форма + количество + что раскрыть), и в
+   ячейке таблицы он раздувал строку так, что остальные поля переставали
+   читаться. Свёрнут по умолчанию, развёрнут по клику. ─── */
+details.ask{font-size:13px}
+details.ask>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:14px;
+  background:#FAF7F0;color:var(--navy);font-weight:600;font-size:12px;white-space:nowrap}
+details.ask>summary::-webkit-details-marker{display:none}
+details.ask>summary::before{content:"▸";font-size:11px;color:var(--muted)}
+details.ask[open]>summary::before{content:"▾"}
+details.ask>summary:hover{border-color:var(--navy)}
+details.ask>div{margin-top:8px;padding:10px 12px;background:#FAF7F0;
+  border-radius:8px;line-height:1.5;min-width:230px;max-width:460px}
+details.ask.have>summary{background:#EDF6ED;color:var(--green);border-color:#CFE6CF}
+details.ask.have>div{background:#EDF6ED}
+@media print{details.ask>div{display:block !important;max-width:none}}
+
+/* ─── Бейджи каналов: в сводном плане строки разных каналов идут вперемешку,
+   и канал должен читаться боковым зрением, а не вычитываться. ─── */
+.ch{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11.5px;
+  font-weight:600;white-space:nowrap;border:1px solid transparent}
+.ch.reel{background:#EDE7F6;color:#4527A0}
+.ch.story{background:#FFF3E0;color:#B9461D}
+.ch.post{background:#E3F2FD;color:#0D47A1}
+.ch.tg{background:#E0F2F1;color:#00695C}
+.ch.th{background:#F3E5F5;color:#6A1B9A}
+.ch.pr,.ch.sup{background:var(--beige);color:var(--navy)}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;
+  background:var(--beige);color:var(--navy);white-space:nowrap;margin:0 3px 3px 0}
+.tag.pin{background:#E3F2FD;color:#0D47A1}
+.tag.hl{background:#FFF3E0;color:#B9461D}
+.tag.rec{background:#FBEEE7;color:var(--accent);font-weight:600}
+.tag.ok{background:#EDF6ED;color:var(--green)}
+
+/* ─── Сводный план: день как блок, а не как строка таблицы. ─── */
+.day{background:#fff;border:1px solid var(--line);border-radius:10px;
+  margin:0 0 14px;overflow:hidden}
+.dayhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  padding:10px 14px;background:var(--beige);border-bottom:1px solid var(--line)}
+.dayhead b{color:var(--navy);font-size:15px}
+.dayhead .muted{font-size:12.5px}
+.day table{border:none}
+.day td{border-left:none;border-right:none;border-top:none;
+  border-bottom:1px solid var(--beige);vertical-align:top}
+.day tr:last-child td{border-bottom:none}
+td.tm{white-space:nowrap;color:var(--muted);font-size:12.5px;width:66px}
+td.tm b{display:block;color:var(--ink);font-size:13.5px}
+td.what .tags{margin-top:6px;line-height:1}
+td.chc{width:92px}
+td.what b{color:var(--ink)}
+td.what .sub{color:var(--muted);font-size:12.5px;margin-top:2px}
+.ax{display:flex;gap:6px;align-items:baseline;margin:0 0 5px;line-height:1}
+.ax:last-child{margin-bottom:0}
+.axk{flex:0 0 54px;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--muted);padding-top:2px}
+.ax .tag,.ax .job{margin:0 3px 0 0}
+details.note.why{padding:0;border-left-width:3px}
+details.note.why>summary{cursor:pointer;list-style:none;display:inline-flex;
+  align-items:center;gap:6px;padding:10px 16px;font-weight:600;color:var(--navy);
+  font-size:13px}
+details.note.why>summary::-webkit-details-marker{display:none}
+details.note.why>summary::before{content:"▸";color:var(--muted);font-size:11px}
+details.note.why[open]>summary::before{content:"▾"}
+details.note.why>div{padding:0 16px 12px;font-size:13.5px;line-height:1.5}
+@media print{details.note.why>div{display:block !important}}
+.axes-key{margin:14px 0 6px}
+.axes-key>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;
+  gap:6px;font-size:13px;font-weight:600;color:var(--navy);padding:6px 12px;
+  border:1px solid var(--line);border-radius:8px;background:#fff}
+.axes-key>summary::-webkit-details-marker{display:none}
+.axes-key>summary::before{content:"▸";color:var(--muted)}
+.axes-key[open]>summary::before{content:"▾"}
+.axes-key table{margin-top:10px;font-size:13px}
+.axes-key td:first-child{width:120px;white-space:nowrap;color:var(--navy);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;font-size:12.5px;
+  color:var(--muted);align-items:center;line-height:1}
+.empty{padding:12px 14px;color:var(--muted);font-size:13px}
+@media (max-width:760px){
+  .day table,.day tbody,.day tr,.day td{display:block;width:100%}
+  .day tr{border:none;border-bottom:1px solid var(--beige);border-radius:0;
+    margin:0;padding:10px 12px;background:#fff}
+  .day td{padding:2px 0}
+  td.tm,td.chc{width:auto;display:inline-block;margin-right:8px}
+}
+/* Телефон: строка таблицы разворачивается в карточку. Эксперт открывает эту
+   страницу там же, где записывает голосовые, а пять колонок в 375 px не влезают. */
+@media (max-width:760px){
+  .wrap{padding:18px 12px 40px}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tr{background:#fff;border:1px solid var(--line);border-radius:10px;
+     margin:0 0 12px;padding:10px 12px;position:relative}
+  tr.daystart{border-top:1px solid var(--line)}
+  td{border:none;padding:4px 0 4px 0}
+  td:empty{display:none}
+  td[data-l]::before{content:attr(data-l);display:block;font-size:11px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:1px}
+  td.topic{font-size:16px;font-weight:600}
+  td.ask{background:var(--beige);border-radius:8px;padding:10px 12px;margin-top:6px}
+  .check{position:absolute;top:10px;right:12px;width:auto;text-align:right}
+  .askcol{width:auto}
+}
+</style></head><body>
+<div class="wrap">
+<h1>Съёмочный пакет</h1>
+<div class="sub">неделя 07.09 — 13.09<br><span class="badge">съёмка 05.09</span></div>
+<div class="note"><b>Как этим пользоваться.</b> Порядок ниже — <b>порядок съёмки</b>, а не порядок выхода: слоты сгруппированы так, чтобы не переставлять свет и не менять образ лишний раз. Календарь публикаций — в конце страницы.<br><br>В карточке дословны только <b>хук</b>, цифры и названия. Всё остальное — ваши же слова из голосовых, но говорите живьём, а не читайте: реплика нужна как опора, не как суфлёр. Сбились — это нормально, снимем дубль.</div>
+<h2>точка 2 · стена по грудь, клиника (кабинет, §14/1) — одна группа на R-02, R-03, R-04, R-08; свет и одежда одни на день <span class="muted">· 4</span></h2>
+<div class="note src"><b>Реквизит на группу:</b> сантиметровая лента, чашка кофе</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-08</span> <b>Мама школьника: снежный ком к ноябрю</b><span class="meta2">Цепочка следствий · 60 сек · сложность тяжёлый</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Безопасность и идентичность: к ноябрю она будет есть меньше и набирать, засыпать на ходу и замечать, что память снижается — и спишет это на «осень» и на себя, а не на то, что три вещи с сентября тратили одно и то же железо.</div>
+<div class="stake"><b>Что зритель получает.</b> Действие: не ждать ноября, «когда станет невыносимо», — железо здесь ключевое: у врача пройти дообследование, ферритин (нд27 + нд1).</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Ещё только сентябрь, а я уже не могу.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидит на стуле, корпус к камере; в руках чашка кофе — с первого кадра, потом ставится на стол и больше не трогается</div>
+<div class="srow"><span class="skey">Кадр</span>По грудь, камера на уровне глаз</div>
+<div class="srow"><span class="skey">Фон</span>Клиника, кабинет — распаковка маша · §14/1 («съёмки в клинике вообще без вопросов»). Не в халате (§15.4/1)</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорить как пациентке, которая сидит напротив, — без оценок мамы, без «вы сами виноваты»</li><li>Цепочку вести по пальцам: три звена — три пальца, это единственный жест</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Показать</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-3</td><td class="act">чашка кофе в руке — первый кадр читается без звука</td><td class="line">Ещё только сентябрь, а я уже не могу.</td></tr>
+<tr class=""><td class="tm">3-9</td><td class="act"></td><td class="line">Первого сентября сносит режим дня, приёмы пищи, отход ко сну. Уровень стресса повышается в разы.</td></tr>
+<tr class=""><td class="tm">9-16</td><td class="act"></td><td class="line">Мы начинаем больше тревожиться, значит, больше тратим железо. Потому что тревожность покрывается кортизолом. Кортизол это гормон стресса.</td></tr>
+<tr class=""><td class="tm">16-25</td><td class="act"></td><td class="line">Засыпаем на ходу, потому что из-за тревожности нарушается сон. Нужно проснуться, нужен кофе, хватаешься как за спасение. Кофеин вымывает железо.</td></tr>
+<tr class="turn"><td class="tm">25-35</td><td class="act"></td><td class="line">Сентябрь и октябрь это период напряжённой работы щитовидной железы. Она тоже тянет железо на себя. И вот у нас трое участников, которые хотят железо.</td></tr>
+<tr class=""><td class="tm">35-42</td><td class="act">цитирует пациентку — чужие слова, «как они говорят»: интонацией и лёгким жестом «в сторону», не о себе</td><td class="line">«Я вроде и ем в два раза меньше, а вес набирается. Сонливая, заторможенная, память снижается. Наверное, осень».</td></tr>
+<tr class="payoff"><td class="tm">42-48</td><td class="act"></td><td class="line">Эту просадку человек с врачом начнёт решать к ноябрю, когда станет невыносимо. Железо здесь ключевое.</td></tr>
+<tr class="payoff"><td class="tm">48-51</td><td class="act"></td><td class="line">Пройти дообследование у врача. Ферритин.</td></tr>
+<tr class=""><td class="tm">51-54</td><td class="act"></td><td class="line">Перешлите маме из родительского чата.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Сентябрь, мама школьника на кофе. Почему к ноябрю нет сил?»</li>
+<li>«Сонливая, заторможенная, память снижается. Наверное, осень?»</li>
+</ol></div>
+<div class="props"><b>Нужно на площадке:</b> чашка кофе</div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-02</span> <b>Сколько лет зреет преддиабет</b><span class="meta2">Три ранних признака · 60 сек · сложность лёгкий</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Безопасность близкого и своя: сон после обеда в выходные, ночные подъёмы и «загар», который не сходит, уже 5–10 лет идут к диабету, а дома их списывают на возраст и усталость.</div>
+<div class="stake"><b>Что зритель получает.</b> Действие: с чем прийти к врачу — попросить обследование для исключения нарушений углеводного обмена, без самостоятельного перечня анализов.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Загар в местах трения одежды не сходит зимой. А сахар в норме.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидит на стуле, корпус к камере, руки свободны; признаки показывает на себе</div>
+<div class="srow"><span class="skey">Кадр</span>По грудь, камера на уровне глаз</div>
+<div class="srow"><span class="skey">Фон</span>Клиника, кабинет — распаковка маша · §14/1 («съёмки в клинике вообще без вопросов»). Не в халате (§15.4/1)</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорить как на приёме, а не на камеру</li><li>Рука подключается только там, где называется место на теле (шея, линия челюсти); в остальных битах руки спокойны</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Показать</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-3</td><td class="act"></td><td class="line">Загар в местах трения одежды не сходит зимой. А сахар в норме.</td></tr>
+<tr class=""><td class="tm">3-9</td><td class="act"></td><td class="line">Преддиабет не начинается с повышенного сахара натощак. Три ранних признака, которые годами списываются на что угодно другое.</td></tr>
+<tr class=""><td class="tm">9-15</td><td class="act"></td><td class="line">В выходные появляется послеобеденный сон. Кажется, человек отсыпается после рабочей недели, просто потому что появилась такая возможность.</td></tr>
+<tr class=""><td class="tm">15-24</td><td class="act"></td><td class="line">Ложусь спать вовремя, но не могу уснуть. Не потому что мысли какие-то нерешённые, а потому что вроде уснул, а организм будит позывом в туалет.</td></tr>
+<tr class=""><td class="tm">24-29</td><td class="act">касается шеи там, где лежит цепочка, — показать место</td><td class="line">Потемнение кожи в местах трения одежды или цепочки на шее: шея, подмышки.</td></tr>
+<tr class="turn"><td class="tm">29-38</td><td class="act">ведёт пальцем по линии челюсти — место, которое бреют</td><td class="line">У мужчин признак, который вообще никто не связывает с преддиабетом. Коричневая полоса в месте, неудобном для бритья, которая не проходит.</td></tr>
+<tr class=""><td class="tm">38-43</td><td class="act"></td><td class="line">Первые признаки появляются в среднем за пять-десять лет до того, как преддиабет станет диабетом.</td></tr>
+<tr class="payoff"><td class="tm">43-50</td><td class="act"></td><td class="line">Во всех этих ситуациях приходим к врачу и говорим: назначьте мне, пожалуйста, обследование для исключения нарушений углеводного обмена.</td></tr>
+<tr class=""><td class="tm">50-53</td><td class="act"></td><td class="line">Напишите в комментариях, какой из трёх узнали.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Муж вроде уснул, а организм снова будит его в туалет.»</li>
+<li>«Муж каждые выходные спит после обеда. Это уже не усталость?»</li>
+</ol></div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-03</span> <b>Уколы для похудения как у подружки</b><span class="meta2">Ответ на возражение · 60 сек · сложность лёгкий</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Безопасность и деньги: колоть «как подружка» — лотерея с побочными и возвратом на уколы; проиграть можно мышцы, которые потом не вернуть.</div>
+<div class="stake"><b>Что зритель получает.</b> Ответ: критерий, по которому видно, что терапия идёт правильно, — вес уходит медленно, а объёмы быстрее; проверяется дома весами и сантиметром.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">««Моя подружка уколы для похудения назначила себе сама. А замечательно худеет.»»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидит на стуле, корпус к камере; сантиметровая лента лежит рядом и берётся в руку только на выплате</div>
+<div class="srow"><span class="skey">Кадр</span>По грудь, камера на уровне глаз</div>
+<div class="srow"><span class="skey">Фон</span>Клиника, кабинет — распаковка маша · §14/1 («съёмки в клинике вообще без вопросов»). Не в халате (§15.4/1)</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорить как пациентке напротив: без «нельзя», спокойно, без осуждения подружки</li><li>Лента — единственный предмет: в руку на 36-й секунде, до этого не трогать</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Показать</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-3</td><td class="act"></td><td class="line">«Моя подружка уколы для похудения назначила себе сама. А замечательно худеет.»</td></tr>
+<tr class=""><td class="tm">3-7</td><td class="act"></td><td class="line">Что за этим стоит на самом деле? Огромное везение. Вот просто огромное.</td></tr>
+<tr class=""><td class="tm">7-11</td><td class="act"></td><td class="line">Уколы для похудения это лекарственный препарат, к которому есть список противопоказаний.</td></tr>
+<tr class=""><td class="tm">11-18</td><td class="act"></td><td class="line">Подружка колола до размера, который ей нравится, затем отменила. И рано или поздно она на эти уколы вернётся.</td></tr>
+<tr class=""><td class="tm">18-25</td><td class="act"></td><td class="line">А люди с врачом выстраивают новую систему, чтобы после отмены уколов вес не вернулся. В среднем это год.</td></tr>
+<tr class="turn"><td class="tm">25-32</td><td class="act"></td><td class="line">Я прям грущу, когда слышу: «подружка колет, и у неё замечательно ушло». Там, значит, ушли и мышцы.</td></tr>
+<tr class=""><td class="tm">32-36</td><td class="act"></td><td class="line">Если рядом нет врача, который это объяснит, на выходе саркопения.</td></tr>
+<tr class="payoff"><td class="tm">36-44</td><td class="act">берёт сантиметровую ленту — показать, чем меряют объёмы</td><td class="line">Вес идёт медленно, а объёмы идут быстрее. Тогда всё правильно. Мы теряем жировую ткань, а мышечную в меньшей степени.</td></tr>
+<tr class=""><td class="tm">44-51</td><td class="act"></td><td class="line">Один вопрос к врачу: есть ли у меня противопоказания к этой терапии? Можно ли мне её начинать сейчас?</td></tr>
+<tr class=""><td class="tm">51-54</td><td class="act"></td><td class="line">Отправьте подруге, которая колет сама.</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Подружка колола до размера, который нравится, а потом отменила.»</li>
+<li>«Подружка колет себе уколы для похудения. С каким вопросом идти к врачу?»</li>
+</ol></div>
+<div class="props"><b>Нужно на площадке:</b> сантиметровая лента</div>
+</div>
+<div class="card shot">
+<div class="cardhead"><span class="sid2">R-04</span> <b>Щитовидка или тарелка: три критерия</b><span class="meta2">Вопрос в лоб с тремя критериями · 55 сек · сложность лёгкий</span></div>
+<div class="stake"><b>Ради чего этот ролик.</b> Идентичность: она была уверена, что «это еда» и виновата сама, — а тело набирает при меньшей тарелке, и дневник её оправдывает.</div>
+<div class="stake"><b>Что зритель получает.</b> Ответ: почему килограммы не от еды — снижение гормонов щитовидки тормозит обмен и снижает аппетит, поэтому есть меньше получается легко, а вес растёт; проверить — профиль гормонального здоровья щитовидной железы.</div>
+<div class="hookbox"><div class="lbl">Хук — дословно, первые секунды</div><div class="hooktxt">«Пациентка ест два раза в день, а вес всё равно растёт.»</div></div>
+<div class="setup"><div class="lbl">Постановка — одна на весь ролик</div>
+<div class="srow"><span class="skey">Как стоите / сидите</span>Сидит на стуле, корпус к камере, руки свободны</div>
+<div class="srow"><span class="skey">Кадр</span>По грудь, камера на уровне глаз</div>
+<div class="srow"><span class="skey">Фон</span>Клиника, кабинет — распаковка маша · §14/1 («съёмки в клинике вообще без вопросов»). Не в халате (§15.4/1)</div>
+<div class="srow"><span class="skey">Движения</span><ul class="mv"><li>Говорить как на приёме: критерии — как вопросы пациентке, а не как список</li><li>Три критерия — по пальцам; это единственный жест, на повороте руки спокойны</li></ul></div>
+</div>
+<table class="beats"><thead><tr><th>Сек</th><th>Что говорите</th></tr></thead><tbody>
+<tr class=""><td class="tm">0-3</td><td class="line">Пациентка ест два раза в день, а вес всё равно растёт.</td></tr>
+<tr class=""><td class="tm">3-7</td><td class="line">Уверены, что ваши килограммы это именно еда? Три критерия.</td></tr>
+<tr class=""><td class="tm">7-14</td><td class="line">Если у вас есть качели цифр на весах, и вечером вы стабильно на полтора-два килограмма тяжелее, чем утром.</td></tr>
+<tr class=""><td class="tm">14-22</td><td class="line">Ем-то я не так уж и много. Пробую ввести дневник питания. Никакого передоза нет. А вес потихонечку, медленно, не скачками.</td></tr>
+<tr class=""><td class="tm">22-28</td><td class="line">У некоторых идёт по когнитивным функциям. То есть сильное снижение памяти. «Я вдруг начала всё записывать».</td></tr>
+<tr class="turn payoff"><td class="tm">28-38</td><td class="line">Начинаю сокращать тарелку, и самое интересное, что мне это даётся комфортно. Снижение гормонов щитовидной железы отвечает и за аппетит. Организм полусонный, заторможенный.</td></tr>
+<tr class=""><td class="tm">38-46</td><td class="line">Уверены, что ваши килограммы только от еды? Если похожая ситуация, очень хорошо было бы проверить профиль гормонального здоровья щитовидной железы.</td></tr>
+<tr class=""><td class="tm">46-49</td><td class="line">Отправьте той, кто «ем-то не так уж и много».</td></tr>
+</tbody></table>
+<div class="takes"><div class="lbl">Дубли хука — снять подряд, с той же точки, сразу после основного</div><ol>
+<li>«Пациентка вдруг начала всё записывать. Пришла из-за веса.»</li>
+<li>«Размер у пациентки растёт весь, а не только живот.»</li>
+</ol></div>
+</div>
+<h2>Лист доборов</h2><div class="note src">Короткие кадры без речи. Снимаются в конце группы, но снять их надо — без них монтаж не соберётся.</div><table><tbody>
+<tr><td class="sid2">R-02</td><td>хук-дубли: основной + 2 с той же точки и тем же светом (текст даёт хукер)</td></tr>
+<tr><td class="sid2">R-03</td><td>хук-дубли: основной + 2 с той же точки и тем же светом (текст даёт хукер)</td></tr>
+<tr><td class="sid2">R-04</td><td>хук-дубли: основной + 2 с той же точки и тем же светом (текст даёт хукер)</td></tr>
+<tr><td class="sid2">R-08</td><td>хук-дубли: основной + 2 с чашкой в руке, та же точка и тот же свет (текст даёт хукер)</td></tr>
+</tbody></table>
+<h2>Когда это выходит</h2>
+<table><thead><tr><th>Дата</th><th>Время</th><th>ID</th><th>Название</th></tr></thead><tbody>
+<tr><td class="dt">08.09 вт</td><td class="tm">08:30</td><td class="sid2">R-02</td><td>Сколько лет зреет преддиабет</td></tr>
+<tr><td class="dt">08.09 вт</td><td class="tm">19:30</td><td class="sid2">R-03</td><td>Уколы для похудения как у подружки</td></tr>
+<tr><td class="dt">09.09 ср</td><td class="tm">08:30</td><td class="sid2">R-04</td><td>Щитовидка или тарелка: три критерия</td></tr>
+<tr><td class="dt">12.09 сб</td><td class="tm">11:00</td><td class="sid2">R-08</td><td>Мама школьника: снежный ком к ноябрю</td></tr>
+</tbody></table>
+<footer>Слотов к съёмке: 4 · суммарный хронометраж готового материала: 235 сек. Собрано из <code>plan.yaml</code>, руками не правится.</footer>
+</div></body></html>
